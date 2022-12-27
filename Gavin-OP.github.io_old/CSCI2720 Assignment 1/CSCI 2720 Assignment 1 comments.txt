@@ -1,0 +1,30 @@
+
+                <div id="comments" class="m-8">
+                    <div id="c1001" class="d-flex">
+                        <div class="flex-shrink-0">
+                            <svg heigh="80" width="80">
+                                <circle cx="30" cy="30" r="20" fill="#86aaf9" style="--darkreader-inline-fill:#062a79;" data-darkreader-inline-fill="">
+                            </circle></svg>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h5>gavin.op@foxmail.com</h5>
+                            <p>May the force be with you.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="comments" class="m-8">
+                    <div id="c1002" class="d-flex">
+                        <div class="flex-shrink-0">
+                            <svg heigh="80" width="80">
+                                <circle cx="30" cy="30" r="20" fill="#f7a28c" style="--darkreader-inline-fill:#751e08;" data-darkreader-inline-fill="">
+                            </circle></svg>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h5>564493609@qq.com</h5>
+                            <p>This is the way.</p>
+                        </div>
+                    </div>
+                <div class="d-flex" id="c1003"><div class="flex-shrink-0"><svg height="80" width="80"><circle cx="30" cy="30" r="20" fill="#86aaf9" style="--darkreader-inline-fill:#062a79;" data-darkreader-inline-fill=""></circle></svg></div><div class="flex-grow-1"><h5>1155141702@link.cuhk.edu.hk</h5><p>With great power comes great responsibility.</p></div></div><div class="d-flex" id="c1004"><div class="flex-shrink-0"><svg height="80" width="80"><circle cx="30" cy="30" r="20" fill="#f7a28c" style="--darkreader-inline-fill:#751e08;" data-darkreader-inline-fill=""></circle></svg></div><div class="flex-grow-1"><h5>HaoxiangZhang@link.cuhk.edu.hk</h5><p>To conquer fear, you must become fear.</p></div></div>

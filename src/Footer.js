@@ -22,7 +22,7 @@ function Footer() {
                         <AiOutlineGithub style={{ color: 'black', marginLeft: '1rem', height: '25px', width: '25px', marginRight: '5px', marginBottom: '3px' }} size='2x' />
                         <span>https://github.com/Gavin-OP</span>
                     </span>
-                    <span>
+                    <span onClick={() => window.location.replace('https://www.linkedin.com/in/gavin-zhang-op')}>
                         <AiFillLinkedin style={{ color: 'black', marginLeft: '1rem', height: '25px', width: '25px', marginRight: '5px', marginBottom: '3px' }} size='2x' />
                         <span>https://www.linkedin.com/in/gavin-zhang-op</span>
                     </span>
