@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Home';
 import Footer from './Footer';
+// import GeucReport from './GEUC4011-Data-Analysis';
 import {
   BrowserRouter,
   Routes,
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          {/* <Route path="/GEUC4011-Data-Analysis.html" element={<GeucReport />} /> */}
           <Route path="/*" element={<Navigate to='/' />} />
         </Routes>
       </BrowserRouter>
