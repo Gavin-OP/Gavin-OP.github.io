@@ -12,7 +12,7 @@ function Footer() {
     return (
         <>
             <MDBFooter className='text-center text-black' style={{ backgroundColor: '#f1f1f1' }}>
-                <MDBContainer className='pt-4' style={{ maxWidth: '90vw' }} >
+                <MDBContainer className='pt-4 pb-3' style={{ maxWidth: '90vw' }} >
                     <span style={{ marginRight: '5vw' }} onClick={() => window.location = 'mailto:HaoxiangZhang@link.cuhk.edu.hk'} onMouseOver={() => this.style.cursor = 'pointer'} >
                         <HiOutlineMail style={{ color: 'black', marginLeft: '1rem', height: '25px', width: '25px', marginRight: '5px', marginBottom: '3px' }} size='2x' />
                         <span>HaoxiangZhang@link.cuhk.edu.hk</span>
