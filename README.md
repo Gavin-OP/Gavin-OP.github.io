@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gavin-OP.github.io _(Gavin's Personal Website)_
 
 ![Website Homepage](./public/image/sample_homepage.png)
@@ -48,3 +49,6 @@ PRs and [issues](https://github.com/Gavin-OP/Gavin-OP.github.io/issues) are glad
 ## License  
 
 [UNLICENSE](./LICENSE)
+=======
+# Gavin-OP.github.io
+>>>>>>> 6c71550 (Create README.md)
