@@ -1,44 +1,49 @@
 import Navigation from './Navbar';
+
+
 function Home() {
     return (
         <>
-            {/* <div
-                class="lazyload s-bg-image s-bg-blurred s-bg-light-text s-new-hero-section s-section s-hero-section   background-image"
-                style="background-repeat:no-repeat;background-size:cover;background-color:#E8EAEC;background-position:50% 50%;background-image:url(Capilano_Suspension_Bridge.jpg)"
-                data-bg="Capilano_Suspension_Bridge.jpg"
-                data-react-style="{&quot;backgroundRepeat&quot;:&quot;no-repeat&quot;,&quot;backgroundSize&quot;:&quot;cover&quot;,&quot;backgroundColor&quot;:&quot;#E8EAEC&quot;,&quot;backgroundPosition&quot;:&quot;50% 50%&quot;}">
-
-            </div> */}
-            {/* <img
-                alt=''
-                src='/avatar.png'
-                width='auto'
-
-                className='d-inline-block align-top'
-            /> */}
-
-
-
             <div style={{
                 backgroundImage: 'url(/Capilano_Suspension_Bridge.jpg)',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center center',
-                height: '500px',
-                // backdropFilter: "blur(10px)"
+                height: '70vh',
             }}>
                 <div className='=mask'
                     style={{
                         backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                        height: '500px',
+                        height: '70vh',
                         backdropFilter: "blur(10px)"
                     }}>
                     <Navigation />
+                    <div className='text-start' style={{ marginLeft: '27vh', marginTop: '33vh' }}>
+                        <p>
+                            <span style={{ fontSize: '60px', fontWeight: 'bold', color: 'white', marginBottom: '-10px', lineHeight: '6vh' }}>ZHANG Haoxiang (Gavin)</span>
+                            <br></br>
+                            <span style={{ fontSize: "40px", color: 'white', marginTop: '-100px' }}>Quantitative Finance and Risk Management</span>
+                        </p>
+                    </div>
                 </div>
             </div>
+            <div style={{ marginLeft: '8vw', marginTop: '60px', marginBottom: '60px', marginRight: '8vw' }}>
+                <h1>
+                    Personal Profile
+                </h1>
+                <p style={{ marginTop: '30px' }}>
+                    Being a multitasker who is not only good at risk management but also
+                    talented in time management, paperwork, communication, coding, and
+                    various tasks, I can deal with the stress even under CUHK courses
+                    and NTU exchange while managing 5 associations and organizing
+                    voluntary teams simultaneously. I would like to take on the coming
+                    challenges and innovations to embrace the goal of joining the
+                    financial industry.
+                </p>
+            </div>
+
         </>
     )
 }
-
 
 export default Home;
