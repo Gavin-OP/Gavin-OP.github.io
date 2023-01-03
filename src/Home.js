@@ -1,3 +1,5 @@
+
+import './Home.css';
 import Navigation from './Navbar';
 
 
@@ -18,12 +20,14 @@ function Home() {
                         backdropFilter: "blur(10px)"
                     }}>
                     <Navigation />
-                    <div className='text-start' style={{ marginLeft: '27vh', marginTop: '33vh' }}>
-                        <p>
+                    <div className='text-start' style={{ marginLeft: '19vw', marginTop: '33vh' }}>
+                        <h1>
                             <span style={{ fontSize: '60px', fontWeight: 'bold', color: 'white', marginBottom: '-10px', lineHeight: '6vh' }}>ZHANG Haoxiang (Gavin)</span>
+
                             <br></br>
+
                             <span style={{ fontSize: "40px", color: 'white', marginTop: '-100px' }}>Quantitative Finance and Risk Management</span>
-                        </p>
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -31,7 +35,7 @@ function Home() {
                 <h1>
                     Personal Profile
                 </h1>
-                <p style={{ marginTop: '30px' }}>
+                {/* <p style={{ marginTop: '30px' }}>
                     Being a multitasker who is not only good at risk management but also
                     talented in time management, paperwork, communication, coding, and
                     various tasks, I can deal with the stress even under CUHK courses
@@ -39,7 +43,7 @@ function Home() {
                     voluntary teams simultaneously. I would like to take on the coming
                     challenges and innovations to embrace the goal of joining the
                     financial industry.
-                </p>
+                </p> */}
             </div>
 
         </>
