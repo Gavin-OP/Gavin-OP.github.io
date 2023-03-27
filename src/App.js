@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Home';
 import Footer from './Footer';
+import StaticHTML from './lxyPresentation'
+
 // import GeucReport from './GEUC4011-Data-Analysis';
 import {
   BrowserRouter,
@@ -17,10 +19,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/GEUC4011-Data-Analysis.html" element={<GeucReport />} /> */}
+          <Route path="/11" element={<StaticHTML />} />
           <Route path="/*" element={<Navigate to='/' />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
     </>
   );
 }

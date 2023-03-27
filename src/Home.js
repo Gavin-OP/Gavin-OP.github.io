@@ -1,4 +1,4 @@
-
+import Footer from './Footer';
 import './Home.css';
 import Navigation from './Navbar';
 
@@ -45,7 +45,7 @@ function Home() {
                     financial industry.
                 </p> */}
             </div>
-
+            <Footer />
         </>
     )
 }
