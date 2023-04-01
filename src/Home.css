@@ -1,3 +1,40 @@
-@media only screen and (max-width: 600px) {
-    
+@media only screen and (max-width: 600px) {}
+
+.home-header-pic-container {
+    background-image: url("/public/Capilano_Suspension_Bridge.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 70vh;
+}
+
+.home-header-pic-mask {
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    height: 100%;
+}
+
+.home-header-text {
+    margin-left: 19vw;
+    margin-top: 33vh;
+    color: white;
+}
+
+.home-header-name {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: -10px;
+    line-height: 6vh;
+}
+
+.home-header-major {
+    font-size: 40px;
+    margin-top: -100px;
+}
+
+.home-body-container {
+    margin-left: 8vw;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-right: 8vw;
 }

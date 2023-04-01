@@ -1,37 +1,24 @@
-import Footer from './Footer';
 import './Home.css';
 import Navigation from './Navbar';
+import Footer from './Footer';
 
 
 function Home() {
     return (
         <>
-            <div style={{
-                backgroundImage: 'url(/Capilano_Suspension_Bridge.jpg)',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center center',
-                height: '70vh',
-            }}>
-                <div className='=mask'
-                    style={{
-                        backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                        height: '70vh',
-                        backdropFilter: "blur(10px)"
-                    }}>
+            <div className='home-header-pic-container'>
+                <div className='home-header-pic-mask'>
                     <Navigation />
-                    <div className='text-start' style={{ marginLeft: '19vw', marginTop: '33vh' }}>
+                    <div className='text-start home-header-text'>
                         <h1>
-                            <span style={{ fontSize: '60px', fontWeight: 'bold', color: 'white', marginBottom: '-10px', lineHeight: '6vh' }}>ZHANG Haoxiang (Gavin)</span>
-
+                            <span className='home-header-name'>ZHANG Haoxiang (Gavin)</span>
                             <br></br>
-
-                            <span style={{ fontSize: "40px", color: 'white', marginTop: '-100px' }}>Quantitative Finance and Risk Management</span>
+                            <span className='home-header-major'>Quantitative Finance and Risk Management</span>
                         </h1>
                     </div>
                 </div>
             </div>
-            <div style={{ marginLeft: '8vw', marginTop: '60px', marginBottom: '60px', marginRight: '8vw' }}>
+            <div className='home-body-container'>
                 <h1>
                     Personal Profile
                 </h1>

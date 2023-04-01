@@ -12,7 +12,7 @@ function Navigation() {
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end me-3" style={{ color: 'white' }} >
                         <NavDropdown title={<span style={{ fontWeight: 'bold' }}>Academic</span>} className='me-3 '>
-                            <NavDropdown.Item href="/psyc1040" className='text-center'>Presentation</NavDropdown.Item>
+                            <NavDropdown.Item href="/" className='text-center'>Presentation</NavDropdown.Item>
                             <NavDropdown.Item href="/" className='text-center'>Project</NavDropdown.Item>
                             <NavDropdown.Item href="/" className='text-center'>Essay</NavDropdown.Item>
                             <NavDropdown.Item href="/" className='text-center'>Notes</NavDropdown.Item>

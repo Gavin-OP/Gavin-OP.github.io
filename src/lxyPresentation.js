@@ -13,7 +13,10 @@ class StaticHTML extends React.Component {
         // fetch the HTML file
         fetch('./MDS.html')
             .then(response => response.text())
-            .then(html => this.setState({ html }))
+            .then(html => {
+                this.setState({ html: html })
+                console.log(html)
+            })
     }
 
     render() {
