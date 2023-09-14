@@ -18,7 +18,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/*" element={<Navigate to='/' />} />
-          <Route path="/timetable-2023-24-T1" element={<Timetable/>} />
         </Routes>
       </BrowserRouter>
     </>
