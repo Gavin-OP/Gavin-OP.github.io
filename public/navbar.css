@@ -1,0 +1,81 @@
+/* Navbar styles */
+.navbar {
+    /* background-color: #343a40; Navbar background color */
+    color: #343a40;
+    /* Text color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 2px;
+}
+
+/* Return icon styles */
+.return-icon {
+    font-size: 24px;
+    font-weight: 700;
+    /* color: black; */
+    /* text-decoration: none; */
+    margin-right: auto;
+    /* Spacing between the icon and dropdown */
+    margin-left: 10px;
+    /* margin-top: 1px; */
+    padding-top: -10px;
+    margin-bottom: 20px;
+    /* Spacing between the icon and the left side of the screen */
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    justify-content: flex-end;
+    display: inline-block;
+}
+
+/* Dropdown toggle styles */
+.dropdown-toggle {
+    cursor: pointer;
+    padding: 10px 8px;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border: none;
+    color: #343a40;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Dropdown link styles */
+.dropdown-content a {
+    color: #343a40;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+    background-color: #e9ecef;
+    /* Hover background color */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
