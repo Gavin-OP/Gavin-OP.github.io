@@ -7,8 +7,12 @@ The personal website for Gavin to showcase the skills, archive memories, and rec
 ## Website Deployment
 
 - install [NodeJS](https://nodejs.org/en/download) with npm  
+
 - run `npm install` to install all dependencies  
-- run `npm run build` to build the website
+
+- run `npm run deploy` to build the website and deploy to gh-pages branch
+
+- update master branch by git
 - 
 --------
 
