@@ -1,3 +1,17 @@
+# Gavin's Personal Website  
+
+## Description
+
+The personal website for Gavin to showcase the skills, archive memories, and record personal life. 
+
+## Website Deployment
+
+- install [NodeJS](https://nodejs.org/en/download) with npm  
+- run `npm install` to install all dependencies  
+- run `npm run build` to build the website
+- 
+--------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
