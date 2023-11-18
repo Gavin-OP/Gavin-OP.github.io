@@ -13,7 +13,10 @@ The personal website for Gavin to showcase the skills, archive memories, and rec
 - run `npm run deploy` to build the website and deploy to gh-pages branch
 
 - update master branch by git
-- 
+
+## Todo List
+- [ ] Design the website layout, what should be included???
+- [ ] html header, footer, and body
 --------
 
 # Getting Started with Create React App
