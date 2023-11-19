@@ -7491,7 +7491,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># import necessary libraries</span>
@@ -7524,7 +7524,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># read raw_data.xlsx</span>
@@ -7752,7 +7752,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># get HSI and HSCI index historical price, and save as csv</span>
@@ -7879,12 +7879,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pca_stock_selection</span><span class="p">(</span><span class="n">start_date</span> <span class="o">=</span> <span class="s1">'2023-04-03'</span><span class="p">,</span> <span class="n">end_date</span> <span class="o">=</span> <span class="s1">'2023-11-09'</span><span class="p">,</span> <span class="n">ma</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">plot_stock_return</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> 
@@ -7959,175 +7959,13 @@ a.anchor-link {
     <span class="k">return</span> <span class="n">portfolio</span>
 
 <span class="c1"># ---------------------- test case ----------------------</span>
-<span class="n">pca_portfolio_1</span> <span class="o">=</span> <span class="n">pca_stock_selection</span><span class="p">(</span><span class="n">start_date</span> <span class="o">=</span> <span class="s1">'2023-07-04'</span><span class="p">,</span> <span class="n">end_date</span> <span class="o">=</span> <span class="s1">'2023-08-01'</span><span class="p">,</span> <span class="n">ma</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">])</span>
-<span class="n">pca_portfolio_2</span> <span class="o">=</span> <span class="n">pca_stock_selection</span><span class="p">(</span><span class="n">start_date</span> <span class="o">=</span> <span class="s1">'2023-08-01'</span><span class="p">,</span> <span class="n">end_date</span> <span class="o">=</span> <span class="s1">'2023-09-04'</span><span class="p">,</span> <span class="n">ma</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">])</span>
-<span class="n">pca_portfolio_3</span> <span class="o">=</span> <span class="n">pca_stock_selection</span><span class="p">(</span><span class="n">start_date</span> <span class="o">=</span> <span class="s1">'2023-09-04'</span><span class="p">,</span> <span class="n">end_date</span> <span class="o">=</span> <span class="s1">'2023-10-03'</span><span class="p">,</span> <span class="n">ma</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">])</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pca_portfolio_1</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pca_portfolio_2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pca_portfolio_3</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="c1"># pca_portfolio_1 = pca_stock_selection(start_date = '2023-07-04', end_date = '2023-08-01', ma = [30])</span>
+<span class="c1"># pca_portfolio_2 = pca_stock_selection(start_date = '2023-08-01', end_date = '2023-09-04', ma = [30])</span>
+<span class="c1"># pca_portfolio_3 = pca_stock_selection(start_date = '2023-09-04', end_date = '2023-10-03', ma = [30])</span>
+<span class="c1"># display(pca_portfolio_1.T)</span>
+<span class="c1"># display(pca_portfolio_2.T)</span>
+<span class="c1"># display(pca_portfolio_3.T)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>0241.HK</th>
-<th>2269.HK</th>
-<th>0992.HK</th>
-<th>9888.HK</th>
-<th>0981.HK</th>
-<th>9988.HK</th>
-<th>1810.HK</th>
-<th>9868.HK</th>
-<th>2313.HK</th>
-<th>0700.HK</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>loading</th>
-<td>1.038982</td>
-<td>0.994777</td>
-<td>0.793095</td>
-<td>0.745685</td>
-<td>0.709989</td>
-<td>0.696852</td>
-<td>0.577323</td>
-<td>-0.568642</td>
-<td>0.568367</td>
-<td>0.488145</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>2020.HK</th>
-<th>2899.HK</th>
-<th>6862.HK</th>
-<th>1099.HK</th>
-<th>1211.HK</th>
-<th>0388.HK</th>
-<th>2269.HK</th>
-<th>1109.HK</th>
-<th>0316.HK</th>
-<th>1378.HK</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>loading</th>
-<td>0.809929</td>
-<td>0.737128</td>
-<td>0.673967</td>
-<td>-0.603115</td>
-<td>0.578705</td>
-<td>0.565193</td>
-<td>0.564301</td>
-<td>0.56111</td>
-<td>-0.555107</td>
-<td>0.542126</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>2269.HK</th>
-<th>1209.HK</th>
-<th>0241.HK</th>
-<th>2899.HK</th>
-<th>1109.HK</th>
-<th>2015.HK</th>
-<th>2628.HK</th>
-<th>0836.HK</th>
-<th>0981.HK</th>
-<th>2313.HK</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>loading</th>
-<td>-0.8022</td>
-<td>0.79344</td>
-<td>0.735947</td>
-<td>0.70734</td>
-<td>0.68681</td>
-<td>0.653713</td>
-<td>0.585735</td>
-<td>0.560932</td>
-<td>0.543917</td>
-<td>-0.487736</td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 </div>
@@ -8158,12 +7996,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">qp_weight_allocation</span><span class="p">(</span><span class="n">portfolio</span><span class="p">,</span> <span class="n">expected_return</span> <span class="o">=</span> <span class="mf">0.12</span><span class="p">):</span>
@@ -8204,217 +8042,16 @@ a.anchor-link {
     <span class="k">return</span> <span class="n">portfolio</span>
 
 <span class="c1"># ---------------------- test case ----------------------</span>
-<span class="n">portfolio1</span> <span class="o">=</span> <span class="n">qp_weight_allocation</span><span class="p">(</span><span class="n">pca_portfolio_1</span><span class="p">,</span> <span class="n">expected_return</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-<span class="n">portfolio2</span> <span class="o">=</span> <span class="n">qp_weight_allocation</span><span class="p">(</span><span class="n">pca_portfolio_2</span><span class="p">,</span> <span class="n">expected_return</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-<span class="n">portfolio3</span> <span class="o">=</span> <span class="n">qp_weight_allocation</span><span class="p">(</span><span class="n">pca_portfolio_3</span><span class="p">,</span> <span class="n">expected_return</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-<span class="n">portfolio1</span> <span class="o">=</span> <span class="n">portfolio1</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-<span class="n">portfolio2</span> <span class="o">=</span> <span class="n">portfolio2</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-<span class="n">portfolio3</span> <span class="o">=</span> <span class="n">portfolio3</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">portfolio1</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">portfolio2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">portfolio3</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="c1"># portfolio1 = qp_weight_allocation(pca_portfolio_1, expected_return=0.4)</span>
+<span class="c1"># portfolio2 = qp_weight_allocation(pca_portfolio_2, expected_return=0.4)</span>
+<span class="c1"># portfolio3 = qp_weight_allocation(pca_portfolio_3, expected_return=0.4)</span>
+<span class="c1"># portfolio1 = portfolio1.sort_index()</span>
+<span class="c1"># portfolio2 = portfolio2.sort_index()</span>
+<span class="c1"># portfolio3 = portfolio3.sort_index()</span>
+<span class="c1"># display(portfolio1.T)</span>
+<span class="c1"># display(portfolio2.T)</span>
+<span class="c1"># display(portfolio3.T)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>0241.HK</th>
-<th>0700.HK</th>
-<th>0981.HK</th>
-<th>0992.HK</th>
-<th>1810.HK</th>
-<th>2269.HK</th>
-<th>2313.HK</th>
-<th>9868.HK</th>
-<th>9888.HK</th>
-<th>9988.HK</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>loading</th>
-<td>1.038982</td>
-<td>0.488145</td>
-<td>0.709989</td>
-<td>0.793095</td>
-<td>0.577323</td>
-<td>0.994777</td>
-<td>0.568367</td>
-<td>-0.568642</td>
-<td>0.745685</td>
-<td>0.696852</td>
-</tr>
-<tr>
-<th>weight</th>
-<td>-0.100000</td>
-<td>0.346242</td>
-<td>0.173882</td>
-<td>0.330290</td>
-<td>0.281895</td>
-<td>-0.062610</td>
-<td>0.145148</td>
-<td>-0.027244</td>
-<td>0.000507</td>
-<td>-0.088110</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>0316.HK</th>
-<th>0388.HK</th>
-<th>1099.HK</th>
-<th>1109.HK</th>
-<th>1211.HK</th>
-<th>1378.HK</th>
-<th>2020.HK</th>
-<th>2269.HK</th>
-<th>2899.HK</th>
-<th>6862.HK</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>loading</th>
-<td>-0.555107</td>
-<td>0.565193</td>
-<td>-0.603115</td>
-<td>0.561110</td>
-<td>0.578705</td>
-<td>0.542126</td>
-<td>0.809929</td>
-<td>0.564301</td>
-<td>0.737128</td>
-<td>0.673967</td>
-</tr>
-<tr>
-<th>weight</th>
-<td>-0.011196</td>
-<td>-0.093899</td>
-<td>0.280476</td>
-<td>-0.091153</td>
-<td>0.678287</td>
-<td>0.067058</td>
-<td>-0.078904</td>
-<td>-0.100000</td>
-<td>0.449331</td>
-<td>-0.100000</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>0241.HK</th>
-<th>0836.HK</th>
-<th>0981.HK</th>
-<th>1109.HK</th>
-<th>1209.HK</th>
-<th>2015.HK</th>
-<th>2269.HK</th>
-<th>2313.HK</th>
-<th>2628.HK</th>
-<th>2899.HK</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>loading</th>
-<td>0.735947</td>
-<td>0.560932</td>
-<td>0.543917</td>
-<td>0.686810</td>
-<td>0.793440</td>
-<td>0.653713</td>
-<td>-0.802200</td>
-<td>-0.487736</td>
-<td>0.585735</td>
-<td>0.707340</td>
-</tr>
-<tr>
-<th>weight</th>
-<td>-0.100000</td>
-<td>0.435118</td>
-<td>0.227294</td>
-<td>-0.018068</td>
-<td>-0.001054</td>
-<td>0.237752</td>
-<td>-0.099999</td>
-<td>0.151121</td>
-<td>-0.081055</td>
-<td>0.248891</td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 </div>
@@ -8443,12 +8080,12 @@ $$</li>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the portfolio beta</span>
@@ -8491,316 +8128,16 @@ $$</li>
     <span class="k">return</span> <span class="n">beta_portfolio</span><span class="p">,</span> <span class="n">portfolio</span>
 
 <span class="c1"># ---------------------- test case ----------------------</span>
-<span class="n">beta1</span><span class="p">,</span> <span class="n">portfolio1</span> <span class="o">=</span> <span class="n">beta_calculator</span><span class="p">(</span><span class="n">portfolio1</span><span class="p">)</span>
-<span class="n">beta2</span><span class="p">,</span> <span class="n">portfolio2</span> <span class="o">=</span> <span class="n">beta_calculator</span><span class="p">(</span><span class="n">portfolio2</span><span class="p">)</span>
-<span class="n">beta3</span><span class="p">,</span> <span class="n">portfolio3</span> <span class="o">=</span> <span class="n">beta_calculator</span><span class="p">(</span><span class="n">portfolio3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'The first portfolio beta is </span><span class="si">{</span><span class="n">beta1</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">portfolio1</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'The second portfolio beta is </span><span class="si">{</span><span class="n">beta2</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">portfolio2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'The third portfolio beta is </span><span class="si">{</span><span class="n">beta3</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">portfolio3</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="c1"># beta1, portfolio1 = beta_calculator(portfolio1)</span>
+<span class="c1"># beta2, portfolio2 = beta_calculator(portfolio2)</span>
+<span class="c1"># beta3, portfolio3 = beta_calculator(portfolio3)</span>
+<span class="c1"># print(f'The first portfolio beta is {beta1}')</span>
+<span class="c1"># display(portfolio1.T)</span>
+<span class="c1"># print(f'The second portfolio beta is {beta2}')</span>
+<span class="c1"># display(portfolio2.T)</span>
+<span class="c1"># print(f'The third portfolio beta is {beta3}')</span>
+<span class="c1"># display(portfolio3.T)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>The first portfolio beta is 0.8992129807851855
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>0241.HK</th>
-<th>0700.HK</th>
-<th>0981.HK</th>
-<th>0992.HK</th>
-<th>1810.HK</th>
-<th>2269.HK</th>
-<th>2313.HK</th>
-<th>9868.HK</th>
-<th>9888.HK</th>
-<th>9988.HK</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>loading</th>
-<td>1.038982</td>
-<td>0.488145</td>
-<td>0.709989</td>
-<td>0.793095</td>
-<td>0.577323</td>
-<td>0.994777</td>
-<td>0.568367</td>
-<td>-0.568642</td>
-<td>0.745685</td>
-<td>0.696852</td>
-</tr>
-<tr>
-<th>weight</th>
-<td>-0.100000</td>
-<td>0.346242</td>
-<td>0.173882</td>
-<td>0.330290</td>
-<td>0.281895</td>
-<td>-0.062610</td>
-<td>0.145148</td>
-<td>-0.027244</td>
-<td>0.000507</td>
-<td>-0.088110</td>
-</tr>
-<tr>
-<th>beta</th>
-<td>1.625450</td>
-<td>1.362882</td>
-<td>0.865357</td>
-<td>0.750798</td>
-<td>1.176935</td>
-<td>1.729372</td>
-<td>1.132808</td>
-<td>1.900931</td>
-<td>1.440365</td>
-<td>1.650693</td>
-</tr>
-<tr>
-<th>beta_portfolio</th>
-<td>-0.162545</td>
-<td>0.471887</td>
-<td>0.150470</td>
-<td>0.247981</td>
-<td>0.331772</td>
-<td>-0.108276</td>
-<td>0.164424</td>
-<td>-0.051788</td>
-<td>0.000730</td>
-<td>-0.145442</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>The second portfolio beta is 0.6611709067532956
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>0316.HK</th>
-<th>0388.HK</th>
-<th>1099.HK</th>
-<th>1109.HK</th>
-<th>1211.HK</th>
-<th>1378.HK</th>
-<th>2020.HK</th>
-<th>2269.HK</th>
-<th>2899.HK</th>
-<th>6862.HK</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>loading</th>
-<td>-0.555107</td>
-<td>0.565193</td>
-<td>-0.603115</td>
-<td>0.561110</td>
-<td>0.578705</td>
-<td>0.542126</td>
-<td>0.809929</td>
-<td>0.564301</td>
-<td>0.737128</td>
-<td>0.673967</td>
-</tr>
-<tr>
-<th>weight</th>
-<td>-0.011196</td>
-<td>-0.093899</td>
-<td>0.280476</td>
-<td>-0.091153</td>
-<td>0.678287</td>
-<td>0.067058</td>
-<td>-0.078904</td>
-<td>-0.100000</td>
-<td>0.449331</td>
-<td>-0.100000</td>
-</tr>
-<tr>
-<th>beta</th>
-<td>0.664524</td>
-<td>1.094868</td>
-<td>0.388578</td>
-<td>0.992007</td>
-<td>1.034649</td>
-<td>0.873493</td>
-<td>1.121556</td>
-<td>1.729372</td>
-<td>0.816199</td>
-<td>1.128190</td>
-</tr>
-<tr>
-<th>beta_portfolio</th>
-<td>-0.007440</td>
-<td>-0.102807</td>
-<td>0.108987</td>
-<td>-0.090425</td>
-<td>0.701789</td>
-<td>0.058575</td>
-<td>-0.088495</td>
-<td>-0.172937</td>
-<td>0.366743</td>
-<td>-0.112819</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>The third portfolio beta is 0.6331617186098089
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>0241.HK</th>
-<th>0836.HK</th>
-<th>0981.HK</th>
-<th>1109.HK</th>
-<th>1209.HK</th>
-<th>2015.HK</th>
-<th>2269.HK</th>
-<th>2313.HK</th>
-<th>2628.HK</th>
-<th>2899.HK</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>loading</th>
-<td>0.735947</td>
-<td>0.560932</td>
-<td>0.543917</td>
-<td>0.686810</td>
-<td>0.793440</td>
-<td>0.653713</td>
-<td>-0.802200</td>
-<td>-0.487736</td>
-<td>0.585735</td>
-<td>0.707340</td>
-</tr>
-<tr>
-<th>weight</th>
-<td>-0.100000</td>
-<td>0.435118</td>
-<td>0.227294</td>
-<td>-0.018068</td>
-<td>-0.001054</td>
-<td>0.237752</td>
-<td>-0.099999</td>
-<td>0.151121</td>
-<td>-0.081055</td>
-<td>0.248891</td>
-</tr>
-<tr>
-<th>beta</th>
-<td>1.625450</td>
-<td>0.345910</td>
-<td>0.865357</td>
-<td>0.992007</td>
-<td>0.920704</td>
-<td>1.513305</td>
-<td>1.729372</td>
-<td>1.132808</td>
-<td>1.157149</td>
-<td>0.816199</td>
-</tr>
-<tr>
-<th>beta_portfolio</th>
-<td>-0.162545</td>
-<td>0.150512</td>
-<td>0.196690</td>
-<td>-0.017923</td>
-<td>-0.000971</td>
-<td>0.359792</td>
-<td>-0.172936</td>
-<td>0.171191</td>
-<td>-0.093793</td>
-<td>0.203145</td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 </div>
