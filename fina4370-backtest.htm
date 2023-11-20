@@ -1,0 +1,2458 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link rel=File-List href="Backtesting_20Nov_files/filelist.xml">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+x\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<style id="Backtesting_20Nov_17085_Styles">
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+.xl1517085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6317085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6417085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:Percent;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6517085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:middle;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6617085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:none;
+	border-bottom:none;
+	border-left:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6717085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:right;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6817085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6917085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:none;
+	border-bottom:none;
+	border-left:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl7017085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:16.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl7117085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"_\(* \#\,\#\#0\.00_\)\;_\(* \\\(\#\,\#\#0\.00\\\)\;_\(* \0022-\0022??_\)\;_\(\@_\)";
+	text-align:center;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl7217085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"_\(* \#\,\#\#0\.00_\)\;_\(* \\\(\#\,\#\#0\.00\\\)\;_\(* \0022-\0022??_\)\;_\(\@_\)";
+	text-align:center;
+	vertical-align:bottom;
+	background:#B4C6E7;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl7317085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:Percent;
+	text-align:right;
+	vertical-align:bottom;
+	background:#B4C6E7;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl7417085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:right;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:none;
+	border-bottom:none;
+	border-left:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl7517085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:right;
+	vertical-align:middle;
+	border-top:none;
+	border-right:none;
+	border-bottom:none;
+	border-left:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl7617085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:right;
+	vertical-align:middle;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl7717085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"_\(* \#\,\#\#0\.00_\)\;_\(* \\\(\#\,\#\#0\.00\\\)\;_\(* \0022-\0022??_\)\;_\(\@_\)";
+	text-align:center;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl7817085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"_\(* \#\,\#\#0\.00_\)\;_\(* \\\(\#\,\#\#0\.00\\\)\;_\(* \0022-\0022??_\)\;_\(\@_\)";
+	text-align:center;
+	vertical-align:bottom;
+	background:#B4C6E7;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl7917085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	background:#B4C6E7;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl8017085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:Percent;
+	text-align:right;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl8117085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl8217085
+	{padding:0px;
+	mso-ignore:padding;
+	color:white;
+	font-size:18.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:middle;
+	background:#305496;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl8317085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:right;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl8417085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:right;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl8517085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:right;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl8617085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:right;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl8717085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"_\(* \#\,\#\#0\.00_\)\;_\(* \\\(\#\,\#\#0\.00\\\)\;_\(* \0022-\0022??_\)\;_\(\@_\)";
+	text-align:center;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	background:#B4C6E7;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl8817085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"_\(* \#\,\#\#0\.00_\)\;_\(* \\\(\#\,\#\#0\.00\\\)\;_\(* \0022-\0022??_\)\;_\(\@_\)";
+	text-align:center;
+	vertical-align:bottom;
+	background:#B4C6E7;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl8917085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:right;
+	vertical-align:middle;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl9017085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:right;
+	vertical-align:middle;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl9117085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	background:#B4C6E7;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl9217085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:underline;
+	text-underline-style:single;
+	font-family:"Calibri \(Body\)";
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl9317085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"_\(* \#\,\#\#0\.00_\)\;_\(* \\\(\#\,\#\#0\.00\\\)\;_\(* \0022-\0022??_\)\;_\(\@_\)";
+	text-align:center;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	background:#B4C6E7;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl9417085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:normal;}
+.xl9517085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:Percent;
+	text-align:center;
+	vertical-align:bottom;
+	background:#B4C6E7;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl9617085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"_\(* \#\,\#\#0\.00_\)\;_\(* \\\(\#\,\#\#0\.00\\\)\;_\(* \0022-\0022??_\)\;_\(\@_\)";
+	text-align:right;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#B4C6E7;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl9717085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl9817085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:Percent;
+	text-align:right;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl9917085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:Percent;
+	text-align:right;
+	vertical-align:bottom;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;
+	background:#B4C6E7;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl10017085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"_\(* \#\,\#\#0_\)\;_\(* \\\(\#\,\#\#0\\\)\;_\(* \0022-\0022??_\)\;_\(\@_\)";
+	text-align:center;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	background:#B4C6E7;
+	mso-pattern:black none;
+	white-space:nowrap;}
+.xl10117085
+	{padding:0px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if !excel]>&nbsp;&nbsp;<![endif]-->
+<!--The following information was generated by Microsoft Excel's Publish as Web
+Page wizard.-->
+<!--If the same item is republished from Excel, all information between the DIV
+tags will be replaced.-->
+<!----------------------------->
+<!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
+<!----------------------------->
+
+<div id="Backtesting_20Nov_17085" align=center x:publishsource="Excel">
+
+<table border=0 cellpadding=0 cellspacing=0 width=990 style='border-collapse:
+ collapse;table-layout:fixed;width:742pt'>
+ <col width=7 style='mso-width-source:userset;mso-width-alt:224;width:5pt'>
+ <col width=87 style='mso-width-source:userset;mso-width-alt:2784;width:65pt'>
+ <col width=0 style='display:none;mso-width-source:userset;mso-width-alt:2784'>
+ <col width=0 style='display:none;mso-width-source:userset;mso-width-alt:2944'>
+ <col width=96 style='mso-width-source:userset;mso-width-alt:3072;width:72pt'>
+ <col width=0 style='display:none;mso-width-source:userset;mso-width-alt:3072'>
+ <col width=96 style='mso-width-source:userset;mso-width-alt:3072;width:72pt'>
+ <col width=88 span=2 style='width:66pt'>
+ <col width=0 style='display:none;mso-width-source:userset;mso-width-alt:3328'>
+ <col width=0 style='display:none;mso-width-source:userset;mso-width-alt:2784'>
+ <col width=88 style='width:66pt'>
+ <col width=0 style='display:none;mso-width-source:userset;mso-width-alt:3328'>
+ <col width=88 span=3 style='width:66pt'>
+ <col width=0 span=2 style='display:none;mso-width-source:userset;mso-width-alt:
+ 2784'>
+ <col width=88 style='width:66pt'>
+ <col width=0 style='display:none;mso-width-source:userset;mso-width-alt:3328'>
+ <col width=88 style='width:66pt'>
+ <tr height=6 style='mso-height-source:userset;height:5.1pt'>
+  <td height=6 class=xl1517085 width=7 style='height:5.1pt;width:5pt'></td>
+  <td class=xl1517085 width=87 style='width:65pt'></td>
+  <td class=xl1517085 width=0></td>
+  <td class=xl1517085 width=0></td>
+  <td class=xl1517085 width=96 style='width:72pt'></td>
+  <td class=xl1517085 width=0></td>
+  <td class=xl1517085 width=96 style='width:72pt'></td>
+  <td class=xl1517085 width=88 style='width:66pt'></td>
+  <td class=xl1517085 width=88 style='width:66pt'></td>
+  <td class=xl1517085 width=0></td>
+  <td class=xl1517085 width=0></td>
+  <td class=xl1517085 width=88 style='width:66pt'></td>
+  <td class=xl1517085 width=0></td>
+  <td class=xl1517085 width=88 style='width:66pt'></td>
+  <td class=xl1517085 width=88 style='width:66pt'></td>
+  <td class=xl1517085 width=88 style='width:66pt'></td>
+  <td class=xl1517085 width=0></td>
+  <td class=xl1517085 width=0></td>
+  <td class=xl1517085 width=88 style='width:66pt'></td>
+  <td class=xl1517085 width=0></td>
+  <td class=xl1517085 width=88 style='width:66pt'></td>
+ </tr>
+ <tr class=xl6517085 height=38 style='mso-height-source:userset;height:29.1pt'>
+  <td height=38 class=xl6517085 style='height:29.1pt'></td>
+  <td colspan=20 class=xl8217085>Portfolio Performance (Effective from 1/8/2023
+  to 9/11/2023)</td>
+ </tr>
+ <tr height=9 style='mso-height-source:userset;height:6.95pt'>
+  <td height=9 class=xl1517085 style='height:6.95pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=28 style='mso-height-source:userset;height:21.0pt'>
+  <td height=28 class=xl1517085 style='height:21.0pt'></td>
+  <td class=xl7017085 colspan=4>Overall Portfolio</td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.95pt'>
+  <td height=21 class=xl1517085 style='height:15.95pt'></td>
+  <td colspan=11 rowspan=15 height=299 class=xl1517085 width=543
+  style='mso-ignore:colspan-rowspan;height:224.85pt;width:407pt'><!--[if gte vml 1]><v:shapetype
+   id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+   path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+   <v:stroke joinstyle="miter"/>
+   <v:formulas>
+    <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+    <v:f eqn="sum @0 1 0"/>
+    <v:f eqn="sum 0 0 @1"/>
+    <v:f eqn="prod @2 1 2"/>
+    <v:f eqn="prod @3 21600 pixelWidth"/>
+    <v:f eqn="prod @3 21600 pixelHeight"/>
+    <v:f eqn="sum @0 0 1"/>
+    <v:f eqn="prod @6 1 2"/>
+    <v:f eqn="prod @7 21600 pixelWidth"/>
+    <v:f eqn="sum @8 21600 0"/>
+    <v:f eqn="prod @7 21600 pixelHeight"/>
+    <v:f eqn="sum @10 21600 0"/>
+   </v:formulas>
+   <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" aspectratio="t"/>
+  </v:shapetype><v:shape id="Chart_x0020_1" o:spid="_x0000_s2049" type="#_x0000_t75"
+   style='position:absolute;margin-left:9pt;margin-top:3.75pt;width:354.75pt;
+   height:205.5pt;z-index:1;visibility:visible' o:gfxdata="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
+">
+   <v:imagedata src="Backtesting_20Nov_files/Backtesting_20Nov_17085_image001.png"
+    o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td width=12 height=5></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td><img width=473 height=274
+    src="Backtesting_20Nov_files/Backtesting_20Nov_17085_image002.png" v:shapes="Chart_x0020_1"></td>
+    <td width=58></td>
+   </tr>
+   <tr>
+    <td height=20></td>
+   </tr>
+  </table>
+  </span><![endif]><!--[if !mso & vml]><span style='width:407.25pt;height:224.25pt'></span><![endif]--></td>
+  <td class=xl1517085></td>
+  <td colspan=6 class=xl9217085>Overall Portfolio Summary</td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=5 style='mso-height-source:userset;height:3.95pt'>
+  <td height=5 class=xl1517085 style='height:3.95pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl6817085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.95pt'>
+  <td height=21 class=xl1517085 style='height:15.95pt'></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl8517085>Starting Capital:</td>
+  <td colspan=4 class=xl9317085><span
+  style='mso-spacerun:yes'>                  </span>10,000,000.00 </td>
+  <td class=xl7917085>&nbsp;</td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl7417085>Ending Capital:</td>
+  <td colspan=4 class=xl7817085><span
+  style='mso-spacerun:yes'>                  </span>10,291,365.15 </td>
+  <td class=xl7817085>&nbsp;</td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl6617085>&nbsp;</td>
+  <td class=xl6717085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl7417085>Profit/Loss:</td>
+  <td colspan=4 class=xl7217085><span
+  style='mso-spacerun:yes'>                       </span>291,365.15 </td>
+  <td class=xl7217085>&nbsp;</td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl7417085>% Profit/Loss:</td>
+  <td colspan=4 class=xl7317085>2.91%</td>
+  <td class=xl7317085>&nbsp;</td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl6617085>&nbsp;</td>
+  <td class=xl6817085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl7417085>Annualised Profit/Loss:</td>
+  <td colspan=4 class=xl7317085>11.06%</td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl7417085>Volatility:</td>
+  <td colspan=4 class=xl7317085>3.25%</td>
+  <td class=xl7317085>&nbsp;</td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl7417085>&nbsp;</td>
+  <td class=xl6717085></td>
+  <td class=xl8017085></td>
+  <td class=xl8017085></td>
+  <td class=xl8017085></td>
+  <td class=xl8017085></td>
+  <td class=xl7317085>&nbsp;</td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl7417085>Benchmark:</td>
+  <td colspan=4 class=xl9517085>3-Month HIBOR + 4%</td>
+  <td class=xl7317085>&nbsp;</td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl8317085>Benchmark @ 1/8/2023:</td>
+  <td colspan=4 class=xl9917085>9.31%</td>
+  <td class=xl7317085>&nbsp;</td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl6717085></td>
+  <td class=xl6717085></td>
+  <td class=xl8017085></td>
+  <td class=xl8017085></td>
+  <td class=xl8017085></td>
+  <td class=xl8017085></td>
+  <td class=xl7317085>&nbsp;</td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=8 style='mso-height-source:userset;height:6.0pt'>
+  <td height=8 class=xl1517085 style='height:6.0pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=28 style='mso-height-source:userset;height:21.0pt'>
+  <td height=28 class=xl1517085 style='height:21.0pt'></td>
+  <td class=xl7017085>Equities</td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=28 style='mso-height-source:userset;height:21.0pt'>
+  <td height=28 class=xl1517085 style='height:21.0pt'></td>
+  <td align=left valign=top><!--[if gte vml 1]><v:shape id="Chart_x0020_5"
+   o:spid="_x0000_s2050" type="#_x0000_t75" style='position:absolute;
+   margin-left:9pt;margin-top:4.5pt;width:354.75pt;height:207pt;z-index:2;
+   visibility:visible' o:gfxdata="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
+">
+   <v:imagedata src="Backtesting_20Nov_files/Backtesting_20Nov_17085_image003.png"
+    o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+  position:absolute;z-index:2;margin-left:12px;margin-top:6px;width:473px;
+  height:276px'><img width=473 height=276
+  src="Backtesting_20Nov_files/Backtesting_20Nov_17085_image004.png" v:shapes="Chart_x0020_5"></span><![endif]><span
+  style='mso-ignore:vglayout2'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td height=28 class=xl7017085 width=87 style='height:21.0pt;width:65pt'></td>
+   </tr>
+  </table>
+  </span></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td colspan=6 class=xl9217085>Equities Summary</td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=8 style='mso-height-source:userset;height:6.0pt'>
+  <td height=8 class=xl1517085 style='height:6.0pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl8517085># Long/Short Equities:</td>
+  <td colspan=4 class=xl10017085><span
+  style='mso-spacerun:yes'>                                     </span>10 </td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl6617085>&nbsp;</td>
+  <td class=xl6717085></td>
+  <td class=xl7117085></td>
+  <td class=xl7117085></td>
+  <td class=xl7117085></td>
+  <td class=xl7117085></td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl7417085>Profit/Loss:</td>
+  <td colspan=4 class=xl7217085><span
+  style='mso-spacerun:yes'>                       </span>251,052.21 </td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl7417085>% Profit/Loss:</td>
+  <td colspan=4 class=xl7317085>2.67%</td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl6617085>&nbsp;</td>
+  <td class=xl6817085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl7417085>Annualised Profit/Loss:</td>
+  <td colspan=4 class=xl7317085>10.12%</td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl8317085>Volatility:</td>
+  <td colspan=4 class=xl9917085>3.61%</td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=13 style='mso-height-source:userset;height:9.95pt'>
+  <td height=13 class=xl1517085 style='height:9.95pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=28 style='mso-height-source:userset;height:21.0pt'>
+  <td height=28 class=xl1517085 style='height:21.0pt'></td>
+  <td align=left valign=top><!--[if gte vml 1]><v:shape id="Chart_x0020_6"
+   o:spid="_x0000_s2051" type="#_x0000_t75" style='position:absolute;
+   margin-left:14.25pt;margin-top:20.25pt;width:354.75pt;height:206.25pt;
+   z-index:3;visibility:visible' o:gfxdata="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
+">
+   <v:imagedata src="Backtesting_20Nov_files/Backtesting_20Nov_17085_image005.png"
+    o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+  position:absolute;z-index:3;margin-left:19px;margin-top:27px;width:473px;
+  height:275px'><img width=473 height=275
+  src="Backtesting_20Nov_files/Backtesting_20Nov_17085_image006.png" v:shapes="Chart_x0020_6"></span><![endif]><span
+  style='mso-ignore:vglayout2'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td height=28 class=xl7017085 width=87 style='height:21.0pt;width:65pt'>Options</td>
+   </tr>
+  </table>
+  </span></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.95pt'>
+  <td height=21 class=xl1517085 style='height:15.95pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td colspan=6 class=xl9217085>Options Summary</td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=5 style='mso-height-source:userset;height:3.95pt'>
+  <td height=5 class=xl1517085 style='height:3.95pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td colspan=2 rowspan=2 class=xl8917085>Strategy:</td>
+  <td colspan=4 rowspan=2 class=xl8717085 width=176 style='width:132pt'><span
+  style='mso-spacerun:yes'> </span>Covered Call/<br>
+    Protective Put<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl7517085>&nbsp;</td>
+  <td class=xl7617085></td>
+  <td class=xl7717085 width=88 style='width:66pt'></td>
+  <td class=xl7717085 width=0></td>
+  <td class=xl7717085 width=0></td>
+  <td class=xl7717085 width=88 style='width:66pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl7417085>Underlying:</td>
+  <td colspan=4 class=xl9117085>Equities in Portfolio</td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl7417085>&nbsp;</td>
+  <td class=xl6717085></td>
+  <td class=xl6317085></td>
+  <td class=xl6317085></td>
+  <td class=xl6317085></td>
+  <td class=xl6317085></td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td colspan=2 class=xl8317085>Profit/Loss:</td>
+  <td colspan=4 class=xl9617085><span
+  style='mso-spacerun:yes'>                         </span>44,280.11 </td>
+  <td class=xl1517085></td>
+  <td class=xl6917085>&nbsp;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr class=xl6517085 height=38 style='mso-height-source:userset;height:29.1pt'>
+  <td height=38 class=xl6517085 style='height:29.1pt'></td>
+  <td colspan=20 class=xl8217085>Delta Hedging*</td>
+ </tr>
+ <tr height=9 style='mso-height-source:userset;height:6.95pt'>
+  <td height=9 class=xl1517085 style='height:6.95pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=28 style='height:21.0pt'>
+  <td height=28 class=xl1517085 style='height:21.0pt'></td>
+  <td class=xl7017085 colspan=6>Portfolio Dollar Delta</td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+  <td colspan=20 rowspan=14 height=294 class=xl1517085 width=983
+  style='mso-ignore:colspan-rowspan;height:220.5pt;width:737pt'><!--[if gte vml 1]><v:shape
+   id="Chart_x0020_7" o:spid="_x0000_s2052" type="#_x0000_t75" style='position:absolute;
+   margin-left:21.75pt;margin-top:6.75pt;width:678.75pt;height:206.25pt;
+   z-index:4;visibility:visible' o:gfxdata="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
+BgAAAAAGAAYAfQEAAOIXAAAAAA==
+">
+   <v:imagedata src="Backtesting_20Nov_files/Backtesting_20Nov_17085_image007.png"
+    o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+    <x:AutoPict/>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td width=29 height=9></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td><img width=905 height=275
+    src="Backtesting_20Nov_files/Backtesting_20Nov_17085_image008.png" v:shapes="Chart_x0020_7"></td>
+    <td width=49></td>
+   </tr>
+   <tr>
+    <td height=10></td>
+   </tr>
+  </table>
+  </span><![endif]><!--[if !mso & vml]><span style='width:737.25pt;height:220.5pt'></span><![endif]--></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1517085 style='height:15.75pt'></td>
+ </tr>
+ <tr height=13 style='mso-height-source:userset;height:9.95pt'>
+  <td height=13 class=xl1517085 style='height:9.95pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr class=xl8117085 height=36 style='mso-height-source:userset;height:27.0pt'>
+  <td height=36 class=xl8117085 width=7 style='height:27.0pt;width:5pt'></td>
+  <td colspan=20 class=xl9417085 width=983 style='width:737pt'>* Since the
+  volatility data of the options is missing, the model above is not complete.
+  The results assume the volatility of the options unchanges throughout the
+  investment horizon.</td>
+ </tr>
+ <tr height=12 style='mso-height-source:userset;height:9.0pt'>
+  <td height=12 class=xl1517085 style='height:9.0pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=14 style='mso-height-source:userset;height:11.1pt'>
+  <td height=14 class=xl1517085 style='height:11.1pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl6417085></td>
+  <td class=xl6417085></td>
+  <td class=xl6417085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <tr height=4 style='mso-height-source:userset;height:3.0pt'>
+  <td height=4 class=xl1517085 style='height:3.0pt'></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+  <td class=xl1517085></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=7 style='width:5pt'></td>
+  <td width=87 style='width:65pt'></td>
+  <td width=0></td>
+  <td width=0></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=0></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=88 style='width:66pt'></td>
+  <td width=88 style='width:66pt'></td>
+  <td width=0></td>
+  <td width=0></td>
+  <td width=88 style='width:66pt'></td>
+  <td width=0></td>
+  <td width=88 style='width:66pt'></td>
+  <td width=88 style='width:66pt'></td>
+  <td width=88 style='width:66pt'></td>
+  <td width=0></td>
+  <td width=0></td>
+  <td width=88 style='width:66pt'></td>
+  <td width=0></td>
+  <td width=88 style='width:66pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+<!----------------------------->
+<!--END OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD-->
+<!----------------------------->
+</body>
+
+</html>
