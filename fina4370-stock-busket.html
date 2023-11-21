@@ -8272,7 +8272,8 @@ all of MD as it is not optimized for dense, information rich UIs.
                       sdnum="1033;0;_-[$$-3C09]* #,##0.00_-;-[$$-3C09]* #,##0.00_-;_-[$$-3C09]* &quot;-&quot;??_-;_-@_-">
                       <b>
                         <font color="#FFFFFF"> Price </font>
-                      </b></td>
+                      </b>
+                    </td>
                     <td align="center" valign=bottom bgcolor="#2F75B5" sdnum="1033;0;0.00"><b>
                         <font color="#FFFFFF">Loading</font>
                       </b></td>
@@ -8295,7 +8296,8 @@ all of MD as it is not optimized for dense, information rich UIs.
                       sdnum="1033;0;_(&quot;$&quot;* #,##0.00_);_(&quot;$&quot;* \(#,##0.00\);_(&quot;$&quot;* &quot;-&quot;??_);_(@_)">
                       <b>
                         <font color="#FFFFFF"> Value </font>
-                      </b></td>
+                      </b>
+                    </td>
                   </tr>
                   <tr>
                     <td style="border-bottom: 1px solid #000000" colspan=9 height="19" align="center" valign=bottom
@@ -9363,7 +9365,13 @@ all of MD as it is not optimized for dense, information rich UIs.
 
 
 
+
+
+
+
+
                 </p>
+
               </li>
             </ul>
           </div>
@@ -9428,6 +9436,311 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="c1"># display(portfolio2.T)</span>
 <span class="c1"># print(f'The third portfolio beta is {beta3}')</span>
 <span class="c1"># display(portfolio3.T)</span>
+</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper" tabindex="0">
+        <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+        </div>
+        <div class="jp-InputArea jp-Cell-inputArea">
+          <div class="jp-InputPrompt jp-InputArea-prompt">
+          </div>
+          <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+            <h3 id="Scraping-the-HIBOR">Scraping the HIBOR<a class="anchor-link" href="#Scraping-the-HIBOR">¶</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+      <div class="jp-Cell-inputWrapper" tabindex="0">
+        <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+        </div>
+        <div class="jp-InputArea jp-Cell-inputArea">
+          <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+          <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+            <div class="cm-editor cm-s-jupyter">
+              <div class="highlight hl-ipython3">
+                <pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://www.hkab.org.hk/tc/rates/hibor'</span><span class="p">)</span>
+
+
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s1">'//div[@aria-label="Toggle Month dropdown"]'</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">"//a[@class='general_dropdown_link w-dropdown-link' and text() = '十一月']"</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="n">day_xpath</span> <span class="o">=</span> <span class="s2">"//div[@class='hibor_calendar_cell_in' and .//text()= '1']"</span>
+
+<span class="n">days</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">"//div[@class='hibor_calendar_cell_in']"</span><span class="p">)</span>
+
+<span class="n">total_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">days</span><span class="p">:</span>
+    <span class="n">day</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">name_num</span> <span class="o">=</span> <span class="p">[</span><span class="n">el</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s2">"//div[@class='general_table_row']/div"</span><span class="p">)]</span>
+    <span class="n">name_num_pairs</span> <span class="o">=</span> <span class="p">[</span><span class="n">name_num</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">name_num</span><span class="p">),</span> <span class="mi">2</span><span class="p">)]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">name_num_pairs</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'maturity'</span><span class="p">,</span> <span class="s1">'hibor'</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'as_of_date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">day</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+    <span class="n">total_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">total_df</span><span class="p">,</span> <span class="n">df</span><span class="p">])</span>
+
+<span class="n">total_df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">'Nov_hibor.xlsx'</span><span class="p">)</span>
+
+<span class="c1"># Close the browser</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper" tabindex="0">
+        <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+        </div>
+        <div class="jp-InputArea jp-Cell-inputArea">
+          <div class="jp-InputPrompt jp-InputArea-prompt">
+          </div>
+          <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+            <h3 id="Consoldiate-Option-Data">Consoldiate Option Data<a class="anchor-link"
+                href="#Consoldiate-Option-Data">¶</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+      <div class="jp-Cell-inputWrapper" tabindex="0">
+        <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+        </div>
+        <div class="jp-InputArea jp-Cell-inputArea">
+          <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+          <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+            <div class="cm-editor cm-s-jupyter">
+              <div class="highlight hl-ipython3">
+                <pre><span></span><span class="kn">import</span> <span class="nn">openpyxl</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+
+<span class="n">port_month</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'08'</span><span class="p">,</span> <span class="s1">'09'</span><span class="p">,</span> <span class="s1">'10'</span><span class="p">]</span>
+<span class="n">stock_code</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'0241'</span><span class="p">,</span> <span class="s1">'0388'</span><span class="p">,</span> <span class="s1">'0981'</span><span class="p">,</span> <span class="s1">'0992'</span><span class="p">,</span> <span class="s1">'1024'</span><span class="p">,</span>
+              <span class="s1">'1099'</span><span class="p">,</span> <span class="s1">'1109'</span><span class="p">,</span> <span class="s1">'1810'</span><span class="p">,</span> <span class="s1">'2015'</span><span class="p">,</span> <span class="s1">'2020'</span><span class="p">,</span>
+              <span class="s1">'2269'</span><span class="p">,</span> <span class="s1">'2628'</span><span class="p">,</span> <span class="s1">'2899'</span><span class="p">,</span> <span class="s1">'3968'</span><span class="p">,</span> <span class="s1">'6862'</span><span class="p">,</span>
+              <span class="s1">'9868'</span><span class="p">,</span> <span class="s1">'9888'</span><span class="p">,</span> <span class="s1">'9961'</span><span class="p">,</span> <span class="s1">'9988'</span><span class="p">]</span>
+<span class="n">opt_month</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'08'</span><span class="p">,</span> <span class="s1">'09'</span><span class="p">,</span> <span class="s1">'10'</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">parse_opt_excel</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">quantity</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_rows'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_columns'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.expand_frame_repr'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_colwidth'</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">quantity</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="n">raw_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">split_df</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">raw_df</span><span class="p">,</span> <span class="n">raw_df</span><span class="p">[</span><span class="n">raw_df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">split_df</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">csize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'any'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">call_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">put_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">7</span><span class="p">:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">put_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">call_df</span><span class="o">.</span><span class="n">columns</span>
+
+    <span class="k">if</span> <span class="n">quantity</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">put_df</span>
+    <span class="k">elif</span> <span class="n">quantity</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">call_df</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'成交量 &gt; 0'</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'成交量'</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+
+    <span class="n">strike</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="n">volume</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">impliedvol</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">csize</span><span class="p">,</span> <span class="n">strike</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">volume</span><span class="p">,</span> <span class="n">impliedvol</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+
+    <span class="n">workbook</span> <span class="o">=</span> <span class="n">openpyxl</span><span class="o">.</span><span class="n">load_workbook</span><span class="p">(</span><span class="sa">f</span><span class="s1">'/Users/shangguanyuqian/Downloads/Copy of Backtesting_Nov18.xlsx'</span><span class="p">)</span>
+    <span class="n">sheet</span> <span class="o">=</span> <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_StockQuantity'</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span>
+        <span class="n">stock</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">sheet</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">quantities</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">sheet</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'/Users/shangguanyuqian/Downloads/Options/</span><span class="si">{</span><span class="n">port_month</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">stock</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">opt_month</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">.xlsx'</span>
+                <span class="n">opt_info</span> <span class="o">=</span> <span class="n">parse_opt_excel</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">port_month</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">quantities</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+                <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionSize'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionStrike'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionPremium'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionLiquidityLimit'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionType'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionImpliedVol'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">opt_info</span><span class="p">:</span>
+                    <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionSize'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">opt_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionStrike'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">opt_info</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionPremium'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">opt_info</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+                    <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionLiquidityLimit'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">opt_info</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+                    <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionImpliedVol'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">opt_info</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+                    <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionType'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">'Put'</span> <span class="k">if</span> <span class="n">quantities</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">'Call'</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionSize'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionStrike'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionPremium'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionLiquidityLimit'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionType'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="n">workbook</span><span class="p">[</span><span class="s1">'DB_OptionImpliedVol'</span><span class="p">]</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+    <span class="n">workbook</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s1">'/Users/shangguanyuqian/Downloads/Copy of Backtesting_Nov18.xlsx'</span><span class="p">)</span>
+</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+      <div class="jp-Cell-inputWrapper" tabindex="0">
+        <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+        </div>
+        <div class="jp-InputArea jp-Cell-inputArea">
+          <div class="jp-InputPrompt jp-InputArea-prompt">
+          </div>
+          <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+            <h3 id="Visualization">Visualization<a class="anchor-link" href="#Visualization">¶</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+      <div class="jp-Cell-inputWrapper" tabindex="0">
+        <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+        </div>
+        <div class="jp-InputArea jp-Cell-inputArea">
+          <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+          <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+            <div class="cm-editor cm-s-jupyter">
+              <div class="highlight hl-ipython3">
+                <pre><span></span><span class="kn">import</span> <span class="nn">openpyxl</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">gaussian_kde</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">kde_plots</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+
+    <span class="c1"># Generate the KDE for the data</span>
+    <span class="n">kde1</span> <span class="o">=</span> <span class="n">gaussian_kde</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'return'</span><span class="p">])</span>
+
+    <span class="c1"># Set the range of the x-axis</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'return'</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="p">[</span><span class="s1">'return'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+
+    <span class="c1"># Create the figure and axes</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="c1"># Plot the KDE curves with filled areas</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">kde1</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Y1'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#5970b4'</span><span class="p">)</span>
+
+    <span class="n">cdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">kde1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">cdf</span> <span class="o">/=</span> <span class="n">cdf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">mode1</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cdf</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span>
+    <span class="n">mode2</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cdf</span> <span class="o">-</span> <span class="mf">0.05</span><span class="p">)</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span>
+
+    <span class="c1"># Draw dashed lines to highlight the mode</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">mode1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#5970b4'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">mode2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#eaa988'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+
+    <span class="c1"># Add text annotations for the mode values</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">mode1</span><span class="p">,</span> <span class="n">kde1</span><span class="p">(</span><span class="n">mode1</span><span class="p">),</span> <span class="sa">f</span><span class="s1">'99%VaR</span><span class="se">\n</span><span class="s1"> </span><span class="si">{</span><span class="n">mode1</span><span class="si">:</span><span class="s1">.2%</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">'right'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">'top'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#5970b4'</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">mode2</span><span class="p">,</span> <span class="n">kde1</span><span class="p">(</span><span class="n">mode2</span><span class="p">),</span> <span class="sa">f</span><span class="s1">'95%VaR</span><span class="se">\n</span><span class="s1"> </span><span class="si">{</span><span class="n">mode2</span><span class="si">:</span><span class="s1">.2%</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">'bottom'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#eaa988'</span><span class="p">)</span>
+
+    <span class="c1"># Set the x and y axis labels</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Return'</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Frequency'</span><span class="p">)</span>
+
+    <span class="c1"># Remove the axis lines</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">'top'</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">'right'</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># set background to be transparent</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'none'</span><span class="p">)</span>
+
+    <span class="c1"># Show the plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Daily Return VaR Without Option Hedging'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'DailyReturnVaR without Option.png'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">line_chart</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1"># Create the figure and axes</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+    <span class="n">day</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span>
+    <span class="n">cumulative_returns</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'index'</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span>
+
+    <span class="n">peak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">cumulative_returns</span><span class="p">)</span>
+    <span class="n">drawdown</span> <span class="o">=</span> <span class="p">(</span><span class="n">cumulative_returns</span> <span class="o">-</span> <span class="n">peak</span><span class="p">)</span> <span class="o">/</span> <span class="n">peak</span>
+    <span class="n">max_dd_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">drawdown</span><span class="p">)</span>  <span class="c1"># Index of the maximum drawdown</span>
+    <span class="n">max_dd_end</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">cumulative_returns</span><span class="p">)</span> <span class="o">-</span> <span class="n">cumulative_returns</span><span class="p">)</span>
+    <span class="n">max_dd_start</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">cumulative_returns</span><span class="p">[:</span><span class="n">max_dd_end</span><span class="p">])</span>
+
+    <span class="c1"># Plotting the time series return</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">day</span><span class="p">,</span> <span class="n">cumulative_returns</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#5970b4'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Date'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Cumulative Return'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Cumulative Return Without Option Hedging'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Max DD: </span><span class="si">{</span><span class="p">(</span><span class="n">cumulative_returns</span><span class="p">[</span><span class="n">max_dd_start</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">cumulative_returns</span><span class="p">[</span><span class="n">max_dd_end</span><span class="p">])</span><span class="si">:</span><span class="s1">.2%</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+                 <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">day</span><span class="p">[</span><span class="nb">int</span><span class="p">((</span><span class="n">max_dd_start</span> <span class="o">+</span> <span class="n">max_dd_end</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)],</span> <span class="p">(</span><span class="n">cumulative_returns</span><span class="p">[</span><span class="n">max_dd_start</span><span class="p">]</span> <span class="o">+</span> <span class="n">cumulative_returns</span><span class="p">[</span><span class="n">max_dd_end</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">day</span><span class="p">[</span><span class="n">max_dd_index</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span> <span class="n">cumulative_returns</span><span class="p">[</span><span class="n">max_dd_index</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.02</span><span class="p">),</span>
+                 <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">'-&gt;'</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">day</span><span class="p">[</span><span class="n">max_dd_start</span><span class="p">],</span> <span class="n">day</span><span class="p">[</span><span class="n">max_dd_end</span><span class="p">]],</span> <span class="p">[</span><span class="n">cumulative_returns</span><span class="p">[</span><span class="n">max_dd_start</span><span class="p">],</span> <span class="n">cumulative_returns</span><span class="p">[</span><span class="n">max_dd_end</span><span class="p">]],</span> <span class="s1">'bo'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#eaa988'</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
+
+    <span class="c1"># Remove the axis lines</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">'top'</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">'right'</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1"># set background to be transparent</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">'none'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'CumReturnMDD without option.png'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre>
               </div>
             </div>
