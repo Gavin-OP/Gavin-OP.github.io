@@ -17,6 +17,7 @@ The personal website for Gavin to showcase the skills, archive memories, and rec
 ## Todo List
 - [ ] Design the website layout, what should be included???
 - [ ] html header, footer, and body
+
 --------
 
 # Getting Started with Create React App

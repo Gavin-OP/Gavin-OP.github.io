@@ -1,6 +1,6 @@
-import './Home.css';
-import Navigation from './Navbar';
-import Footer from './Footer';
+import './css/Home.css';
+import Navigation from './components/Navbar';
+import Footer from './components/Footer';
 
 
 function Home() {

@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Home';
-import Timetable from './timetable_2023_24_T1';
 
 import {
   BrowserRouter,

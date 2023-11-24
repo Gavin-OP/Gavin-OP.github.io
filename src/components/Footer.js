@@ -1,4 +1,4 @@
-import './Footer.css'
+import '../css/Footer.css'
 import React from 'react';
 import {
     MDBFooter,
