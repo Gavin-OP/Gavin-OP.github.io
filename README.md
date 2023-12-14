@@ -43,7 +43,7 @@ The website is build based on ReactJS, HTML, CSS, NodeJS, and Express. The repo 
 
 ## Contributing
 
-PRs and [issues]() are gladly accepted!  
+PRs and [issues](https://github.com/Gavin-OP/Gavin-OP.github.io/issues) are gladly accepted!  
 
 ## License  
 
