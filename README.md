@@ -1,6 +1,6 @@
-# Gavin's Personal Website
+# Gavin-OP.github.io _(Gavin's Personal Website)_
 
-## Description
+
 
 The personal website for Gavin to showcase the skills, archive memories, and record personal life. 
 
