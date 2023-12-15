@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.d863e735.css",
-    "main.js": "/static/js/main.fe8bcae0.js",
+    "main.js": "/static/js/main.b9a9ea64.js",
     "static/js/787.f59291e0.chunk.js": "/static/js/787.f59291e0.chunk.js",
     "static/media/Capilano_Suspension_Bridge.jpg": "/static/media/Capilano_Suspension_Bridge.f06326edfbf409d3495d.jpg",
     "index.html": "/index.html",
     "main.d863e735.css.map": "/static/css/main.d863e735.css.map",
-    "main.fe8bcae0.js.map": "/static/js/main.fe8bcae0.js.map",
+    "main.b9a9ea64.js.map": "/static/js/main.b9a9ea64.js.map",
     "787.f59291e0.chunk.js.map": "/static/js/787.f59291e0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d863e735.css",
-    "static/js/main.fe8bcae0.js"
+    "static/js/main.b9a9ea64.js"
   ]
 }
