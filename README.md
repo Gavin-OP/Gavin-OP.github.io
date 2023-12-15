@@ -1,4 +1,4 @@
-# Gavin-OP.github.io _(Gavin's Personal Website)_
+# Gavin-OP.github.io _(Gavin's Personal Website)_ <!-- omit in toc -->
 
 ![Website Homepage](./public/image/sample_homepage.png)
 
@@ -8,13 +8,13 @@ The personal website for Gavin to showcase his skills, archive memories, and rec
 
 The website is build based on ReactJS, HTML, CSS, NodeJS, and Express. The repo contains the design, documentation, and implementation of Gavin's personal website. 
 
-## Table of Contents
-- [Install](#install)  
+## Table of Contents <!-- omit in toc -->
+- [Install](#install)
 - [Usage](#usage)
 - [Todo List](#todo-list)
 - [References](#references)
 - [Contributing](#contributing)
-- [License](#license)  
+- [License](#license)
 
 ## Install  
 
@@ -33,6 +33,7 @@ The website is build based on ReactJS, HTML, CSS, NodeJS, and Express. The repo 
 
 ## Todo List
 - [ ] ⭐⭐⭐⭐⭐Design the website layout, what should be included??? reference [How to jazz up your website like Apple with JavaScript](https://medium.com/geekculture/how-to-jazz-up-your-website-like-apple-with-javascript-eed2bf227fec)
+- [ ] ⭐⭐Footer change hover CSS
 - [ ] ⭐html header, footer, and body
 - [ ] ⭐Add a NodeJS backend server to serve all the files, reference [How to Create a React App with a Node Backend: The Complete Guide](https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/)
 

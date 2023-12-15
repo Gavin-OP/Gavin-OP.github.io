@@ -12,10 +12,10 @@ function Navigation() {
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end me-3" style={{ color: 'white' }} >
                         <NavDropdown title={<span style={{ fontWeight: 'bold' }}>Academic</span>} className='me-3 '>
-                            <NavDropdown.Item href="/GEUC4011-Data-Analysis.html" className='text-center'>Project</NavDropdown.Item>
+                            <NavDropdown.Item href="/page/GEUC4011-Data-Analysis.html" className='text-center'>Project</NavDropdown.Item>
                             <NavDropdown.Item href="/" className='text-center'>Essay</NavDropdown.Item>
                             <NavDropdown.Item href="/" className='text-center'>Notes</NavDropdown.Item>
-                            <NavDropdown.Item href="/timetable.html" className='text-center'>Timetable</NavDropdown.Item>
+                            <NavDropdown.Item href="/page/timetable.html" className='text-center'>Timetable</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title={<span style={{ fontWeight: 'bold' }}>Internship</span>} className='me-3' >
                             <NavDropdown.Item href="/" className='text-center'>FutureX Capital</NavDropdown.Item>
