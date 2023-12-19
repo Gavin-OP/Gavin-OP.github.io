@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './Home';
+import Home from './sections/Home';
 
 import {
   BrowserRouter,

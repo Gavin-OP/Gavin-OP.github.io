@@ -42,6 +42,8 @@ The website is build based on ReactJS, HTML, CSS, NodeJS, and Express. The repo 
 [25 React Website Design Examples We Love](https://blog.hubspot.com/website/react-websites-examples)  
 [How To Create A Website Like Apple](https://internetdevels.com/blog/how-to-create-a-website-like-apple)
 
+[终极解决：Error: error:0308010C:digital envelope routines::unsupported-CSDN博客](https://blog.csdn.net/m0_48300767/article/details/131450325)
+
 ## Contributing
 
 PRs and [issues](https://github.com/Gavin-OP/Gavin-OP.github.io/issues) are gladly accepted!  

@@ -3,3 +3,44 @@
     --bs-dropdown-link-active-bg: #fff;
     --bs-dropdown-link-active-color: rgb(32, 33, 36);
 }
+
+nav {
+    text-align: center;
+    padding: 1rem;
+    position: flex;
+    top: 0;
+    width: 100%;
+    /* z-index: 1000; Adjust as needed, ensures it's above other content */
+    /* transition: transform 0.3s ease-in-out; */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    margin: 0 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #878889;
+    font-weight: normal;
+    transition: color 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #dbdbdb;
+    font-weight: bold;
+}
+
+.visible {
+    transform: translateY(0);
+}
+
+.hidden {
+    transform: translateY(-100%);
+}
