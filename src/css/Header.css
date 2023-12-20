@@ -45,7 +45,24 @@
 .right-content {
     flex: 1;
     text-align: left;
+    font-size: 20px;
+    font-weight: 400;
     padding: 1rem;
+    margin-top: 45vh;
+    margin-right: 15vw;
+    max-width: 25vw;
+    color: #dbd9d9;
+}
+
+.OP {
+    color: #5a5b5d;
+}
+
+.right-content span {
+    background: linear-gradient(to right, #51a5de, #7b40bd);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .gradient-line {

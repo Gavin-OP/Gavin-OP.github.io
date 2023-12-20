@@ -9,8 +9,9 @@ const Header = () => {
                     <h1>ZHANG Haoxiang</h1>
                 </div>
                 <div className="right-content">
+                    <p className="OP">Hi, this is OP.</p>
                     <p>
-                        Welcome to my personal website. I am passionate about web development and creating meaningful user experiences.
+                        I am <span>BSc. in Quantitative Finance and Risk Management</span> student at CUHK.
                     </p>
                 </div>
             </div>

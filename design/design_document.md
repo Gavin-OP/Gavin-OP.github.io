@@ -12,7 +12,10 @@
 - Skills
 - Timetable
 
-## Style  
+## Style
+
+- [Chethan KVS - Product Designer and Design YouTuber](https://www.chethankvs.design/)
+
 - [apple style zoom in zoom out](https://medium.com/geekculture/how-to-jazz-up-your-website-like-apple-with-javascript-eed2bf227fec)
 - [网页风格参考](https://www.chethankvs.design/), [Portfolio Website - Digital Product Designer - Webflow](https://webflow.com/made-in-webflow/website/Portfolio-Website-Digital-Product-Designer), [Robin Williams - Product Designer (webflow.io)](https://portfolio-course-rw.webflow.io/), [Portfolio Website - Free Template - Webflow](https://webflow.com/made-in-webflow/website/Portfolio-Website-Free-Template), [Thomas Bosc | Content Manager à Paris](https://thomasbosc.com/), [MacBook Air 13- and 15-inch with M2 - Apple (IN)](https://www.apple.com/in/macbook-air-13-and-15-m2/)
 - 使用虚拟表情
