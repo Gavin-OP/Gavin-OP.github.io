@@ -6,10 +6,13 @@
 
 nav {
     text-align: center;
+    font-size: 20px;
     padding: 1rem;
     position: flex;
     top: 0;
     width: 100%;
+    margin-top: 10px;
+    height: 10vh;
     /* z-index: 1000; Adjust as needed, ensures it's above other content */
     /* transition: transform 0.3s ease-in-out; */
 }
@@ -22,7 +25,7 @@ ul {
 }
 
 li {
-    margin: 0 1rem;
+    margin: 0 10rem;
 }
 
 a {

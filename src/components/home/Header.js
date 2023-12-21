@@ -6,12 +6,16 @@ const Header = () => {
         <header className="header-container">
             <div className="header-text-container">
                 <div className="left-content">
-                    <h1>ZHANG Haoxiang</h1>
+                    <h1>Gavin</h1>
+                    <h2>ZHANG Haoxiang</h2>
                 </div>
                 <div className="right-content">
                     <p className="OP">Hi, this is OP.</p>
                     <p>
-                        I am <span>BSc. in Quantitative Finance and Risk Management</span> student at CUHK.
+                        I am a <span>Quantitative Finance and Risk Management</span> student at CUHK.
+                    </p>
+                    <p>
+                        Perfectly balanced. Aspire to explore. 
                     </p>
                 </div>
             </div>
