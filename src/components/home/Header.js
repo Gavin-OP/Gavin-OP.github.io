@@ -3,7 +3,7 @@ import '../../css/Header.css'; // Create a new CSS file for styling the Header
 
 const Header = () => {
     return (
-        <header className="header-container">
+        <section className="header-container">
             <div className="header-text-container">
                 <div className="left-content">
                     <h1>Gavin</h1>
@@ -15,12 +15,17 @@ const Header = () => {
                         I am a <span>Quantitative Finance and Risk Management</span> student at CUHK.
                     </p>
                     <p>
-                        Perfectly balanced. Aspire to explore. 
+                        Perfectly balanced. Aspire to explore.
                     </p>
                 </div>
             </div>
+            <div class="arrow-container">
+                <span class="arrow"></span>
+                <span className="gradient-line"></span>
+            </div>
+            <div className="gradient-circle"></div>
             <div className="gradient-line"></div>
-        </header>
+        </section>
     );
 };
 

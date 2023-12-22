@@ -1,0 +1,63 @@
+.internship-section {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+}
+
+.gradient-sentence {
+    text-align: center;
+    margin-bottom: 3rem;
+    min-width: 1900px;
+}
+
+.gradient-sentence p {
+    font-size: 6rem;
+    color: #86868b;
+    padding-right: 50%;
+}
+
+.internship-highlight {
+    background: linear-gradient(to right, #51a5de, #7b40bd);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 6rem;
+    margin-left: 20%;
+    /* Adjust the color as needed */
+}
+
+.internship-cards {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 5rem;
+    min-width: 1900px;
+    margin-bottom: 10rem;
+    padding-right: 1rem;
+    margin-left: 1rem;
+}
+
+.internship-card {
+    background-color: #000000;
+    /* Dark background color */
+    color: #fff;
+    /* Text color */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(77, 77, 77, 0.1);
+    /* Shadow effect */
+    margin: 1rem;
+    width: 30%;
+    /* Adjust the width as needed */
+}
+
+.internship-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.internship-card p {
+    font-size: 1rem;
+}

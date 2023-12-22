@@ -3,6 +3,7 @@ import '../css/Home.css';
 import Navigation from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import Header from '../components/home/Header';
+import Internship from '../components/home/Internship';
 
 
 // function Home() {
@@ -44,10 +45,11 @@ import Header from '../components/home/Header';
 
 const Home = () => {
   return (
-    <section id="home" className="home-container">
+    <div id="home" className="home-container">
       <Navigation/>
       <Header/>
-    </section>
+      <Internship/>
+    </div>
   );
 };
 

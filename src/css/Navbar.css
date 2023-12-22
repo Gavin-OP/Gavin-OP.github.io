@@ -13,8 +13,6 @@ nav {
     width: 100%;
     margin-top: 10px;
     height: 10vh;
-    /* z-index: 1000; Adjust as needed, ensures it's above other content */
-    /* transition: transform 0.3s ease-in-out; */
 }
 
 ul {
@@ -25,7 +23,7 @@ ul {
 }
 
 li {
-    margin: 0 10rem;
+    margin: 0 9vw;
 }
 
 a {
@@ -46,4 +44,22 @@ a:hover {
 
 .hidden {
     transform: translateY(-100%);
+}
+
+@media (max-width: 768px) {
+    li {
+        margin: 0 9vw;
+    }
+}
+
+@media (min-width: 1000px) {
+    nav {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    li {
+        margin: 0 10rem;
+    }
 }
