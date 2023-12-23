@@ -18,7 +18,7 @@
 }
 
 .internship-highlight {
-    background: linear-gradient(to right, #51a5de, #7b40bd);
+    background: linear-gradient(to right, #be22ff, #7418d4, #d61635, #ff981f);
     font-weight: bold;
     -webkit-background-clip: text;
     color: transparent;
@@ -33,10 +33,10 @@
     text-align: center;
     justify-content: space-between;
     margin-top: 5rem;
-    min-width: 1900px;
+    min-width: 1500px;
     margin-bottom: 10rem;
-    padding-right: 1rem;
-    margin-left: 1rem;
+    padding-right: 2rem;
+    margin-left: 2rem;
 }
 
 .internship-card {
@@ -44,20 +44,57 @@
     /* Dark background color */
     color: #fff;
     /* Text color */
-    padding: 2rem;
-    border-radius: 8px;
+    padding: 1rem;
+    border-radius: 35px;
     box-shadow: 0 4px 8px rgba(77, 77, 77, 0.1);
+    min-height: 500px;
     /* Shadow effect */
     margin: 1rem;
-    width: 30%;
+    padding-top: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    max-width: 550px;
+    min-width: 550px;
     /* Adjust the width as needed */
 }
 
+.internship-card h1 {
+    font-size: 100px;
+    text-align: left;
+    /* margin-left: -10rem; */
+    font-weight: lighter;
+    color: #4f4f51;
+}
+
 .internship-card h2 {
-    font-size: 1.5rem;
+    font-size: 30px;
     margin-bottom: 1rem;
+    text-align: left;
 }
 
 .internship-card p {
+    margin-top: 4rem;
     font-size: 1rem;
+    color: #89898d;
+}
+
+.company-name1 {
+    background: linear-gradient(to right, #01d8d5, #0078ff);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.company-name2 {
+    background: linear-gradient(to right, #db1626, #de9059);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.company-name3 {
+    background: linear-gradient(to right, #9d56df, #524ef1);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    color: transparent;
 }

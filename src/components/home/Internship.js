@@ -16,19 +16,22 @@ const Internship = () => {
             <div className="internship-cards">
                 {/* Card 1 */}
                 <div className="internship-card">
-                    <h2>Internship 1</h2>
+                    <h1>01</h1>
+                    <h2><span className='company-name1'>Zhihu</span>, <br></br> Business Development Intern</h2>
                     <p>Description of Internship 1</p>
                 </div>
 
                 {/* Card 2 */}
                 <div className="internship-card">
-                    <h2>Internship 2</h2>
+                    <h1>02</h1>
+                    <h2><span className='company-name2'>PwC</span>, <br></br> Summer Intern</h2>
                     <p>Description of Internship 2</p>
                 </div>
 
                 {/* Card 3 */}
                 <div className="internship-card">
-                    <h2>Internship 3</h2>
+                    <h1>03</h1>
+                    <h2><span className='company-name3'>FutureX Capital</span>, <br></br> Investment Research Intern</h2>
                     <p>Description of Internship 3</p>
                 </div>
             </div>

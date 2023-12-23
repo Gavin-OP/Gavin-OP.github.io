@@ -62,7 +62,7 @@
 }
 
 .right-content span {
-    background: linear-gradient(to right, #51a5de, #7b40bd);
+    background: linear-gradient(to right, #03b1f6, #6b85fe, #8c4fff, #ee3afe);
     font-weight: bold;
     -webkit-background-clip: text;
     color: transparent;
@@ -74,6 +74,7 @@
     background: linear-gradient(to right, #0b0d0f, #dbdbdb61, #0b0d0f);
     margin-bottom: 10rem;
 }
+
 /* 
 .arrow-container {
     display: flex;
@@ -131,4 +132,16 @@
     to {
         transform: rotate(360deg);
     }
+} */
+
+/* # make a gradient circle background for this section */
+/* .header-container::before {
+    content: '';
+    position: absolute;
+    top: 50;
+    left: 50;
+    width: 10%;
+    height: 10%;
+    background: linear-gradient(to top right, #13002c, #000000);
+    z-index: -1;
 } */
