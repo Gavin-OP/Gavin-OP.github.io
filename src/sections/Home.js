@@ -4,6 +4,7 @@ import Navigation from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import Header from '../components/home/Header';
 import Internship from '../components/home/Internship';
+import Project from '../components/home/Project';
 
 
 // function Home() {
@@ -45,10 +46,11 @@ import Internship from '../components/home/Internship';
 
 const Home = () => {
   return (
-    <div id="home" className="home-container">
-      <Navigation/>
-      <Header/>
-      <Internship/>
+    <div className="home-container">
+      <Navigation />
+      <Header />
+      <Internship />
+      <Project />
     </div>
   );
 };

@@ -3,7 +3,8 @@ import '../../css/Header.css'; // Create a new CSS file for styling the Header
 
 const Header = () => {
     return (
-        <section className="header-container">
+        <section id='home' className="header-container">
+            <div className='spaceholder'></div>
             <div className="header-text-container">
                 <div className="left-content">
                     <h1>Gavin</h1>
@@ -12,10 +13,10 @@ const Header = () => {
                 <div className="right-content">
                     <p className="OP">Hi, this is OP.</p>
                     <p>
-                        I am a <span>Quantitative Finance and Risk Management</span> student at CUHK.
+                        I am a <span>Quantitative Finance and Risk Management</span> undergraduate at CUHK.
                     </p>
                     <p>
-                        Perfectly balanced. Aspire to explore.
+                        Perfectly balanced. Aspire to be Quant.
                     </p>
                 </div>
             </div>

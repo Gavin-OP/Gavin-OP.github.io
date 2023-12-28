@@ -1,0 +1,18 @@
+.project-section {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.project-highlight {
+    text-align: end;
+    background: linear-gradient(to right, #37e96c, #03f6f4, #58b2fb, #7467c9);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 6rem;
+    padding-right: 5rem;
+}

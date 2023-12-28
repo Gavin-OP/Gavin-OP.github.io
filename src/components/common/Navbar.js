@@ -63,13 +63,32 @@ function Navigation() {
     };
   }, [prevScrollPos, visible]);
 
+  const handleSmoothScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className={visible ? 'visible' : 'hidden'}>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#internship">Internship</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#project">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        {/* <li>
+          <a onClick={() => handleSmoothScroll('home')}>Home</a>
+        </li>
+        <li>
+          <button onClick={() => handleSmoothScroll('internship')}>Internship</button>
+        </li>
+        <li>
+          <button onClick={() => handleSmoothScroll('project')}>Projects</button>
+        </li>
+        <li>
+          <button onClick={() => handleSmoothScroll('contact')}>Contact</button>
+        </li> */}
       </ul>
     </nav>
   );
