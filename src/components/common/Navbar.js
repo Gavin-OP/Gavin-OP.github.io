@@ -75,7 +75,7 @@ function Navigation() {
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#internship">Internship</a></li>
-        <li><a href="#project">Projects</a></li>
+        {/* <li><a href="#project">Projects</a></li> */}
         <li><a href="#contact">Contact</a></li>
         {/* <li>
           <a onClick={() => handleSmoothScroll('home')}>Home</a>

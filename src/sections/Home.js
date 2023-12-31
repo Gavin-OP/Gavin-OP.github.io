@@ -1,10 +1,10 @@
 import '../css/Home.css';
 // import React from 'react';
 import Navigation from '../components/common/Navbar';
-import Footer from '../components/common/Footer';
 import Header from '../components/home/Header';
 import Internship from '../components/home/Internship';
 import Project from '../components/home/Project';
+import Footer from '../components/common/Footer';
 
 
 // function Home() {
@@ -50,7 +50,8 @@ const Home = () => {
       <Navigation />
       <Header />
       <Internship />
-      <Project />
+      {/* <Project /> */}
+      <Footer />
     </div>
   );
 };

@@ -79,7 +79,7 @@ const Internship = () => {
                 </div>
             </div>
 
-            <div className="gradient-line"></div>
+            {/* <div className="gradient-line"></div> */}
         </section>
     );
 };

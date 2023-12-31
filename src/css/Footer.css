@@ -1,0 +1,63 @@
+.footer-section {
+    background-color: #1d1f20;
+    color: #86868b;
+    padding-top: 2rem;
+}
+
+.footer-content-container {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-contact {
+    text-align: center;
+    position: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 1500px;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.footer-contact li {
+    display: inline-block;
+    flex: 1;
+    margin: 0;
+    text-align: center;
+}
+
+.footer-contact li:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #292c2f;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.footer-bottom p {
+    margin: auto;
+    padding: auto;
+    color: #86868b;
+}
+
+HiOutLineMail {
+    color: #86868b;
+}
+
+.footer-contact span svg {
+    margin-right: 3px;
+    margin-bottom: 3.5px;
+}
