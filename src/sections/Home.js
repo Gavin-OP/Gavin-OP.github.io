@@ -5,6 +5,7 @@ import Header from '../components/home/Header';
 import Internship from '../components/home/Internship';
 import Project from '../components/home/Project';
 import Footer from '../components/common/Footer';
+import GameCanvas from '../components/home/Firework';
 
 
 // function Home() {
@@ -51,6 +52,7 @@ const Home = () => {
       <Header />
       <Internship />
       <Project />
+      <GameCanvas/>
       <Footer />
     </div>
   );
