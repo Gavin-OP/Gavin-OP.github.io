@@ -2,19 +2,19 @@ import React, { useEffect } from 'react';
 import '../../css/Project.css';
 
 
-const ProjectCard = ({ projectImage, iconClass, title }) => (
-    <div className="project-item">
-        {/* <div className="shadow"></div> */}
-        <div className="content">
-            <div className="icon">
-                <i className={`iconfont ${iconClass}`}></i>
-            </div>
-            <div className="text">
-                <div className="tit">{title}</div>
-            </div>
-        </div>
-    </div>
-);
+// const ProjectCard = ({ projectImage, iconClass, title }) => (
+//     <div className="project-item">
+//         <div className="shadow"></div>
+//         <div className="content">
+//             <div className="icon">
+//                 <i className={`iconfont ${iconClass}`}></i>
+//             </div>
+//             <div className="text">
+//                 <div className="tit">{title}</div>
+//             </div>
+//         </div>
+//     </div>
+// );
 
 const Project = () => {
     useEffect(() => {
@@ -44,17 +44,10 @@ const Project = () => {
                 <p>Explore my</p>
                 <div className='project-highlight'>best projects</div>
             </div>
+
             <div className="projectcard-container">
                 <div className="project-item">
-                    {/* <div className="shadow"></div> */}
                     <div className="project-content">
-                        {/* <div className="icon">
-                            <i className={`iconfont ${iconClass}`}></i>
-                        </div> */}
-                        {/* <div className="text">
-                            <div className="tit">{title}</div>
-                        </div> */}
-
                         {/* project image */}
                         <div className='project-image-container'>
                             <div className="project-image">
@@ -62,31 +55,20 @@ const Project = () => {
                             </div>
                         </div>
 
-                        {/* Tweet content and action buttons */}
-                        {/* <div className='tweet-text-container' >
-                            <div className="tweet-text" onClick={handleOpen}>{props.tweetText}</div>
-                            <div className="tweet-actions">
-                                <button className="like-button" style={{ color: state.likeLight }} onClick={handleLike}><FontAwesomeIcon icon={faHeart} /></button>
-                                <div className="action-number">{props.likeCount}</div>
-                                <button className="dislike-button" style={{ color: state.dislikeLight }} onClick={handleDislike}><FontAwesomeIcon icon={faHeartBroken} /></button>
-                                <div className="action-number">{ }</div>
-                                <button className="favorite-button" style={{ color: state.starLight }} onClick={handleStar}><FontAwesomeIcon icon={faStar} /></button>
-                                <div className="action-number">{ }</div>
-                                <button className="comment-button" style={{ color: state.commentLight }} onClick={toggleCommentInput}><FontAwesomeIcon icon={faComment} /></button>
-                                <div className="action-number">{props.commentCount}</div>
-                                <button className="retweet-button" onClick={handleRetweetBtn}><FontAwesomeIcon icon={faShare} /></button>
-                            </div>
-                        </div> */}
+                        {/* project detail */}
+                        <div className='project-detail-1'>
+                            <p>Volatility Surface</p>
+                        </div>
+
                     </div>
                 </div>
 
 
                 <div className="project-item">
-                    {/* <div className="shadow"></div> */}
-                    <div className="content">
+                    <div className="project-content">
                         <div className='project-image-container'>
                             <div className="project-image">
-                                <img src={process.env.PUBLIC_URL + '/image/huizhou_sunset.jpg'} alt="Project Image" />
+                                <img src={process.env.PUBLIC_URL + '/image/Stock_Portfolio.png'} alt="Project Image" />
                             </div>
                         </div>
                     </div>
@@ -94,23 +76,24 @@ const Project = () => {
 
 
                 <div className="project-item">
-                    {/* <div className="shadow"></div> */}
-                    <div className="content">
+                    <div className="project-content">
+                        <div className='project-detail-3'>
+                            <p>Use <span style={{ color: 'white' }}>CNN, LSTM, and ARIMA </span>to predict Tesla stock prices.
+                                <br></br>
+                                Prediction? or Classification? or B.........
+                                <br></br>
+
+                            </p>
+                        </div>
                         <div className='project-image-container'>
-                            <div className="project-image">
-                                <img src={process.env.PUBLIC_URL + '/image/Capilano_Suspension_Bridge.jpg'} alt="Project Image" />
+                            <div className="project-image" id='project-image3'>
+                                <img src={process.env.PUBLIC_URL + '/image/price.png'} alt="Project Image" />
                             </div>
                         </div>
                     </div>
                 </div>
 
 
-                {/* 
-                <ProjectCard backgroundImage="../../public/image/Capilano_Suspension_Bridge.jpg" iconClass="icon-yangguang" title="Sunshine" />
-                <ProjectCard backgroundImage="../../public/image/Capilano_Suspension_Bridge.jpg" iconClass="icon-yangguang" title="Sunshine" />
-                <ProjectCard backgroundImage="../../public/image/Capilano_Suspension_Bridge.jpg" iconClass="icon-yangguang" title="Sunshine" />
-                <ProjectCard backgroundImage="../../public/image/Capilano_Suspension_Bridge.jpg" iconClass="icon-yangguang" title="Sunshine" />
-                <ProjectCard backgroundImage="../../public/image/Capilano_Suspension_Bridge.jpg" iconClass="icon-yangguang" title="Sunshine" /> */}
             </div>
         </section>
     );

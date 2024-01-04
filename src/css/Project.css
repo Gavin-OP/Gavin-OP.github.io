@@ -25,6 +25,7 @@
     width: 100%;
     height: 500px;
     overflow: hidden;
+    margin-top: 5rem;
     /* background: radial-gradient(circle at top center, #718497, #29323c); */
 }
 
@@ -45,14 +46,13 @@
 }
 
 .project-image-container {
-    height: 100%;
-    width: 100%;
+    height: 370px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 2rem;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    /* padding-left: 2rem; */
+    /* padding-top: 4rem; */
+    /* padding-bottom: 4rem; */
 }
 
 .project-image {
@@ -68,6 +68,7 @@
     height: 100%;
     object-position: center;
     visibility: hidden;
+    /* display: none; */
 }
 
 /* .projectcard-container .project-item .shadow {
@@ -160,19 +161,62 @@
     background: linear-gradient(to top, rgba(0, 0, 0, 0.35) 65%, transparent);
 }
 
-.projectcard-container .project-item.active .content {
+/* .projectcard-container .project-item.active .content {
     bottom: 20px;
     left: 20px;
-}
+} */
 
 .projectcard-container .project-item.active .project-content .text div {
     opacity: 1;
 }
 
-.projectcard-container .project-item.active .project-content .project-image-container .project-image img {
+.active .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     visibility: visible;
+    display: block;
+    transition: cubic-bezier(1, 0, 0, 1) 0.7s;
+}
+
+#project-image3 {
+    height: 77%;
+    max-width: 700px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.project-detail-3 {
+    padding-top: 5rem;
+    text-align: center;
+    justify-content: center;
+    color: #89898d;
+    /* visibility: hidden; */
+}
+
+.project-detail-3 .span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #89898d;
+}
+
+.projectcard-container .project-item.active .project-detail-3.active {
+    padding-top: 5rem;
+    margin-bottom: -1rem;
+    text-align: center;
+    justify-content: start;
+    color: #89898d;
+    /* visibility: visible; */
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
 }
