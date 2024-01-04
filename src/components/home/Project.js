@@ -47,7 +47,7 @@ const Project = () => {
             <div className="projectcard-container">
                 <div className="project-item">
                     {/* <div className="shadow"></div> */}
-                    <div className="content">
+                    <div className="project-content">
                         {/* <div className="icon">
                             <i className={`iconfont ${iconClass}`}></i>
                         </div> */}
@@ -56,7 +56,7 @@ const Project = () => {
                         </div> */}
 
                         {/* project image */}
-                        <div className='project--image-container'>
+                        <div className='project-image-container'>
                             <div className="project-image">
                                 <img src={process.env.PUBLIC_URL + '/image/NKY_BS_IV_Surface.png'} alt="Project Image" />
                             </div>
@@ -84,7 +84,7 @@ const Project = () => {
                 <div className="project-item">
                     {/* <div className="shadow"></div> */}
                     <div className="content">
-                        <div className='project--image-container'>
+                        <div className='project-image-container'>
                             <div className="project-image">
                                 <img src={process.env.PUBLIC_URL + '/image/huizhou_sunset.jpg'} alt="Project Image" />
                             </div>
@@ -96,7 +96,7 @@ const Project = () => {
                 <div className="project-item">
                     {/* <div className="shadow"></div> */}
                     <div className="content">
-                        <div className='project--image-container'>
+                        <div className='project-image-container'>
                             <div className="project-image">
                                 <img src={process.env.PUBLIC_URL + '/image/Capilano_Suspension_Bridge.jpg'} alt="Project Image" />
                             </div>
