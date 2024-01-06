@@ -7,6 +7,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
+import Birthday from './sections/Birthday';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path='/20240109' element={<Birthday />} />
           <Route path="/*" element={<Navigate to='/' />} />
         </Routes>
       </BrowserRouter>

@@ -51,7 +51,7 @@ const Home = () => {
       <Navigation />
       <Header />
       <Internship />
-      <Project />
+      {/* <Project /> */}
       {/* <Fireworks /> */}
       <Footer />
     </div>
