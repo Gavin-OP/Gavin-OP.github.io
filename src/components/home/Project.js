@@ -46,25 +46,25 @@ const Project = () => {
             </div>
 
             <div className="projectcard-container">
-                <div className="project-item">
+                <div className="project-item" id='project-wechat-analysis'>
                     <div className="project-content">
                         {/* project image */}
-                        <div className='project-image-container'>
+                        {/* <div className='project-image-container' id>
                             <div className="project-image">
-                                <img src={process.env.PUBLIC_URL + '/image/NKY_BS_IV_Surface.png'} alt="Project Image" />
+                                <img src={process.env.PUBLIC_URL + '/image/wechat_analysis_backgroud.png'} alt="Project 1 Wechat Analysis" />
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* project detail */}
                         <div className='project-detail-1'>
-                            <p>Volatility Surface</p>
+                            <p className='project-small-detail1'>WeChat Usage Annual Report</p>
                         </div>
 
                     </div>
                 </div>
 
 
-                <div className="project-item">
+                {/* <div className="project-item">
                     <div className="project-content">
                         <div className='project-image-container'>
                             <div className="project-image">
@@ -72,20 +72,21 @@ const Project = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
 
                 <div className="project-item">
+                    <p className='project-small-detail3'>Stock<br></br>Price<br></br>Prediction</p>
                     <div className="project-content">
                         <div className='project-detail-3'>
-                            <p>Use <span style={{ color: 'white' }}>CNN, LSTM, and ARIMA </span>to predict Tesla stock prices.
+                            <p className='project-active-detail3'>Use <span style={{ color: 'white' }}>CNN, LSTM, and ARIMA </span>to predict Tesla stock prices.
                                 <br></br>
                                 Prediction? or Classification? or B.........
                                 <br></br>
 
                             </p>
                         </div>
-                        <div className='project-image-container'>
+                        <div className='project-image-container' id='project-image-container3'>
                             <div className="project-image" id='project-image3'>
                                 <img src={process.env.PUBLIC_URL + '/image/price.png'} alt="Project Image" />
                             </div>
