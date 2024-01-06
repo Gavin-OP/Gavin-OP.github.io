@@ -26,14 +26,14 @@ li {
     margin: 0 9vw;
 }
 
-a {
+.navBarLink {
     text-decoration: none;
     color: #878889;
     font-weight: normal;
     transition: color 0.3s ease-in-out, font-weight 0.3s ease-in-out;
 }
 
-a:hover {
+.navBarLink:hover {
     color: #dbdbdb;
     font-weight: bold;
 }

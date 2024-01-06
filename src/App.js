@@ -3,6 +3,7 @@ import Home from './sections/Home';
 
 import {
   BrowserRouter,
+  HashRouter,
   Routes,
   Route,
   Navigate,
@@ -14,13 +15,15 @@ function App() {
   return (
     <>
       {/* website router design */}
-      <BrowserRouter>
-        <Routes>
+      {/* <BrowserRouter> */}
+      <HashRouter>
+        <Routes basemname={`/${process.env.PUBLIC_URL}`}>
           <Route path="/" element={<Home />} />
           <Route path='/20240109' element={<Birthday />} />
           <Route path="/*" element={<Navigate to='/' />} />
         </Routes>
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
+    </HashRouter>
     </>
   );
 }

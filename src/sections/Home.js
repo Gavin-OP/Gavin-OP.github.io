@@ -1,4 +1,5 @@
 import '../css/Home.css';
+import { Link } from 'react-router-dom';
 // import React from 'react';
 import Navigation from '../components/common/Navbar';
 import Header from '../components/home/Header';
@@ -53,6 +54,7 @@ const Home = () => {
       <Internship />
       {/* <Project /> */}
       {/* <Fireworks /> */}
+      {/* create a button link to Birthday and using Router Link */}
       <Footer />
     </div>
   );

@@ -43,6 +43,7 @@ import '../../css/Navbar.css';
 // export default Navigation
 
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Navigation() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -70,13 +71,22 @@ function Navigation() {
     }
   };
 
+  const scrollToAnchor = (anchorName) => {
+    if (anchorName) {
+      let anchorElement = document.getElementById(anchorName);
+      if (anchorElement) {
+        anchorElement.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <nav className={visible ? 'visible' : 'hidden'}>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#internship">Internship</a></li>
-        {/* <li><a href="#project">Projects</a></li> */}
-        <li><a href="#contact">Contact</a></li>
+        <li><a className='navBarLink' onClick={() => scrollToAnchor('home')}>Home</a></li>
+        <li><a className='navBarLink' onClick={() => scrollToAnchor('internship')}>Internship</a></li>
+        {/* <li><a className='navBarLink' onClick={() => scrollToAnchor('project')}>Projects</a></li> */}
+        <li><a className='navBarLink' onClick={() => scrollToAnchor('contact')}>Contact</a></li>
         {/* <li>
           <a onClick={() => handleSmoothScroll('home')}>Home</a>
         </li>
