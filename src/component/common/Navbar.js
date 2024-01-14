@@ -83,7 +83,7 @@ function Navigation() {
   return (
     <nav className={visible ? 'visible' : 'hidden'}>
       <ul>
-        <li><a className='navBarLink' onClick={() => scrollToAnchor('home')}>Home</a></li>
+        <li><a className='navBarLink' onClick={() => scrollToAnchor('profile')}>Profile</a></li>
         <li><a className='navBarLink' onClick={() => scrollToAnchor('internship')}>Internship</a></li>
         {/* <li><a className='navBarLink' onClick={() => scrollToAnchor('project')}>Projects</a></li> */}
         <li><a className='navBarLink' onClick={() => scrollToAnchor('contact')}>Contact</a></li>

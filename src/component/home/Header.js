@@ -3,7 +3,7 @@ import '../../css/Header.css'; // Create a new CSS file for styling the Header
 
 const Header = () => {
     return (
-        <section id='home' className="header-container">
+        <section id='profile' className="header-container">
             <div className='spaceholder'></div>
             <div className="header-text-container">
                 <div className="left-content">

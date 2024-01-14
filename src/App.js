@@ -1,6 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './sections/Home';
-
 import {
   BrowserRouter,
   HashRouter,
@@ -8,7 +6,9 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import Birthday from './sections/Birthday';
+
+import Home from './section/Home';
+import Birthday from './section/Birthday';
 
 
 function App() {

@@ -1,12 +1,12 @@
 import '../css/Home.css';
 import { Link } from 'react-router-dom';
 // import React from 'react';
-import Navigation from '../components/common/Navbar';
-import Header from '../components/home/Header';
-import Internship from '../components/home/Internship';
-import Project from '../components/home/Project';
-import Footer from '../components/common/Footer';
-import Fireworks from '../components/home/Firework';
+import Navigation from '../component/common/Navbar';
+import Header from '../component/home/Header';
+import Internship from '../component/home/Internship';
+import Project from '../component/home/Project';
+import Footer from '../component/common/Footer';
+import Fireworks from '../component/home/Firework';
 
 
 // function Home() {

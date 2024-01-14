@@ -38,11 +38,13 @@ import { AiOutlineGithub, AiFillLinkedin } from 'react-icons/ai'
 // Footer.js
 function Footer() {
     const handleIconHover = (e) => {
-        e.currentTarget.style.color = '#b4b4b4';
+        e.currentTarget.style.color = '#dbdbdb';
+        e.currentTarget.style.cursor = 'pointer';
     };
 
     const handleIconLeave = (e) => {
         e.currentTarget.style.color = '#86868b';
+        e.currentTarget.style.cursor = 'default';
     };
 
     return (
