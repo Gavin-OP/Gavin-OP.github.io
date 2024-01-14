@@ -1,55 +1,55 @@
-<!DOCTYPE html>
-<html>
+<link rel="stylesheet" type="text/css" href="./navbar.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script>
+    function redirectToLink() {
+        var linkUrl = "https://gavin-op.github.io/";
+        window.location.href = linkUrl;
+    }
+</script>
 
-<head>
-    <link rel="stylesheet" type="text/css" href="./navbar.css">
-    <link rel="stylesheet" href="https://fontawesome.com/icons/arrow-left?f=classic&s=solid">
-    <script src="https://kit.fontawesome.com/814179a032.js" crossorigin="anonymous"></script>
-</head>
 
-<body>
-    <div class="navbar">
-        <!-- Return icon linking to GitHub -->
-        <div class="return-icon">
-            <button onclick="redirectToLink()" style="border: none; background-color: white;">
-                <i class="fa-solid fa-arrow-left"></i>
-            </button>
+<div class="navbar">
+    <!-- Return icon linking to GitHub -->
+    <div class="return-icon">
+        <button onclick="redirectToLink()" style="border: none; background-color: white;">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+    </div>
+
+
+    <!-- Dropdown menu -->
+    <div class="dropdown">
+        <span class="dropdown-toggle">Semester</span>
+        <div class="dropdown-content">
+            <a href="/page/timetable_23T1.html">2023-24 Term 1</a>
+            <a href="/page/timetable_23T2.html">2023-24 Term 2</a>
+            <a href="/page/timetable-lxy.html">2023-24 Term 2 HCH</a>
         </div>
 
-        <script>
-            function redirectToLink() {
-                var linkUrl = "https://gavin-op.github.io/";
-                window.location.href = linkUrl;
-            }
-        </script>
-
-        <!-- Dropdown menu -->
-        <div class="dropdown">
-            <span class="dropdown-toggle">Academic</span>
-            <div class="dropdown-content">
-                <a href="#">Presentation</a>
-                <a href="#">Project</a>
-                <a href="#">Essay</a>
-                <a href="#">Notes</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <span class="dropdown-toggle">Internship</span>
-            <div class="dropdown-content">
-                <a href="#">FutureX Capital</a>
-                <a href="#">PWC</a>
-                <a href="#">Zhihu</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <span class="dropdown-toggle">Extracurricular</span>
-            <div class="dropdown-content">
-                <a href="#">Vlog</a>
-            </div>
+    </div>
+    <div class="dropdown">
+        <span class="dropdown-toggle">Academic</span>
+        <div class="dropdown-content">
+            <a href="#">Presentation</a>
+            <a href="#">Project</a>
+            <a href="#">Essay</a>
+            <a href="#">Notes</a>
         </div>
     </div>
-</body>
 
-</html>
+    <div class="dropdown">
+        <span class="dropdown-toggle">Internship</span>
+        <div class="dropdown-content">
+            <a href="#">FutureX Capital</a>
+            <a href="#">PWC</a>
+            <a href="#">Zhihu</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <span class="dropdown-toggle">Extracurricular</span>
+        <div class="dropdown-content">
+            <a href="#">Vlog</a>
+        </div>
+    </div>
+</div>
