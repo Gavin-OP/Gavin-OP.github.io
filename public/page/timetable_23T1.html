@@ -5,27 +5,29 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="icon" href="avatar.ico" />
-  <link rel="stylesheet" type="text/css" href="./timetable.css">
   <title>2023-24 Term1 Timetable</title>
-  <script>
-    var content = document.querySelector('link[rel="import"]').import;
-  </script>
+  <link rel="stylesheet" type="text/css" href="./timetable.css">
 
+  <!-- return icon stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/814179a032.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <!-- Navigation Bar -->
   <script>
-    // Make a request to the provided URL
     fetch('https://raw.githubusercontent.com/Gavin-OP/Gavin-OP.github.io/master/public/page/navbar.html')
       .then(response => response.text())
       .then(htmlCode => {
-        // Assuming the code is HTML, you can inject it into a target element
         document.getElementById('navBar').innerHTML = htmlCode;
       })
       .catch(error => console.error('Error fetching code:', error));
   </script>
   <div id="navBar"></div>
+
+
+
+
 
   <!-- timetable -->
   <div style="display: flex; justify-content: center; align-items: center;">
