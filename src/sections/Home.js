@@ -52,7 +52,7 @@ const Home = () => {
       <Navigation />
       <Header />
       <Internship />
-      <Project />
+      {/* <Project /> */}
       {/* <Fireworks /> */}
       {/* create a button link to Birthday and using Router Link */}
       <Footer />
