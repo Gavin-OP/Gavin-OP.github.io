@@ -30,7 +30,6 @@
 }
 
 .projectcard-container .project-item {
-    position: relative;
     width: 300px;
     height: 100%;
     margin: 1rem;
@@ -38,12 +37,152 @@
     border-radius: 35px;
     background-size: cover;
     background-position: center;
-    /* transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95); */
     overflow: hidden;
     background-color: #1d1f20;
+    position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     /* box-shadow: 2px 2px 4px #2f2f2f8c, -2px -2px 4px #00000077; */
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
+
+.projectcard-container .project-item.active {
+    flex: 1;
+    border-radius: 35px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    /* transition: background-color 0.5s, border-radius 0.5s, box-shadow 0.5s; */
+}
+
+.project-content {
+    display: flex;
+    height: 98%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    /* Add this line to center text horizontally */
+}
+
+.projectcard-container .project-item.active .project-content {
+    bottom: 20px;
+    left: 20px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+/* .projectcard-container .project-item.active .project-content .text div {
+    opacity: 1;
+} */
+
+/* project 1 */
+.project-detail-1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    transition: opacity 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95), transform 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.projectcard-container .project-item.active .project-detail-1 {
+    transition: 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.project-small-detail1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95), height 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.projectcard-container .project-item.active .project-small-detail1 {
+    opacity: 0;
+}
+
+#project-wechat-analysis {
+    background-size: cover;
+    background-position: left center;
+    background-image: url(../../public/image/wechat_analysis_backgroud.png);
+}
+
+
+
+/* project 3 */
+.project-detail3 {
+    text-align: center;
+    justify-content: center;
+    color: #89898d;
+    padding-top: 5rem;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition: opacity 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95), transform 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.projectcard-container .project-item.active .project-detail3 {
+    padding-top: 5rem;
+    margin-bottom: -1rem;
+    text-align: center;
+    justify-content: start;
+    color: #89898d;
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transition: 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.projectcard-container .project-detail3 {
+    text-align: center;
+    justify-content: center;
+    color: #89898d;
+    padding-top: 5rem;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.project-small-detail3 {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    display: inline-block;
+    transition: opacity 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95), height 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    opacity: 1;
+    height: auto;
+}
+
+.project-small-detail3,
+.project-detail3 {
+    transition: opacity 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    opacity: 1;
+    position: relative;
+}
+
+.projectcard-container .project-item.active .project-small-detail3 {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
 
 .project-image-container {
     height: 370px;
@@ -151,28 +290,15 @@
     color: #ac92ec;
 } */
 
-.projectcard-container .project-item.active {
-    flex: 1;
-    border-radius: 35px;
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .projectcard-container .project-item.active .shadow {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.35) 65%, transparent);
 }
 
-/* .projectcard-container .project-item.active .content {
-    bottom: 20px;
-    left: 20px;
-} */
 
-.projectcard-container .project-item.active .project-content .text div {
-    opacity: 1;
-}
+
+
 
 .active .project-image img {
     width: 100%;
@@ -197,95 +323,10 @@
     display: none;
 }
 
-.project-detail-1 {
-    font-size: 40px;
-    font-weight: 700;
-    text-align: center;
-    /* justify-content: center; */
-    color: white;
-    /* visibility: hidden; */
-    transition: opacity 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-}
-
-.project-detail-3 {
-    padding-top: 5rem;
-    text-align: center;
-    justify-content: center;
-    color: #89898d;
-    /* visibility: hidden; */
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-    /* display: none; */
-}
-
-.project-small-detail3 {
-    font-size: 40px;
-    font-weight: 700;
-    color: white;
-    display: inline-block;
-}
-
-.project-detail-3 .span {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #89898d;
-}
-
-.project-active-detail3 {
-    display: none;
-}
-
-.projectcard-container .project-item.active .project-detail-3 {
-    padding-top: 5rem;
-    margin-bottom: -1rem;
-    text-align: center;
-    justify-content: start;
-    color: #89898d;
-    /* visibility: visible; */
-    display: block;
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-}
-
-.projectcard-container .project-item.active .project-small-detail3 {
-    display: none;
-}
-
-.projectcard-container .project-item.active .project-active-detail3 {
-    display: block;
-}
 
 .projectcard-container .project-item.active #project-image-container3 {
     display: block;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.projectcard-container .project-item.active .project-detail-1 {
-    transition: opacity 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-}
-
-.projectcard-container .project-item.active .project-small-detail1 {
-    display: none;
-}
-
-.project-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    /* Add this line to center text horizontally */
-}
-
-
-#project-wechat-analysis {
-    /* set background image fit the size */
-    background-size: cover;
-    background-position: left center;
-    /* set background image fit the size */
-    background-image: url(../../public/image/wechat_analysis_backgroud.png);
-    /* transition: background-position 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95); */
 }
