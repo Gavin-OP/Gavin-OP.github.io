@@ -31,7 +31,7 @@
 }
 
 .projectcard-container .project-item {
-    width: 300px;
+    width: 400px;
     height: 100%;
     margin: 1rem;
     cursor: pointer;
@@ -132,8 +132,8 @@
     border: none;
     outline: none;
     cursor: pointer;
-    font-size: 2rem;
-    color: #fff;
+    font-size: 1.5rem;
+    color: #86868b;
     opacity: 0;
     margin-right: 1rem;
     /* Default: Hidden */
@@ -147,7 +147,10 @@
     transition: 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-
+.projectcard-container .project-item.active .project-icons button:hover {
+    color: #fff;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
 
 /* project 1 */
 .project-detail1 {

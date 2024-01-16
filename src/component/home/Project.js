@@ -60,7 +60,7 @@ const Project = () => {
             {/* project card */}
             <div className="projectcard-container">
                 {/* project 1 */}
-                <div className="project-item" id='project-wechat-analysis'>
+                <div className="project-item active" id='project-wechat-analysis'>
                     <div className="project-content">
                         {/* content in inactive state */}
                         <p className='project-small-detail1'>
