@@ -32,7 +32,7 @@ const Internship = () => {
                 <p>
                     Explore my
                 </p>
-                <div className='internship-highlight'>internship experience</div>
+                <div className='internship-highlight'>internship experiences</div>
             </div>
 
             {/* Three 新拟态 dark card components */}
