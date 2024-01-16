@@ -5,8 +5,10 @@ import Navigation from '../component/common/Navbar';
 import Header from '../component/home/Header';
 import Internship from '../component/home/Internship';
 import Project from '../component/home/Project';
+import PdfViewer from '../component/common/PdfViewer';
 import Footer from '../component/common/Footer';
 import Fireworks from '../component/home/Firework';
+import CNN_LSTM_pdf from '../component/page/cnn_lstm_pdf'; 
 
 
 // function Home() {
@@ -53,6 +55,8 @@ const Home = () => {
       <Header />
       <Internship />
       <Project />
+      {/* <PdfViewer pdfPath={process.env.PUBLIC_URL + '/file/Stock_Return_Prediction_with_CNN_and_Attention_based_LSTM_models.pdf'} /> */}
+      {/* <CNN_LSTM_pdf /> */}
       {/* <Fireworks /> */}
       {/* create a button link to Birthday and using Router Link */}
       <Footer />

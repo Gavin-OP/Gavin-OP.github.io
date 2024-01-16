@@ -1,4 +1,12 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart, faCode, faImages, faShare, faHeartBroken, faComment, faStar, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faFilePdf } from '@fortawesome/free-regular-svg-icons'
+import { BsFillFilePptFill } from "react-icons/bs";
+import { BsFiletypePptx } from "react-icons/bs";
+import { BsFileEarmarkText } from 'react-icons/bs';
 import '../../css/Project.css';
 
 
@@ -51,7 +59,7 @@ const Project = () => {
 
             {/* project card */}
             <div className="projectcard-container">
-
+                {/* project 1 */}
                 <div className="project-item" id='project-wechat-analysis'>
                     <div className="project-content">
                         {/* content in inactive state */}
@@ -60,26 +68,51 @@ const Project = () => {
                         </p>
 
                         {/* project detail */}
-                        <div className='project-detail-1'>
-                            <p className='project-active-detail3'>Use <span style={{ color: 'white' }}>CNN, LSTM, and ARIMA </span>to predict Tesla stock prices.
+                        <div className='project-detail1'>
+                            <p className='project-active-detail1'>Calculate sentimental score by <span style={{ color: 'white' }}>SnowNLP</span> to analyze emotion<br></br>
+                                contained in WeChat messages daily.
                                 <br></br>
-                                Prediction? or Classification? or B.........
                                 <br></br>
+                                So, is it a happy day or a sad day?
                             </p>
 
-                            <div className='project-image-container' id='project-image-container3'>
-                                <div className="project-image" id='project-image3'>
-                                    <img src={process.env.PUBLIC_URL + '/image/price.png'} alt="Project Image" />
+                            <div className='project-image-container' id='project-image-container1'>
+                                <div className="project-image" id='project-image1'>
+                                    <img src={process.env.PUBLIC_URL + '/image/sentiment_score_daily.png'} alt="Project Image" />
                                 </div>
                             </div>
+
+
                         </div>
 
+                    </div>
+                    {/* Icons */}
+                    <div className="project-icons">
+                        {/* <button className="code-button"><FontAwesomeIcon icon={faCode} /></button> */}
+                        <a href="/#/20240109">
+                            <button className="slide-button"><FontAwesomeIcon icon={faImages} /></button>
+                        </a>
                     </div>
                 </div>
 
 
+                {/* project 2 */}
+                {/* <div className="project-item" id='project-wechat-analysis'>
+                    <div className="project-content">
+                        content in inactive state
+                        <p className='project-small-detail1'>
+                            WeChat<br></br>Usage<br></br>Annual<br></br>Report
+                        </p>
+
+                        project detail
+                        <div className='project-detail-1'>
+                        </div>
+
+                    </div>
+                </div> */}
 
 
+                {/* project 3 */}
                 <div className="project-item">
                     <div className="project-content">
                         {/* content in inactive state */}
@@ -100,25 +133,23 @@ const Project = () => {
                                     <img src={process.env.PUBLIC_URL + '/image/price.png'} alt="Project Image" />
                                 </div>
                             </div>
+
+
                         </div>
+                    </div>
+                    {/* Icons */}
+                    <div className="project-icons">
+                        <a href="https://github.com/Gavin-OP/stat4012-group-project">
+                            <button className="github-button"><FontAwesomeIcon icon={faGithub} /></button>
+                        </a>
+                        <a href="/#/stat4012-cnn-lstm">
+                            <button className="pdf-button" ><FontAwesomeIcon icon={faFilePdf} /></button>
+                        </a>
                     </div>
                 </div>
 
 
-                <div className="project-item" id='project-wechat-analysis'>
-                    <div className="project-content">
-                        {/* content in inactive state */}
-                        <p className='project-small-detail1'>
-                            WeChat<br></br>Usage<br></br>Annual<br></br>Report
-                        </p>
 
-                        {/* project detail */}
-                        <div className='project-detail-1'>
-                            {/* sdfasdfasdfasdfasdfasdfasdfasdfasdfasdfsdfasdfasdfasdf */}
-                        </div>
-
-                    </div>
-                </div>
 
             </div>
         </section >
