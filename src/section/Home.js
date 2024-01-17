@@ -8,7 +8,9 @@ import Project from '../component/home/Project';
 import PdfViewer from '../component/common/PdfViewer';
 import Footer from '../component/common/Footer';
 import Fireworks from '../component/home/Firework';
-import CNN_LSTM_pdf from '../component/page/cnn_lstm_pdf'; 
+import CNN_LSTM_pdf from '../component/page/cnn_lstm_pdf';
+import { PDFViewer } from '@react-pdf/renderer';
+import MyDocument from '../component/common/PdfViewer';
 
 
 // function Home() {
@@ -58,6 +60,9 @@ const Home = () => {
       {/* <PdfViewer pdfPath={process.env.PUBLIC_URL + '/file/Stock_Return_Prediction_with_CNN_and_Attention_based_LSTM_models.pdf'} /> */}
       {/* <CNN_LSTM_pdf /> */}
       {/* <Fireworks /> */}
+      {/* <PDFViewer>
+        <MyDocument />
+      </PDFViewer> */}
       {/* create a button link to Birthday and using Router Link */}
       <Footer />
     </div>
