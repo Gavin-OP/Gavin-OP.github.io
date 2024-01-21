@@ -23,3 +23,7 @@
 - 使用虚拟表情
 - [动画参考](https://www.gilbertsimonmd.com/), [Let's Make One of Those Fancy Scrolling Animations Used on Apple Product Pages | CSS-Tricks - CSS-Tricks](https://css-tricks.com/lets-make-one-of-those-fancy-scrolling-animations-used-on-apple-product-pages/)
 - [color references](https://www.apple.com/ipad-pro/)
+
+## Code Structure
+
+[How I Structure my React Projects | by Riki Phukon | Medium](https://rikiphukon.medium.com/how-i-structure-my-react-projects-as-a-frontend-developer-22bd18e83f5b)
