@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faCode, faImages, faShare, faHeartBroken, faComment, faStar, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
@@ -45,6 +45,7 @@ const Project = () => {
             });
         };
     }, []); // Empty dependency array ensures this effect runs once after the initial render
+
 
 
     return (
@@ -97,15 +98,15 @@ const Project = () => {
 
 
                 {/* project 2 */}
-                {/* <div className="project-item" id='project-wechat-analysis'>
+                {/* <div className="project-item">
                     <div className="project-content">
                         content in inactive state
-                        <p className='project-small-detail1'>
+                        <p className='project-small-detail2'>
                             WeChat<br></br>Usage<br></br>Annual<br></br>Report
                         </p>
 
                         project detail
-                        <div className='project-detail-1'>
+                        <div className='project-detail0'>
                         </div>
 
                     </div>
@@ -139,22 +140,44 @@ const Project = () => {
                     </div>
                     {/* Icons */}
                     <div className="project-icons">
-                        <a href="https://github.com/Gavin-OP/stat4012-group-project">
+                        <a href="https://github.com/Gavin-OP/stat4013-group-project">
                             <button className="github-button"><FontAwesomeIcon icon={faGithub} /></button>
                         </a>
-                        <a href="/#/stat4012-cnn-lstm">
+                        <a href="/#/stat4013-cnn-lstm">
                             <button className="pdf-button" ><FontAwesomeIcon icon={faFilePdf} /></button>
                         </a>
                     </div>
                 </div>
 
+                {/* project 4 */}
+                {/* <div className="project-item">
+                    <div className="project-content">
+                        content in inactive state
+                        <p className='project-small-detail2'>
+                            WeChat<br></br>Usage<br></br>Annual<br></br>Report
+                        </p>
 
+                        project detail
+                        <div className='project-detail0'>
+                        </div>
+
+                    </div>
+                </div> */}
 
 
             </div>
+
+
+            {/* Navigation Buttons */}
+            {/* <div className="navigation-buttons">
+                <button >Previous</button>
+                <button >Next</button>
+            </div> */}
         </section >
     );
 };
 
 
 export default Project;
+
+

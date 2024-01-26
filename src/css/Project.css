@@ -7,13 +7,15 @@
 }
 
 .project-highlight {
-    text-align: end;
-    background: linear-gradient(to right, #37e96c, #03f6f4, #58b2fb, #7467c9);
+    float: right;
+    text-align: right;
+    background: linear-gradient(to right, #15e8ad, #37e96c, #03f6f4, #58b2fb, #0279ff, #5849b8);
     font-weight: bold;
     -webkit-background-clip: text;
     color: transparent;
     font-size: 6rem;
     padding-right: 5rem;
+    width: 60%;
 }
 
 
