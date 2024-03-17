@@ -140,7 +140,7 @@ const Project = () => {
                     </div>
                     {/* Icons */}
                     <div className="project-icons">
-                        <a href="https://github.com/Gavin-OP/stat4013-group-project">
+                        <a href="https://github.com/Gavin-OP/stat4012-group-project">
                             <button className="github-button"><FontAwesomeIcon icon={faGithub} /></button>
                         </a>
                         <a href="/#/stat4013-cnn-lstm">
