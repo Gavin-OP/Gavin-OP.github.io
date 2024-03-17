@@ -8,6 +8,7 @@ import { BsFillFilePptFill } from "react-icons/bs";
 import { BsFiletypePptx } from "react-icons/bs";
 import { BsFileEarmarkText } from 'react-icons/bs';
 import '../../css/Project.css';
+import CNN_LSTM_pdf from '../page/cnn_lstm_pdf';
 
 
 // const ProjectCard = ({ projectImage, iconClass, title }) => (
@@ -143,7 +144,7 @@ const Project = () => {
                         <a href="https://github.com/Gavin-OP/stat4012-group-project">
                             <button className="github-button"><FontAwesomeIcon icon={faGithub} /></button>
                         </a>
-                        <a href="/#/stat4013-cnn-lstm">
+                        <a href="/#/stat4012-cnn-lstm">
                             <button className="pdf-button" ><FontAwesomeIcon icon={faFilePdf} /></button>
                         </a>
                     </div>
