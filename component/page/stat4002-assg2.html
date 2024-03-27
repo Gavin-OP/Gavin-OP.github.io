@@ -1637,6 +1637,8 @@ display: none;
    </script>
    <div id="navBar"></div>
 
+
+
 <div class="container-fluid main-container">
 
 
@@ -1662,8 +1664,10 @@ display: none;
 <div id="a" class="section level3">
 <h3>(a)</h3>
 <p>Let<br />
-<span class="math inline">\(n:=\)</span> the number of
-observations,<br />
+<span class="math inline">\(n_1:=\)</span> the number of observations
+for group 1,<br />
+<span class="math inline">\(n_2:=\)</span> the number of observations
+for group 2,<br />
 <span class="math inline">\(p:=\)</span> the number of dimensions,<br />
 <span class="math inline">\(\mu_1:=\)</span> the mean vector of group
 1,<br />
@@ -1759,7 +1763,8 @@ n-2}\)</span></p>
 &amp; 2,<br />
 <span class="math inline">\(\bar{x} =
 \displaystyle\frac{1}{n}\sum_{j=1}^{n_1}x_{1j}+\sum_{j=1}^{n_1}x_{2j}\)</span>.</p>
-<p><strong>Hypothesis:</strong> $H_0:C= 0H_1: C $<br />
+<p><strong>Hypothesis:</strong> <span class="math inline">\(H_0:C\mu =
+0\quad H_1: C \mu \ne 0\)</span><br />
 <strong>Test Statistics:</strong> <span class="math inline">\(T^2 =
 \displaystyle n \bar{x}&#39; C&#39; (CS_pC&#39;)^{-1}C \bar{x} \sim
 \frac{(n-2)(p-1)}{n-p}F_{p-1, n-p}\)</span></p>
@@ -1784,6 +1789,26 @@ critical value <span class="math inline">\(=4.737414\)</span>, p-value
 </div>
 <div id="q2-test-for-equality-of-covariance-matrix" class="section level2">
 <h2>Q2: Test for Equality of Covariance Matrix</h2>
+<p>Let<br />
+<span class="math inline">\(n_1:=\)</span> the number of observations
+for group 1,<br />
+<span class="math inline">\(n_2:=\)</span> the number of observations
+for group 2,<br />
+<span class="math inline">\(p:=\)</span> the number of dimensions, <span class="math inline">\(\Sigma_i:=\)</span> the covariance matrix of group
+i, where <span class="math inline">\(i=1,2\)</span>,<br />
+<span class="math inline">\(S_i:=\)</span> the sample covariance matrix
+of group i, where <span class="math inline">\(i=1,2\)</span>,<br />
+<span class="math inline">\(S_p=\displaystyle\frac{(n_1-1)S_1 +
+(n_2-1)S_2}{n_1 + n_2 -2}\)</span>.</p>
+<p><strong>Hypothesis:</strong> <span class="math inline">\(H_0:\Sigma_1
+= \Sigma_2\quad H_1: \Sigma_1 \ne \Sigma_2\)</span><br />
+<strong>Test Statistics:</strong> <span class="math inline">\(M =
+\displaystyle (n - 2) \ln|S_p| - (n_1 -
+1)\ln|S_1|-(n_2-1)\ln|S_2|\)</span><br />
+<span class="math inline">\(u =
+\displaystyle\left(\frac{1}{n_1-1}+\frac{1}{n_2
+-1}-\frac{1}{n-2}\right)\left[\frac{2p^2+3p-1}{6(p+1)}\right]\)</span><br />
+<span class="math inline">\((1-u)M\sim\chi^2_{p(p+1)/2}\)</span></p>
 <pre class="r"><code>rm(list = ls())
 load(&quot;./HW2Q3Data.rda&quot;)
 x1 &lt;- group1
