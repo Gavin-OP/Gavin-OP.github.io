@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.b75b8498.css",
-    "main.js": "/static/js/main.774fef89.js",
+    "main.js": "/static/js/main.8c6d98d6.js",
     "static/js/787.f59291e0.chunk.js": "/static/js/787.f59291e0.chunk.js",
     "static/media/wechat_analysis_backgroud.png": "/static/media/wechat_analysis_backgroud.ce2ea93ba2d2922e0b5e.png",
     "index.html": "/index.html",
     "main.b75b8498.css.map": "/static/css/main.b75b8498.css.map",
-    "main.774fef89.js.map": "/static/js/main.774fef89.js.map",
+    "main.8c6d98d6.js.map": "/static/js/main.8c6d98d6.js.map",
     "787.f59291e0.chunk.js.map": "/static/js/787.f59291e0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b75b8498.css",
-    "static/js/main.774fef89.js"
+    "static/js/main.8c6d98d6.js"
   ]
 }
