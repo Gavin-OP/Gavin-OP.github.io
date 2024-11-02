@@ -1,12 +1,12 @@
 import '../../css/Internship.css';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
 const Internship = () => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const [isPrevDisabled, setIsPrevDisabled] = React.useState(true);
     const [isNextDisabled, setIsNextDisabled] = React.useState(false);
-    const cardsRef = useRef([]);
+    const cardsWrapperRef = useRef(null);
 
     const cardsData = [
         {
@@ -14,7 +14,7 @@ const Internship = () => {
             title: "01", 
             company: "Polymer Capital",
             position: "Alpha Capture System Intern",
-            details: "Python: .groupby(), .merge(), .assign()\nDocker: docker iamge, docker run\nGit: git pull, git branch, git rebase\n\nDatabase. Data preprocessing. Summary statistics. Alpha generation. Backtesting. "
+            details: "Python: .groupby(), .merge(), .assign()\nGit: git pull, git branch, git rebase\nDocker: docker image, docker run\n\nDatabase. Data preprocessing. Summary statistics. Alpha generation. Backtesting."
         },
         {
             id: 2, 
@@ -57,38 +57,33 @@ const Internship = () => {
         });
     };
 
-    const getVisibleCards = () => {
-        const endIndex = currentIndex + 3;
-        if (endIndex <= cardsData.length) {
-            return cardsData.slice(currentIndex, endIndex);
-        } else {
-            return [...cardsData.slice(currentIndex), ...cardsData.slice(0, endIndex - cardsData.length)];
-        }
-    }
+
 
     return (
         <section id='internship' className="internship-section">
-            {/* Gradient big sentence */}
+            {/* gradient big sentence */}
             <div className="gradient-sentence">
-                <p>
-                    Explore my
-                </p>
+                <p>Explore my</p>
                 <div className='internship-highlight'>internship experiences</div>
             </div>
 
-            {/* Three 新拟态 dark card components */}
-            <div className="internship-cards">
-                {getVisibleCards().map((card, index) => (
-                    <div key={card.id} className='internship-card' ref={el => cardsRef.current[index] = el}>
+
+            {/* internsihp card components */}
+            <div className="internship-cards-container">
+                <div className='internship-cards-wrapper' ref={cardsWrapperRef} style={{ transform: `translateX(-${currentIndex * 100 / 3}%)` }}>
+                {cardsData.map((card) => (
+                    <div key={card.id} className='internship-card'>
                         <h1>{card.title}</h1>
-                        <h2 ><span className={`company-name${card.id}`}>{card.company}</span>, <br></br> {card.position}</h2>
+                        <h2><span className={`company-name${card.id}`}>{card.company}</span>, <br></br> <span style={{fontSize:"25px"}}>{card.position}</span></h2>
 
                         <div className='internship-details'>
                             <p>{card.details}</p>
                         </div>
                     </div>
                 ))}
+                </div>
             </div>
+
 
             {/* Switch button */}
             <div className='button-container'>
@@ -107,6 +102,8 @@ const Internship = () => {
                 </button>
             </div>
 
+
+            {/* Gradient line */}
             <div className="gradient-line"></div>
         </section>
     );

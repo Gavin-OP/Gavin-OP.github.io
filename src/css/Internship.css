@@ -30,52 +30,62 @@
     padding-right: 5rem;
 }
 
-.internship-cards {
+
+.internship-cards-container {
     display: flex;
-    align-items: stretch;
     text-align: center;
     justify-content: space-between;
     margin-top: 5rem;
-    padding-right: 2rem;
+    margin-right: 2rem;
     margin-left: 2rem;
+    margin-bottom: 1rem;
     max-width: 1500px;
+    overflow: hidden;
+}
+
+.internship-cards-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: calc((100% * 4 / 3) + 8rem);
+    margin-bottom: 2rem;
 }
 
 .internship-card {
     display: flex;
+    flex-direction: column;
     flex: 1;
+    justify-content: flex-start;
+    position: relative;
+
     background-color: #000000;
     color: #fff;
-    padding: 1rem;
+
     border-radius: 35px;
     box-shadow: 0 4px 8px rgba(77, 77, 77, 0.1);
+
     margin: 1rem;
     padding-top: 2rem;
     padding-left: 4rem;
     padding-right: 4rem;
     min-height: 100%;
-    max-width: 550px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    overflow: hidden;
-    position: relative;
+    min-width: calc((100% / 3) - 2rem);
 }
+
 
 .internship-card h1 {
     font-size: 100px;
     text-align: left;
     font-weight: lighter;
     color: #4f4f51;
-    /* flex-grow: 1; */
 }
 
 .internship-card h2 {
     font-size: 30px;
     margin-bottom: 1rem;
     text-align: left;
-    flex-grow: 1;
+    min-height: 110px;
 }
+
 
 .internship-details {
     display: flex;
@@ -83,7 +93,6 @@
     align-items: flex-start;
     margin-bottom: 3rem;
     margin-top: 1rem;
-    /* flex-grow: 1; */
     justify-content: flex-start;
 }
 
@@ -91,11 +100,24 @@
     font-size: 1rem;
     color: #89898d;
     text-align: left;
-    margin-bottom: 1rem;
     white-space: pre-line;
-    /* flex-grow: 1; */
+    margin-top: auto;
+    min-height: 10rem;
 }
 
+.company-name1 {
+    background: linear-gradient(to right, #c21675, #ff1100);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.company-name2 {
+    background: linear-gradient(to right, #9d56df, #524ef1);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    color: transparent;
+}
 
 .company-name3 {
     background: linear-gradient(to right, #01d8d5, #0078ff);
@@ -109,28 +131,6 @@
     font-weight: bold;
     -webkit-background-clip: text;
     color: transparent;
-}
-
-.company-name2 {
-    background: linear-gradient(to right, #9d56df, #524ef1);
-    font-weight: bold;
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.company-name1 {
-    background: linear-gradient(to right, #c21675, #ff1100);
-    font-weight: bold;
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.gradient-line {
-    height: 2px;
-    width: 80%;
-    background: linear-gradient(to right, #0b0d0f, #dbdbdb61, #0b0d0f);
-    margin-bottom: 10rem;
-    max-width: 1500px;
 }
 
 
@@ -174,4 +174,13 @@
     cursor: default;
     background: #1B1B1C;
     color: #595959;
+}
+
+
+.gradient-line {
+    height: 2px;
+    width: 80%;
+    background: linear-gradient(to right, #0b0d0f, #dbdbdb61, #0b0d0f);
+    margin-bottom: 10rem;
+    max-width: 1500px;
 }
