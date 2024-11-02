@@ -8,7 +8,6 @@ import { BsFillFilePptFill } from "react-icons/bs";
 import { BsFiletypePptx } from "react-icons/bs";
 import { BsFileEarmarkText } from 'react-icons/bs';
 import '../../css/Project.css';
-import CNN_LSTM_pdf from '../page/cnn_lstm_pdf';
 
 
 // const ProjectCard = ({ projectImage, iconClass, title }) => (
@@ -51,121 +50,121 @@ const Project = () => {
 
     return (
         <section id='project' className="project-section">
-            {/* gradient sentence */}
+            {/* gradient big sentence */}
             <div className="gradient-sentence">
                 <p>Explore my</p>
                 <div className='project-highlight'>best projects</div>
             </div>
 
 
-
             {/* project card */}
-            <div className="projectcard-container">
-                {/* project 1 */}
-                <div className="project-item active" id='project-wechat-analysis'>
-                    <div className="project-content">
-                        {/* content in inactive state */}
-                        <p className='project-small-detail1'>
-                            WeChat<br></br>Usage<br></br>Annual<br></br>Report
-                        </p>
-
-                        {/* project detail */}
-                        <div className='project-detail1'>
-                            <p className='project-active-detail1'>Calculate sentimental score by <span style={{ color: 'white' }}>SnowNLP</span> to analyze emotion<br></br>
-                                contained in WeChat messages daily.
-                                <br></br>
-                                <br></br>
-                                So, is it a happy day or a sad day?
+            <div className="project-cards-container">
+                <div className='project-cards-wrapper'>
+                    {/* project 1 */}
+                    <div className="project-item active" id='project-wechat-analysis'>
+                        <div className="project-content">
+                            {/* content in inactive state */}
+                            <p className='project-small-detail1'>
+                                WeChat<br></br>Usage<br></br>Annual<br></br>Report
                             </p>
 
-                            <div className='project-image-container' id='project-image-container1'>
-                                <div className="project-image" id='project-image1'>
-                                    <img src={process.env.PUBLIC_URL + '/image/sentiment_score_daily.png'} alt="Project Image" />
+                            {/* project detail */}
+                            <div className='project-detail1'>
+                                <p className='project-active-detail1'>Calculate sentimental score by <span style={{ color: 'white' }}>SnowNLP</span> to analyze emotion<br></br>
+                                    contained in WeChat messages daily.
+                                    <br></br>
+                                    <br></br>
+                                    So, is it a happy day or a sad day?
+                                </p>
+
+                                <div className='project-image-container' id='project-image-container1'>
+                                    <div className="project-image" id='project-image1'>
+                                        <img src={process.env.PUBLIC_URL + '/image/sentiment_score_daily.png'} alt="Project Image" />
+                                    </div>
                                 </div>
+
+
                             </div>
 
-
                         </div>
-
-                    </div>
-                    {/* Icons */}
-                    <div className="project-icons">
-                        {/* <button className="code-button"><FontAwesomeIcon icon={faCode} /></button> */}
-                        <a href="/#/20240109">
-                            <button className="slide-button"><FontAwesomeIcon icon={faImages} /></button>
-                        </a>
-                    </div>
-                </div>
-
-
-                {/* project 2 */}
-                {/* <div className="project-item">
-                    <div className="project-content">
-                        content in inactive state
-                        <p className='project-small-detail2'>
-                            WeChat<br></br>Usage<br></br>Annual<br></br>Report
-                        </p>
-
-                        project detail
-                        <div className='project-detail0'>
+                        {/* Icons */}
+                        <div className="project-icons">
+                            {/* <button className="code-button"><FontAwesomeIcon icon={faCode} /></button> */}
+                            <a href="/#/20240109">
+                                <button className="slide-button"><FontAwesomeIcon icon={faImages} /></button>
+                            </a>
                         </div>
-
                     </div>
-                </div> */}
 
 
-                {/* project 3 */}
-                <div className="project-item">
-                    <div className="project-content">
-                        {/* content in inactive state */}
-                        <p className='project-small-detail3'>
-                            Stock<br></br>Price<br></br>Prediction
-                        </p>
-
-                        {/* project detail */}
-                        <div className='project-detail3'>
-                            <p className='project-active-detail3'>Use <span style={{ color: 'white' }}>CNN, LSTM, and ARIMA </span>to predict Tesla stock prices.
-                                <br></br>
-                                Prediction? or Classification? or B.........
-                                <br></br>
+                    {/* project 2 */}
+                    {/* <div className="project-item">
+                        <div className="project-content">
+                            content in inactive state
+                            <p className='project-small-detail2'>
+                                WeChat<br></br>Usage<br></br>Annual<br></br>Report
                             </p>
 
-                            <div className='project-image-container' id='project-image-container3'>
-                                <div className="project-image" id='project-image3'>
-                                    <img src={process.env.PUBLIC_URL + '/image/price.png'} alt="Project Image" />
-                                </div>
+                            project detail
+                            <div className='project-detail0'>
                             </div>
 
+                        </div>
+                    </div> */}
 
+
+                    {/* project 3 */}
+                    <div className="project-item">
+                        <div className="project-content">
+                            {/* content in inactive state */}
+                            <p className='project-small-detail3'>
+                                Stock<br></br>Price<br></br>Prediction
+                            </p>
+
+                            {/* project detail */}
+                            <div className='project-detail3'>
+                                <p className='project-active-detail3'>Use <span style={{ color: 'white' }}>CNN, LSTM, and ARIMA </span>to predict Tesla stock prices.
+                                    <br></br>
+                                    Prediction? or Classification? or B.........
+                                    <br></br>
+                                </p>
+
+                                <div className='project-image-container' id='project-image-container3'>
+                                    <div className="project-image" id='project-image3'>
+                                        <img src={process.env.PUBLIC_URL + '/image/price.png'} alt="Project Image" />
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        {/* Icons */}
+                        <div className="project-icons">
+                            <a href="https://github.com/Gavin-OP/stat4012-group-project">
+                                <button className="github-button"><FontAwesomeIcon icon={faGithub} /></button>
+                            </a>
+                            <a href="/#/stat4012-cnn-lstm">
+                                <button className="pdf-button" ><FontAwesomeIcon icon={faFilePdf} /></button>
+                            </a>
                         </div>
                     </div>
-                    {/* Icons */}
-                    <div className="project-icons">
-                        <a href="https://github.com/Gavin-OP/stat4012-group-project">
-                            <button className="github-button"><FontAwesomeIcon icon={faGithub} /></button>
-                        </a>
-                        <a href="/#/stat4012-cnn-lstm">
-                            <button className="pdf-button" ><FontAwesomeIcon icon={faFilePdf} /></button>
-                        </a>
-                    </div>
+
+                    {/* project 4 */}
+                    {/* <div className="project-item">
+                        <div className="project-content">
+                            content in inactive state
+                            <p className='project-small-detail2'>
+                                WeChat<br></br>Usage<br></br>Annual<br></br>Report
+                            </p>
+
+                            project detail
+                            <div className='project-detail0'>
+                            </div>
+
+                        </div>
+                    </div> */}
+
                 </div>
-
-                {/* project 4 */}
-                {/* <div className="project-item">
-                    <div className="project-content">
-                        content in inactive state
-                        <p className='project-small-detail2'>
-                            WeChat<br></br>Usage<br></br>Annual<br></br>Report
-                        </p>
-
-                        project detail
-                        <div className='project-detail0'>
-                        </div>
-
-                    </div>
-                </div> */}
-
-
             </div>
 
 
