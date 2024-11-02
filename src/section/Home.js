@@ -1,16 +1,17 @@
 import '../css/Home.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import React from 'react';
 import Navigation from '../component/common/Navbar';
 import Header from '../component/home/Header';
 import Internship from '../component/home/Internship';
 import Project from '../component/home/Project';
-import PdfViewer from '../component/common/PdfViewer';
 import Footer from '../component/common/Footer';
-import Fireworks from '../component/home/Firework';
-import CNN_LSTM_pdf from '../component/page/cnn_lstm_pdf';
-import { PDFViewer } from '@react-pdf/renderer';
-import MyDocument from '../component/common/PdfViewer';
+
+// import PdfViewer from '../component/common/PdfViewer';
+// import Fireworks from '../component/home/Firework';
+// import CNN_LSTM_pdf from '../component/page/cnn_lstm_pdf';
+// import { PDFViewer } from '@react-pdf/renderer';
+// import MyDocument from '../component/common/PdfViewer';
 
 
 // function Home() {
