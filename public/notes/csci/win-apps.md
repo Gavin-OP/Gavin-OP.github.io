@@ -221,7 +221,7 @@
 - [x] [EZTV](https://eztvx.to/home)
 - [x] [The Pirate Bay](https://thepiratebay.org/index.html)
 - [ ] [draw.io](https://app.diagrams.net/)
-- [ ] [Z-Library](gen.lib.rus.ec) (图书馆)
+- [ ] [Z-Library](../gen.lib.rus.ec) (图书馆)
 - [ ] [扇贝](https://web.shanbay.com/) (扇贝)
 - [ ] [uupoop](https://www.uupoop.com/#/) (在线PS)
 - [ ] ~~[CUSIS]~~
