@@ -32,7 +32,6 @@ const MarkdownRenderer = ({ filename }) => {
 
     const fileToRender = filename === undefined ? 'disclaimer' : filename;
 
-    console.log('filename in Renderer', filename);
     useEffect(() => {
         fetch(`/notes/${fileToRender}.md`)
             .then((response) => response.text())
@@ -40,30 +39,32 @@ const MarkdownRenderer = ({ filename }) => {
             .catch((error) => console.error(error));
     }, [filename]);
 
-    // useEffect(() => {
-    //     const fetchMarkdown = async (file) => {
-    //         try {
-    //             const response = await fetch(`/notes/${file}.md`);
-    //             const text = await response.text();
-    //             console.log('the file return', text.trim());
-    //             if (text.trim() === '') {
-    //                 // 如果内容为空，则加载 disclaimer.md
-    //                 const disclaimerResponse = await fetch(`/notes/disclaimer.md`);
-    //                 const disclaimerText = await disclaimerResponse.text();
-    //                 setContent(disclaimerText);
-    //             } else {
-    //                 setContent(text);
-    //             }
-    //         } catch (error) {
-    //             console.error(error);
-    //         }
-    //     };
+    useEffect(() => {
+        const fetchMarkdown = async (file) => {
+            try {
+                const response = await fetch(`/notes/${file}.md`);
+                const text = await response.text();
+                console.log('the file return', text.trim());
+                if (text.trim() === '' || text.includes('<!DOCTYPE html>')) {
+                    // 如果内容为空或包含 <!DOCTYPE html>，则加载 disclaimer.md
+                    const disclaimerResponse = await fetch(`/notes/disclaimer.md`);
+                    const disclaimerText = await disclaimerResponse.text();
+                    setContent(disclaimerText);
+                } else {
+                    setContent(text);
+                }
+            } catch (error) {
+                console.error(error);
+                // 如果发生错误，也加载 disclaimer.md
+                const disclaimerResponse = await fetch(`/notes/disclaimer.md`);
+                const disclaimerText = await disclaimerResponse.text();
+                setContent(disclaimerText);
+            }
+        };
 
-    //     fetchMarkdown(fileToRender);
-    // }, [fileToRender]);
+        fetchMarkdown(fileToRender);
+    }, [fileToRender]);
 
-
-    console.log('file content', content);
 
     // make the checkbox can be checked or unchecked
     // const handleCheckboxChange = (event) => {
@@ -191,6 +192,8 @@ const MarkdownRenderer = ({ filename }) => {
                             }
                             return <a {...props} />;
                         }
+
+
                     }}
 
                 >
