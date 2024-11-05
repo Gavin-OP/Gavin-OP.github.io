@@ -4,15 +4,15 @@
 >
 > 创作时间：2021/06/15
 >
-> 上次修改时间：2024/10/17
+> 上次修改时间：2024/11/05
 
 ## 编程相关软件
 
 ### Linux
 
-- [x] VIM[^6]
+- [x] VIM[^3]
 - [ ] WSL
-- [ ] Ubuntu[^7]
+- [ ] Ubuntu[^5]
 - [ ] gedit
 - [ ] Docker Desktop
 
@@ -42,7 +42,7 @@
 
 ### Markdown
 
-- [x] Typora[^3]
+- [x] Typora
   - [x] D42ker GitHub Theme
 - [x] TypeDown
 - [ ] OneMark
@@ -105,7 +105,7 @@
 - [ ] Adobe Premiere Pro (Pr) / Camtasia
 - [ ] Adobe Photoshop (Ps)
 - [ ] Adobe Media Encoder
-- [ ] Onenote GEM[^5]
+- [ ] Onenote GEM
 - [ ] GoPro Player
 - [ ] PaintTool SAI
 - [ ] 欧陆词典
@@ -262,8 +262,6 @@
 [^1]: `Python` 和 `C++`都可以用Visual Studio Code
 [^2]: `R`和`SAS`都可以用Notepad--
 [^4]: 可以使用网页 App
-[^6]: VIM需要安装vim-plug，其他配置需要更改 \_vimrc 文件。具体的vimrc设置参考[vimrc config](https://github.com/Gavin-OP/vimrc)
-[^7]: 需要打开 Hyper-V 和 Windows Subsystem for Linux
-[^3]:Typora 购买后 License Key: `JZ8UBR-E8XTYF-KC57KD-2PBPLG`
-[^5]: Gem for OneNote 2021 license code: `000017-B1Z9AU-TECFE5-1Z823Z-5JWHAA-QNB985-5ZY4N6-E73DWE-Y9ZKQT-1D6MQZ`
+[^3]: VIM需要安装vim-plug，其他配置需要更改 \_vimrc 文件。具体的vimrc设置参考[vimrc config](https://github.com/Gavin-OP/vimrc)
+[^5]: 需要打开 Hyper-V 和 Windows Subsystem for Linux
 
