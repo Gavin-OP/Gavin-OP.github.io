@@ -4,7 +4,7 @@
 >
 > Created time: 2022.04.11
 >
-> Last edited time: 2022.04.11
+> Last edited time: 2024.11.05
 
 ## Bernoulli Trials
 
@@ -484,7 +484,7 @@ e^{\left(\lambda\left(e^t-1\right)\right)}\\
 
 pmf:\ f\left(x\right)=
 P\left(X=x\right)=
-\frac{{(\lambda t)}^xe^{\left(-\lambda t\right)}}{x!}
+\frac{(\lambda t)^xe^{\left(-\lambda t\right)}}{x!}
 ,\ \ where\ x=0,1,2,3,\ldots\\
 ~\\
 \textbf{Important properties:}\\
