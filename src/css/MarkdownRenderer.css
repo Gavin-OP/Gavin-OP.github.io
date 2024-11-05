@@ -260,6 +260,21 @@ body {
 .markdown-body ol:last-child {
     margin-bottom: 0;
 }
+.markdown-body ul>li {
+    margin: 0;
+    padding: 0;
+}
+.markdown-body li>ul {
+    margin-top: 0;
+    padding-top: 0;
+}
+.markdown-body .contains-task-list ul{
+    margin-top: 0;
+}
+.markdown-body .contains-task-list ul input[type=checkbox] {
+    margin-left: 24px;
+}
+
 .markdown-body blockquote {
     border-left: 4px solid #dfe2e5;
     padding: 0 15px;
