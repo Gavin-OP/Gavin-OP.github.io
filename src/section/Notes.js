@@ -9,12 +9,10 @@ const Notes = () => {
     const location = useLocation();
 
     const currentPath = location.pathname;
-    console.log('currentPath in Notes.js', currentPath);
-    console.log('filename in Notesjs', filename);
 
     return (
         <div className="notes-page">
-            {/* <NotesMenu currentPath={currentPath} /> */}
+            <NotesMenu currentPath={currentPath} />
             <div className="notes-content">
                 <MarkdownRenderer filename={filename} />
             </div>
