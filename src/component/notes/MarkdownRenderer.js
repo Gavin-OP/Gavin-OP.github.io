@@ -5,17 +5,18 @@
 // 4. Add a report button for the markdown files, so that can report mistakes
 // 5. add a button to copy the code in the markdown file
 // 6. Convert the markdown file to pdf
+// 7. Incorrect URL will be redirected to the disclaimer page
 
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { useParams, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import rehypeMermaid from 'rehype-mermaid';
+// import rehypeMermaid from 'rehype-mermaid';
 // import remarkMermaid from 'remark-mermaid';
 
 import 'katex/dist/katex.min.css';
@@ -42,9 +43,8 @@ const MarkdownRenderer = ({ filename }) => {
     useEffect(() => {
         const fetchMarkdown = async (file) => {
             try {
-                const response = await fetch(`/notes/${file}.md`);
+                const response = await fetch(`/notes/${file}`);
                 const text = await response.text();
-                console.log('the file return', text.trim());
                 if (text.trim() === '' || text.includes('<!DOCTYPE html>')) {
                     // 如果内容为空或包含 <!DOCTYPE html>，则加载 disclaimer.md
                     const disclaimerResponse = await fetch(`/notes/disclaimer.md`);

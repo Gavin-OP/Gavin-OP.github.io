@@ -54,8 +54,6 @@ html {
 .markdown-container {
     background-color: #F4F6F9;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 body {
