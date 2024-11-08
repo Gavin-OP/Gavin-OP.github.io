@@ -8,5 +8,6 @@ Special thanks to all the contributors who have generously shared their knowledg
 
 - [Gavin OP](mailto:HaoxiangZhang@link.cuhk.edu.hk)
 - [ZHAI Yunxiao (Clay)](mailto:clay.zhai@link.cuhk.edu.hk)
+- [XIONG Ruoshui (Rosa)](mailto:ruoshui2021@gmail.com)
 
 Thank you for your understanding and support.
