@@ -20,6 +20,7 @@ const NotesMenu = ({ currentPath }) => {
     //     auth: process.env.REACT_APP_GITHUB_TOKEN
     // }), []);
     console.log(process.env.REACT_APP_GITHUB_TOKEN);
+    console.log('sadfasdfasdfasdf')
 
     // useEffect(() => {
     //     const fetchFiles = async (path) => {
