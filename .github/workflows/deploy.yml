@@ -26,8 +26,8 @@ jobs:
       
       - name: Configure Git
         run: |
-          git config --global user.name "Gavin"
-          git config --global user.email "HaoxiangZhang@link.cuk.edu.hk?"
+          git config --global user.name "Gavin-OP"
+          git config --global user.email "HaoxiangZhang@link.cuk.edu.hk"
 
       - name: Build and Deploy to GitHub Pages
         run: npm run deploy
