@@ -20,6 +20,7 @@ const NotesMenu = ({ currentPath }) => {
         auth: process.env.REACT_APP_GITHUB_TOKEN
     });
 
+        // wy can
     useEffect(() => {
         const fetchFiles = async (path) => {
             try {
