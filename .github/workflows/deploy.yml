@@ -27,6 +27,7 @@ jobs:
       - name: Build project
         env:
           REACT_APP_GITHUB_TOKEN: ${{ secrets.REACT_APP_GITHUB_TOKEN }}
+          CI: false
         run: npm run build
 
       - name: Deploy to GitHub Pages
