@@ -44,7 +44,7 @@ class PictureGallery extends React.Component {
                     >
                         <img
                             src={picture}
-                            alt={`Picture ${index + 1}`}
+                            alt={`${index + 1}`}
                             style={{ width: '100%', height: 'auto', maxHeight: '100vh' }}
                         />
                     </div>

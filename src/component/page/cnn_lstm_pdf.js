@@ -1,7 +1,7 @@
 import React from 'react';
-import Navigation from '../common/Navbar';
+// import Navigation from '../common/Navbar';
 
-const CNN_LSTM_pdf = () => {
+const CnnLstmPdf = () => {
     return (
         <div style={{ height: '100vh' }}>
             {/* <Navigation /> */}
@@ -12,5 +12,5 @@ const CNN_LSTM_pdf = () => {
     );
 };
 
-export default CNN_LSTM_pdf;
+export default CnnLstmPdf;
 

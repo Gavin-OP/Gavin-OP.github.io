@@ -7,9 +7,9 @@ import {
 } from 'react-router-dom';
 
 import Home from './section/Home';
-import CNN_LSTM_pdf from './component/page/cnn_lstm_pdf';
+import CnnLstmPdf from './component/page/cnn_lstm_pdf';
 import Birthday from './section/Birthday';
-import DAR_Strategy_pdf from './component/page/dar_strategy_pdf';
+import DarStrategyPdf from './component/page/dar_strategy_pdf';
 import Notes from './section/Notes';
 
 
@@ -21,8 +21,8 @@ function App() {
         <Routes basemname={`/${process.env.PUBLIC_URL}`}>
           <Route path="/" element={<Home />} />
           <Route path='/20240109' element={<Birthday />} />
-          <Route path='/stat4012-cnn-lstm' element={<CNN_LSTM_pdf />} />
-          <Route path='/dar-strategy' element={<DAR_Strategy_pdf />} />
+          <Route path='/stat4012-cnn-lstm' element={<CnnLstmPdf />} />
+          <Route path='/dar-strategy' element={<DarStrategyPdf />} />
           <Route path='/notes/*' element={<Notes />} />
           <Route path="/*" element={<Navigate to='/' />} />
         </Routes>

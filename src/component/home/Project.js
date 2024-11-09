@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+// import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faCode, faImages, faShare, faHeartBroken, faComment, faStar, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+// import { faHeart, faCode, faShare, faHeartBroken, faComment, faStar, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faImages } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons'
-import { BsFillFilePptFill } from "react-icons/bs";
-import { BsFiletypePptx } from "react-icons/bs";
-import { BsFileEarmarkText } from 'react-icons/bs';
+// import { BsFillFilePptFill } from "react-icons/bs";
+// import { BsFiletypePptx } from "react-icons/bs";
+// import { BsFileEarmarkText } from 'react-icons/bs';
 import '../../css/Project.css';
 
 
@@ -79,7 +80,7 @@ const Project = () => {
 
                                 <div className='project-image-container' id='project-image-container1'>
                                     <div className="project-image" id='project-image1'>
-                                        <img src={process.env.PUBLIC_URL + '/image/sentiment_score_daily.png'} alt="Project Image" />
+                                        <img src={process.env.PUBLIC_URL + '/image/sentiment_score_daily.png'} alt="sentiment score daily" />
                                     </div>
                                 </div>
 
@@ -131,7 +132,7 @@ const Project = () => {
 
                                 <div className='project-image-container' id='project-image-container3'>
                                     <div className="project-image" id='project-image3'>
-                                        <img src={process.env.PUBLIC_URL + '/image/price.png'} alt="Project Image" />
+                                        <img src={process.env.PUBLIC_URL + '/image/price.png'} alt="TASLA price prediction" />
                                     </div>
                                 </div>
 

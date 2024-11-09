@@ -42,19 +42,18 @@ import '../../css/Navbar.css';
 
 // export default Navigation
 
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState, useCallback } from 'react';
 
 function Navigation() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const currentScrollPos = window.scrollY;
 
     setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 15);
     setPrevScrollPos(currentScrollPos);
-  };
+  }, [prevScrollPos]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -62,14 +61,14 @@ function Navigation() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [prevScrollPos, visible]);
+  }, [prevScrollPos, visible, handleScroll]);
 
-  const handleSmoothScroll = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // const handleSmoothScroll = (id) => {
+  //   const element = document.getElementById(id);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
   const scrollToAnchor = (anchorName) => {
     if (anchorName) {
@@ -83,10 +82,10 @@ function Navigation() {
   return (
     <nav className={visible ? 'visible' : 'hidden'}>
       <ul>
-        <li><a className='navBarLink' onClick={() => scrollToAnchor('profile')}>Profile</a></li>
-        <li><a className='navBarLink' onClick={() => scrollToAnchor('internship')}>Internship</a></li>
-        <li><a className='navBarLink' onClick={() => scrollToAnchor('project')}>Project</a></li>
-        <li><a className='navBarLink' onClick={() => scrollToAnchor('contact')}>Contact</a></li>
+        <li><button className='navBarLink' onClick={() => scrollToAnchor('profile')} >Profile</button></li>
+        <li><button className='navBarLink' onClick={() => scrollToAnchor('internship')} >Internship</button></li>
+        <li><button className='navBarLink' onClick={() => scrollToAnchor('project')} >Project</button></li>
+        <li><button className='navBarLink' onClick={() => scrollToAnchor('contact')} >Contact</button></li>
         {/* <li>
           <a onClick={() => handleSmoothScroll('home')}>Home</a>
         </li>

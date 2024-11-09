@@ -1,9 +1,9 @@
 import '../../css/Footer.css'
 import React from 'react';
-import {
-    MDBFooter,
-    MDBContainer,
-} from 'mdb-react-ui-kit';
+// import {
+//     MDBFooter,
+//     MDBContainer,
+// } from 'mdb-react-ui-kit';
 import { HiOutlineMail } from 'react-icons/hi'
 import { AiOutlineGithub, AiFillLinkedin } from 'react-icons/ai'
 

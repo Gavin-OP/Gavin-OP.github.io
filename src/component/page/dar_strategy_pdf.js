@@ -1,7 +1,7 @@
 import React from 'react';
-import Navigation from '../common/Navbar';
+// import Navigation from '../common/Navbar';
 
-const DAR_Strategy_pdf = () => {
+const DarStrategyPdf = () => {
     return (
         <div style={{ height: '100vh' }}>
             {/* <Navigation /> */}
@@ -12,6 +12,6 @@ const DAR_Strategy_pdf = () => {
     );
 };
 
-export default DAR_Strategy_pdf;
+export default DarStrategyPdf;
 
 

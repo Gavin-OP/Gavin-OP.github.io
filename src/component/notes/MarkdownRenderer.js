@@ -7,7 +7,7 @@
 // 6. Convert the markdown file to pdf
 // 7. Incorrect URL will be redirected to the disclaimer page
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useLocation } from 'react-router-dom';
 import remarkGfm from "remark-gfm";
@@ -33,38 +33,30 @@ const MarkdownRenderer = ({ filename }) => {
 
     const fileToRender = filename === undefined ? 'disclaimer' : filename;
 
-    useEffect(() => {
-        fetch(`/notes/${fileToRender}.md`)
+    const fetchFile = useCallback((file) => {
+        fetch(`/notes/${file}.md`)
             .then((response) => response.text())
-            .then((text) => setContent(text))
-            .catch((error) => console.error(error));
-    }, [filename]);
+            .then((text) => {
+                if (text.includes("<!DOCTYPE html>")) {
+                    console.log(`Failed to fetch file: /notes/${file}.md`);
+                    throw new Error(`File not found: /notes/${file}.md`);
+                }
+                setContent(text);
+            })
+            .catch((error) => {
+                console.error(error);
+                if (file !== 'disclaimer') {
+                    console.log(`Retrying with disclaimer.md`);
+                    fetchFile('disclaimer');
+                } else {
+                    console.log(`Failed to fetch file: /notes/${file}.md`);
+                }
+            });
+    }, []);
 
     useEffect(() => {
-        const fetchMarkdown = async (file) => {
-            try {
-                const response = await fetch(`/notes/${file}`);
-                const text = await response.text();
-                if (text.trim() === '' || text.includes('<!DOCTYPE html>')) {
-                    // 如果内容为空或包含 <!DOCTYPE html>，则加载 disclaimer.md
-                    const disclaimerResponse = await fetch(`/notes/disclaimer.md`);
-                    const disclaimerText = await disclaimerResponse.text();
-                    setContent(disclaimerText);
-                } else {
-                    setContent(text);
-                }
-            } catch (error) {
-                console.error(error);
-                // 如果发生错误，也加载 disclaimer.md
-                const disclaimerResponse = await fetch(`/notes/disclaimer.md`);
-                const disclaimerText = await disclaimerResponse.text();
-                setContent(disclaimerText);
-            }
-        };
-
-        fetchMarkdown(fileToRender);
-    }, [fileToRender]);
-
+        fetchFile(fileToRender);
+    }, [fileToRender, fetchFile]);
 
     // make the checkbox can be checked or unchecked
     // const handleCheckboxChange = (event) => {
@@ -180,6 +172,14 @@ const MarkdownRenderer = ({ filename }) => {
                             if (props.href && (props.href.startsWith('#user-content-fn-') || props.href.startsWith('#user-content-fnref-'))) {
                                 const currentUrl = getCurrentUrl();
                                 return (
+                                    // <a
+                                    //     {...props}
+                                    //     href={`${currentUrl}${props.href}`}
+                                    //     onClick={(event) => {
+                                    //         event.preventDefault();
+                                    //         handleSmoothScroll(props.href.substring(1));
+                                    //     }}
+                                    // />
                                     <a
                                         {...props}
                                         href={`${currentUrl}${props.href}`}
@@ -187,10 +187,14 @@ const MarkdownRenderer = ({ filename }) => {
                                             event.preventDefault();
                                             handleSmoothScroll(props.href.substring(1));
                                         }}
-                                    />
+                                    >
+                                        {props.children.length === 0 ? 'Link' : props.children}
+                                    </a>
                                 );
                             }
-                            return <a {...props} />;
+                            // return <a {...props} />;
+                            return <a {...props}>{props.children.length === 0 ? 'Link' : props.children}</a>;
+
                         }
 
 
