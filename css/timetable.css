@@ -1,0 +1,57 @@
+.PABACKGROUNDINVISIBLE {
+    border-top-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-right-style: none;
+}
+
+.PSLEVEL1GRID {
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    font-weight: normal;
+    font-style: normal;
+    color: rgb(60, 60, 60);
+    border-width: 1px;
+    border-color: rgb(163, 190, 216);
+    border-style: solid;
+}
+
+.PSLEVEL3GRIDODDROW {
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    font-weight: normal;
+    font-style: normal;
+    color: rgb(81, 81, 81);
+    background-color: rgb(255, 255, 255);
+    line-height: 120%;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+    border-bottom-color: rgb(230, 230, 230);
+    border-right-color: rgb(230, 230, 230);
+    border-bottom-style: solid;
+    border-right-style: solid;
+}
+
+.PSLEVEL1GRIDWBO {
+    border-width: 1px;
+    border-color: rgb(201, 206, 213);
+    border-style: solid;
+}
+
+.PSLEVEL1GRIDLABEL {
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    font-style: normal;
+    color: rgb(171, 91, 26);
+    background-color: rgb(241, 245, 246);
+    text-indent: 1px;
+    padding-top: 0.75px;
+    padding-bottom: 0.75px;
+    padding-left: 2px;
+    padding-right: 0.75px;
+    border-top-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-right-style: none;
+}
