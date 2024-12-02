@@ -19,8 +19,6 @@ const NotesMenu = ({ currentPath }) => {
     // const octokit = useMemo(() => new Octokit({
     //     auth: process.env.REACT_APP_GITHUB_TOKEN
     // }), []);
-    console.log(process.env.REACT_APP_GITHUB_TOKEN);
-    console.log('sadfasdfasdfasdf')
 
     // useEffect(() => {
     //     const fetchFiles = async (path) => {
