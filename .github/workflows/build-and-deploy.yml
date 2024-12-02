@@ -13,12 +13,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.2.2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.1.0
         with:
-          node-version: '20'
+          node-version: '23.3.0'
       
       - name: Upgrade npm
         run: npm install -g npm@latest
@@ -27,13 +27,7 @@ jobs:
         run: npm install
       
       - name: Build project
-        # env:
-          # REACT_APP_GITHUB_TOKEN: ${{ secrets.REACT_APP_GITHUB_TOKEN }}
-          # CI: false
         run: npm run build
-
-      # - name: Remove sensitive information
-        # run: find ./build -type f -exec sed -i 's/${{ secrets.REACT_APP_GITHUB_TOKEN }}/[REDACTED]/g' {} +
       
       - name: Verify build directory
         run: ls -la ./build
