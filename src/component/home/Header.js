@@ -2,7 +2,6 @@ import React from 'react';
 import '../../css/Header.css'; // Create a new CSS file for styling the Header
 
 const Header = () => {
-    console.log('Header.js is renderingadfsafsafas')
     return (
         <section id='profile' className="header-container">
             <div className='spaceholder'></div>
