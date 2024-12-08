@@ -23,6 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .history
-.vscode
+# .vscode
 
 .env
