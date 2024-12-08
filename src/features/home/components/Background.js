@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../css/Header.css'; // Create a new CSS file for styling the Header
+import '../styles/Background.css';
 
-const Header = () => {
+const Background = () => {
     return (
         <section id='profile' className="header-container">
             <div className='spaceholder'></div>
@@ -20,8 +20,8 @@ const Header = () => {
                     </p>
                 </div>
             </div>
-            <div class="arrow-container">
-                <span class="arrow"></span>
+            <div className="arrow-container">
+                <span className="arrow"></span>
                 <span className="gradient-line"></span>
             </div>
             <div className="gradient-circle"></div>
@@ -30,4 +30,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Background;

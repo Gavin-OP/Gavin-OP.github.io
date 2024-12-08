@@ -10,10 +10,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Octokit } from '@octokit/core';
-import '../../css/NotesMenu.css';
+import '../styles/NotesMenu.css';
+import FileExplorer from './FileExplorer';
+import { shadesOfPurple } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+
 
 const NotesMenu = ({ currentPath }) => {
     const [files, setFiles] = useState([]);
+    const [fileContent, setFileContent] = useState(null);
     const navigate = useNavigate();
 
     // const octokit = useMemo(() => new Octokit({
@@ -48,7 +53,6 @@ const NotesMenu = ({ currentPath }) => {
 
     //     fetchFiles(currentPath.replace('/notes', ''));
     // }, [currentPath, octokit]);
-
     useEffect(() => {
         const fetchFiles = async (path) => {
             const octokit = new Octokit({
@@ -67,10 +71,16 @@ const NotesMenu = ({ currentPath }) => {
                 });
 
                 if (Array.isArray(response.data)) {
-                    setFiles(response.data);
-                } else {
-                    setFiles([]);
+                    const transformedFiles = response.data.map(file => ({
+                        name: file.name.replace('.md', ''),
+                        path: file.path,
+                        isFolder: file.type === 'dir',
+                        items: [],
+                        sha: file.sha
+                    }));
+                    setFiles(transformedFiles);
                 }
+                console.log(files);
             } catch (error) {
                 console.error('Error fetching files:', error);
                 setFiles([]);
@@ -82,12 +92,41 @@ const NotesMenu = ({ currentPath }) => {
 
 
     const handleFolderClick = (path) => {
-        navigate(`/notes${path.replace('public/notes', '')}`);
+        console.log("path: ", path.replace('public/notes', ''));
+        navigate(`/notes/${path.replace('public/notes', '')}`);
+        // navigate(`/notes/csci/`);
     };
 
     const handleParentClick = () => {
         const parentPath = currentPath.split('/').slice(0, -1).join('/');
         navigate(parentPath);
+    };
+
+    const handleFileClick = async (path) => {
+        const octokit = new Octokit({
+            auth: process.env.REACT_APP_GITHUB_TOKEN
+        });
+
+        try {
+            const response = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}?ref=master', {
+                owner: 'Gavin-OP',
+                repo: 'Gavin-OP.github.io',
+                path: path,
+                headers: {
+                    'X-GitHub-Api-Version': '2022-11-28'
+                }
+            });
+
+            if (response.data && response.data.content) {
+                const content = atob(response.data.content);
+                setFileContent(content);
+            } else {
+                setFileContent(null);
+            }
+        } catch (error) {
+            console.error('Error fetching file content:', error);
+            setFileContent(null);
+        }
     };
 
     const renderFiles = (files) => {
@@ -119,7 +158,21 @@ const NotesMenu = ({ currentPath }) => {
 
     return (
         <div className="notes-menu">
-            {renderFiles(files)}
+            {/* {renderFiles(files)} */}
+            {files.length > 0 && (
+                <FileExplorer explorerData={{
+                    name: 'notes', isFolder: true, items: files
+                    // .map(file => ({
+                    //     name: file.name,
+                    //     isFolder: file.type === 'dir',
+                    //     items: []
+                    // }))
+                    , path: '/notes'
+                }}
+                    onFolderClick={handleFolderClick}
+                    onFileClick={handleFileClick}
+                />
+            )}
         </div>
     );
 };

@@ -1,14 +1,13 @@
-import YearEndReport from '../component/birthday/YearEndReport';
+import YearEndReport from '../components/YearEndReport';
 // import Navigation from '../component/common/Navbar';
 
-const Birthday = () => {
+const BirthdayPage = () => {
     return (
         <div className="birthday-container">
-            {/* <Navigation /> */}
             <YearEndReport />
         </div>
     );
 }
 
 
-export default Birthday;
+export default BirthdayPage;

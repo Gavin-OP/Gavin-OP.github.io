@@ -226,7 +226,7 @@
 #project-wechat-analysis {
     background-size: cover;
     background-position: left center;
-    background-image: url(../../public/image/wechat_analysis_backgroud.png);
+    background-image: url(../../../../public/image/wechat_analysis_backgroud.png);
 }
 
 #project-wechat-analysis::before {

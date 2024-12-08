@@ -20,10 +20,9 @@ import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 // import remarkMermaid from 'remark-mermaid';
 
 import 'katex/dist/katex.min.css';
-import '../../css/MarkdownRenderer.css';
+import '../styles/MarkdownRenderer.css';
 // import 'mermaid/dist/mermaid.esm.min.mjs';
 
-//test
 
 
 const MarkdownRenderer = ({ filename }) => {
@@ -37,10 +36,10 @@ const MarkdownRenderer = ({ filename }) => {
         fetch(`/notes/${file}.md`)
             .then((response) => response.text())
             .then((text) => {
-                if (text.includes("<!DOCTYPE html>")) {
-                    console.log(`Failed to fetch file: /notes/${file}.md`);
-                    throw new Error(`File not found: /notes/${file}.md`);
-                }
+                // if (text.includes("<!DOCTYPE html>")) {
+                //     console.log(`Failed to fetch file: /notes/${file}.md`);
+                //     throw new Error(`File not found: /notes/${file}.md`);
+                // }
                 setContent(text);
             })
             .catch((error) => {

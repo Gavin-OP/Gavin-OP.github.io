@@ -1,4 +1,4 @@
-import '../../css/Internship.css';
+import '../styles/Internship.css';
 import React, { useRef } from 'react';
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 

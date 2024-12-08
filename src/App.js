@@ -1,33 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  HashRouter,
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
-
-import Home from './section/Home';
-import CnnLstmPdf from './component/page/cnn_lstm_pdf';
-import Birthday from './section/Birthday';
-import DarStrategyPdf from './component/page/dar_strategy_pdf';
-import Notes from './section/Notes';
-
+import { Suspense } from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import { routes } from './router/Routes';
+// import LoadingSpinner from './components/common/LoadingSpinner';
 
 function App() {
   return (
-    <>
-      {/* website router design */}
-      <HashRouter>
-        <Routes basemname={`/${process.env.PUBLIC_URL}`}>
-          <Route path="/" element={<Home />} />
-          <Route path='/20240109' element={<Birthday />} />
-          <Route path='/stat4012-cnn-lstm' element={<CnnLstmPdf />} />
-          <Route path='/dar-strategy' element={<DarStrategyPdf />} />
-          <Route path='/notes/*' element={<Notes />} />
-          <Route path="/*" element={<Navigate to='/' />} />
+    <HashRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          {routes.map(route => (
+            <Route key={route.path} {...route} />
+          ))}
         </Routes>
-      </HashRouter>
-    </>
+      </Suspense>
+    </HashRouter>
   );
 }
 
