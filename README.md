@@ -1,4 +1,4 @@
-# Gavin-OP.github.io _(Gavin's Personal Website)_ <!-- omit in toc -->
+# Gavin-OP.github.io _(Gavin's Website)_ <!-- omit in toc -->
 
 ![Website Homepage](./public/image/sample_homepage.png)
 
