@@ -29,13 +29,14 @@
   - Relation with tail event: 
 
     - All tail events in $\mathcal T=\cap_{i=1}^\infty\sigma(X_i,X_{i+1},...)$ are permutable. It's because tail events are determined by asymptotic behaviors of a sequence of random variables. Still, think of a tail event example in Chapter 2. No matter how to change the order of first $k$ elements, whether sample mean limit exists is determined by only asymptotic random variables in the sequence. 
-
-      \begin{align}
+      $$
+      \text{Example 1}:\quad\begin{align}
       A&\equiv\left\{(\omega_1,\omega_2,...):\lim_{N\to\infty}\frac{X_1+\cdots+X_N}N<\infty\right\}\\
       &=\left\{(\omega_1,\omega_2,...):\lim_{N\to\infty}\frac{X_1+\cdots+X_n}N+\frac{X_{n+1}+\cdots+X_N}N<\infty\right\}\\
       &=\left\{(\omega_1,\omega_2,...):0+\lim_{N\to\infty}\frac{X_{n+1}+\cdots+X_N}N<\infty\right\}\\
       &=\left\{(\omega_{n+1},\omega_{n+2},...):\lim_{N\to\infty}\frac{X_{n+1}+\cdots+X_N}N<\infty\right\}
       \end{align}
+      $$
 
     - Not all permutable events are tail events. E.g.:
       $$
@@ -327,7 +328,7 @@
 
     - For third line, first consider two-dimension version: $\int_0^1\int_o^{y_2}dy_1=\frac12$, i.e., the integral is actually area of intersection between $x_1+x_2\le 1$ and unit area $[0,1]^2$. Similarly, for three dimensions, it means volume of intersection of $x_1+x_2+x_3\le 1$ and $[0,1]^3$ 
 
-      ![](Ch4_inventory/cube.png)
+      ![](inventory/cube.png)
 
   - Then we have:
     $$
@@ -585,7 +586,7 @@
 
 - **Theorem**. Reflection Principle. If $x,y>0$, then the number of paths from $(0,x)$ to $(n,y)$ that are o at some time is equal to the number of paths from $(0,-x)$ to $(n,y)$
   
-  ![](Ch4_inventory/ref_theorem.png)
+  ![](inventory/ref_theorem.png)
   
   - Note the theorem is intuitive from the graph
   - Also, the starting point could be symmetric around any point, see below theorem:
@@ -613,7 +614,7 @@
 
     - Then according to reflection principle, we know for whichever path that finally make $S_n(\omega)>b$, there must exist a symmetric path around $y=b$ such that $S_n(\omega')<b$. See plot below:
 
-      ![](Ch4_inventory/reflection.png)
+      ![](inventory/reflection.png)
     
     - So the number of paths $\omega$ such that $S_n(\omega)>b$ is the same the number of paths such that $S_n(\omega')<b$, which means $P\{S_n>b\}=P\{S_n<b\}$, and thus $P(A)=P(B)$
     - The reflection means the probability for two events are equal
