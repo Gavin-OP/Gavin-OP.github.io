@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_web=self.webpackChunkmy_web||[]).push([[680],{1680:(e,t,h)=>{h.r(t),h.d(t,{default:()=>a});h(2791);var s=h(184);const a=()=>(0,s.jsx)("div",{style:{height:"100vh"},children:(0,s.jsx)("object",{data:"/file/DAR_Strategy.pdf",width:"100%",height:"100%"})})}}]);
+//# sourceMappingURL=680.d4c6d17c.chunk.js.map
