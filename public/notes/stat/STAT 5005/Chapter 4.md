@@ -30,7 +30,7 @@
 
     - All tail events in $\mathcal T=\cap_{i=1}^\infty\sigma(X_i,X_{i+1},...)$ are permutable. It's because tail events are determined by asymptotic behaviors of a sequence of random variables. Still, think of a tail event example in Chapter 2. No matter how to change the order of first $k$ elements, whether sample mean limit exists is determined by only asymptotic random variables in the sequence. 
       $$
-      \text{Example 1}:\quad\begin{align}
+      \begin{align}
       A&\equiv\left\{(\omega_1,\omega_2,...):\lim_{N\to\infty}\frac{X_1+\cdots+X_N}N<\infty\right\}\\
       &=\left\{(\omega_1,\omega_2,...):\lim_{N\to\infty}\frac{X_1+\cdots+X_n}N+\frac{X_{n+1}+\cdots+X_N}N<\infty\right\}\\
       &=\left\{(\omega_1,\omega_2,...):0+\lim_{N\to\infty}\frac{X_{n+1}+\cdots+X_N}N<\infty\right\}\\
