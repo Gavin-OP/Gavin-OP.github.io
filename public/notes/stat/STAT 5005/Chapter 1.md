@@ -22,10 +22,10 @@
 
 - **Definition**. A collection of subsets of $\Omega$, denoted by F, is called a $\sigma$-field or $\sigma$-algebra if:
   $$
-  \begin{flalign}
+  \begin{align}
   &\text{(i) }\Omega\in\mathcal{F},\\
   &\text{(ii) If }A\in\mathcal{F},\text{ then }A^c\in\mathcal{F},\\
-  &\text{(iii) If }A_1,A_2,\cdots\in\mathcal{F},\text{ then }\cup_{i=1}^\infty A_i\in\mathcal{F}.\end{flalign}
+  &\text{(iii) If }A_1,A_2,\cdots\in\mathcal{F},\text{ then }\cup_{i=1}^\infty A_i\in\mathcal{F}.\end{align}
   $$
 
   - Elements of $\mathcal F$ are called **events**
