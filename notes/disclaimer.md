@@ -7,7 +7,9 @@ If you would like to contribute to this project or if you find any errors in the
 Special thanks to all the contributors who have generously shared their knowledge and expertise to make this project possible:
 
 - [Gavin OP](mailto:HaoxiangZhang@link.cuhk.edu.hk)
-- [ZHAI Yunxiao (Clay)](mailto:clay.zhai@link.cuhk.edu.hk)
+- [QIU Kexin (Chloe)](mailto:1155173885@link.cuhk.edu.hk)  
+- [WANG Yuxin (Eleanor)](mailto:yuxin0359@gmail.com)  
 - [XIONG Ruoshui (Rosa)](mailto:ruoshui2021@gmail.com)
+- [ZHAI Yunxiao (Clay)](mailto:clay.zhai@link.cuhk.edu.hk)
 
 Thank you for your understanding and support.
