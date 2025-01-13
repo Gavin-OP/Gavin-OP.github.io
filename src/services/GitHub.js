@@ -1,3 +1,8 @@
+// TODO
+// 1. inventory?
+// 2. test getFileContent
+import { Octokit } from '@octokit/core';
+
 // Centralize all GitHub API calls
 export class GitHubService {
     constructor(owner, repo, branch = 'master') {
@@ -9,38 +14,9 @@ export class GitHubService {
         });
     }
 
-    async getAllNotes() {
-        try {
-            const response = await this.octokit.request('GET /repos/{owner}/{repo}/git/trees/{branch}?recursive=1', {
-                owner: this.owner,
-                repo: this.repo,
-                branch: this.branch
-            });
-
-            return this.transformGitHubTree(response.data.tree);
-        } catch (error) {
-            console.error('Error fetching notes:', error);
-            return [];
-        }
-    }
-
-    async getFileContent(path) {
-        try {
-            const response = await this.octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
-                owner: this.owner,
-                repo: this.repo,
-                path: path
-            });
-
-            return atob(response.data.content);
-        } catch (error) {
-            console.error('Error fetching file:', error);
-            return null;
-        }
-    }
-
     transformGitHubTree(tree) {
         // Transform flat tree into hierarchical structure
+        // if want any order or inventory, add here
         const root = { name: 'notes', path: '', items: [], isFolder: true };
         const map = { '': root };
 
@@ -71,4 +47,36 @@ export class GitHubService {
 
         return root;
     }
+
+    async getAllNotes() {
+        try {
+            const response = await this.octokit.request('GET /repos/{owner}/{repo}/git/trees/{branch}?recursive=1', {
+                owner: this.owner,
+                repo: this.repo,
+                branch: this.branch,
+                recursive: true
+            });
+
+            return this.transformGitHubTree(response.data.tree);
+        } catch (error) {
+            console.error('Error fetching notes:', error);
+            return [];
+        }
+    }
+
+    async getFileContent(path) {
+        try {
+            const response = await this.octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+                owner: this.owner,
+                repo: this.repo,
+                path: path
+            });
+
+            return atob(response.data.content);
+        } catch (error) {
+            console.error('Error fetching file:', error);
+            return null;
+        }
+    }
+
 }
