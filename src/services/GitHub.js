@@ -80,9 +80,24 @@ export class GitHubService {
     }
   }
 
-  async getFileContent(path) {
+  async isValidPath(path) {
     try {
       const response = await fetch(`${path}`);
+      const text = await response.text();
+      return !text.includes("<!DOCTYPE html>");
+    } catch (error) {
+      console.error("Error validating path:", error);
+      return false;
+    }
+  }
+
+  async getFileContent(path) {
+    // check whether the path is valid, if not, display the default file
+    const defaultPath = `notes/disclaimer.md`;
+    const validPath = await this.isValidPath(path) ? path : defaultPath;
+
+    try {
+      const response = await fetch(`${validPath}`);
       if (!response.ok) {
         throw new Error(`Error fetching file: ${response.statusText}`);
       }
