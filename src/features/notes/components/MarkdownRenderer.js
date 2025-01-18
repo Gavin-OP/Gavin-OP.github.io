@@ -1,11 +1,11 @@
+// This is a file to render the markdown file to HTML.
+// It takes the Markdown file string as input and renders it to HTML.
 // TODO
 // 1. Add the clickable checkbox
 // 2. Add support for Mermaid
-// 3. Add a menu for a lot of markdow files, like a side bar navigation
-// 4. Add a report button for the markdown files, so that can report mistakes
-// 5. add a button to copy the code in the markdown file
-// 6. Convert the markdown file to pdf
-// 7. Incorrect URL will be redirected to the disclaimer page
+// 3. Add a report button for the markdown files, so that can report mistakes
+// 4. add a button to copy the code in the markdown file
+// 5. Convert the markdown file to pdf
 
 import React, { useState, useEffect, useCallback } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -145,8 +145,7 @@ const MarkdownRenderer = ({ filename }) => {
                         //     }
                         // },
 
-
-
+            // make the code block formatted
                         pre({ node, className, children, ...props }) {
                             const codeNode = node.children[0];
                             const match = /language-(\w+)/.exec(codeNode?.properties?.className || '');
@@ -166,7 +165,7 @@ const MarkdownRenderer = ({ filename }) => {
                             );
                         },
 
-
+            // make the footnote link clickable
                         a({ node, ...props }) {
                             if (props.href && (props.href.startsWith('#user-content-fn-') || props.href.startsWith('#user-content-fnref-'))) {
                                 const currentUrl = getCurrentUrl();
