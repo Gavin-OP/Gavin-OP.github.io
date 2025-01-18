@@ -26,7 +26,8 @@ const TestPage = () => {
         console.log("Test File Tree:", tree);
 
         // Test getting a specific file
-        const testFilePath = "/notes/disclaimer.md"; // or any existing file path
+        // const testFilePath = "/notes/stat/distribution.md"; // or any existing file path
+        const testFilePath = "/notes/README.md";
         const fileContent = await github.getFileContent(testFilePath);
         console.log("File Content Result:", fileContent);
 
@@ -65,7 +66,7 @@ const TestPage = () => {
           </pre>
         </div>
         <h4>File Content:</h4>
-        <MarkdownRenderer />
+        <MarkdownRenderer markdownContent={debugInfo.fileContent} />
       </div>
     </div>
   );
