@@ -139,14 +139,6 @@ const MarkdownRenderer = ({ markdownContent }) => {
               ) {
                                 const currentUrl = getCurrentUrl();
                                 return (
-                                    // <a
-                                    //     {...props}
-                                    //     href={`${currentUrl}${props.href}`}
-                                    //     onClick={(event) => {
-                                    //         event.preventDefault();
-                                    //         handleSmoothScroll(props.href.substring(1));
-                                    //     }}
-                                    // />
                                     <a
                                         {...props}
                                         href={`${currentUrl}${props.href}`}
