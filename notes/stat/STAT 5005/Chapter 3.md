@@ -70,7 +70,7 @@
       - So $P(\Omega_0)=1$
     - So we only need to prove $F_n^{-1}(\omega)\to F_\infty^{-1}(\omega),\forall\omega\in\Omega_0$
 
-    <img src="notes/stat/STAT 5005/Ch3_inventory/Sk1.png" style="zoom:67%;" />
+    <img src="Ch3_inventory/Sk1.png" style="zoom:67%;" />
 
   - Now $\forall \omega\in\Omega_0$, we have:
 
