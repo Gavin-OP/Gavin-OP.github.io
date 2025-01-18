@@ -7,26 +7,23 @@
 // 4. add a button to copy the code in the markdown file
 // 5. Convert the markdown file to pdf
 
-import React, { useState, useEffect, useCallback } from 'react';
-import ReactMarkdown from 'react-markdown';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from "react";
+import ReactMarkdown from "react-markdown";
+import { useLocation } from "react-router-dom";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
-import rehypeKatex from 'rehype-katex'
-import remarkMath from 'remark-math';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { xcode } from "react-syntax-highlighter/dist/esm/styles/hljs";
 // import rehypeMermaid from 'rehype-mermaid';
 // import remarkMermaid from 'remark-mermaid';
 
-import 'katex/dist/katex.min.css';
-import '../styles/MarkdownRenderer.css';
+import "katex/dist/katex.min.css";
+import "../styles/MarkdownRenderer.css";
 // import 'mermaid/dist/mermaid.esm.min.mjs';
 
-
-
-const MarkdownRenderer = ({ filename }) => {
-    const [content, setContent] = useState('');
+const MarkdownRenderer = ({ markdownContent }) => {
     const location = useLocation();
     // const [checkboxStates, setCheckboxStates] = useState({});
 
@@ -82,7 +79,7 @@ const MarkdownRenderer = ({ filename }) => {
     const handleSmoothScroll = (id) => {
         const element = document.getElementById(id);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
         }
     };
 
@@ -97,7 +94,6 @@ const MarkdownRenderer = ({ filename }) => {
                     className="markdown-body"
                     remarkPlugins={[remarkGfm, remarkMath]}
                     rehypePlugins={[rehypeRaw, rehypeKatex]}
-
                     // make the checkbox can be check or unchecked, use handleCheckBoxChange
                     // components={{
                     //     input({ node, ...props }) {
@@ -119,8 +115,6 @@ const MarkdownRenderer = ({ filename }) => {
                     //         return <input {...props} />;
                     //     },
                     // }}
-
-
 
                     components={{
                         // pre({ node, className, children, ...props }) {
@@ -148,7 +142,9 @@ const MarkdownRenderer = ({ filename }) => {
             // make the code block formatted
                         pre({ node, className, children, ...props }) {
                             const codeNode = node.children[0];
-                            const match = /language-(\w+)/.exec(codeNode?.properties?.className || '');
+              const match = /language-(\w+)/.exec(
+                codeNode?.properties?.className || ""
+              );
                             return match ? (
                                 <SyntaxHighlighter
                                     style={xcode}
@@ -156,7 +152,7 @@ const MarkdownRenderer = ({ filename }) => {
                                     PreTag="pre"
                                     {...props}
                                 >
-                                    {String(codeNode.children[0].value).replace(/\n$/, '')}
+                  {String(codeNode.children[0].value).replace(/\n$/, "")}
                                 </SyntaxHighlighter>
                             ) : (
                                 <pre className="md-fences" {...props}>
@@ -167,7 +163,11 @@ const MarkdownRenderer = ({ filename }) => {
 
             // make the footnote link clickable
                         a({ node, ...props }) {
-                            if (props.href && (props.href.startsWith('#user-content-fn-') || props.href.startsWith('#user-content-fnref-'))) {
+              if (
+                props.href &&
+                (props.href.startsWith("#user-content-fn-") ||
+                  props.href.startsWith("#user-content-fnref-"))
+              ) {
                                 const currentUrl = getCurrentUrl();
                                 return (
                                     // <a
@@ -186,7 +186,7 @@ const MarkdownRenderer = ({ filename }) => {
                                             handleSmoothScroll(props.href.substring(1));
                                         }}
                                     >
-                                        {props.children.length === 0 ? 'Link' : props.children}
+                    {props.children.length === 0 ? "Link" : props.children}
                                     </a>
                                 );
                             }
@@ -199,7 +199,7 @@ const MarkdownRenderer = ({ filename }) => {
                     }}
 
                 >
-                    {content}
+          {markdownContent}
                 </ReactMarkdown>
             </div>
         </div>
