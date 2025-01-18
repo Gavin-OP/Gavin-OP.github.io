@@ -2,7 +2,7 @@ export const GITHUB_CONFIG = {
     owner: 'Gavin-OP',
     repo: 'Gavin-OP.github.io',
     branch: 'master',
-    basePath: 'public/notes'
+    basePath: 'public/notes/'
 };
 
 export const MARKDOWN_CONFIG = {
