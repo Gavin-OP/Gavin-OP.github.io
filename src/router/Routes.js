@@ -6,11 +6,16 @@ const CnnLstmPdfPage = lazy(() => import('../features/home/pages/CnnLstmPdfPage'
 const NotesPage = lazy(() => import('../features/notes/pages/NotesPage'));
 const BirthdayPage = lazy(() => import('../features/fun/pages/BirthdayPage'));
 const DarStrategyPdfPage = lazy(() => import('../features/home/pages/DarStrategyPdfPage'));
+const TestPage = lazy(() => import('../features/notes/pages/TestPage'));
 
 export const routes = [
     {
         path: '/',
         element: <Home />
+    },
+    {
+        path: '/test/',
+        element: <TestPage />
     },
     {
         path: '/notes/*',
