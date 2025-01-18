@@ -185,7 +185,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
                 //   return <img {...props} src={src} />;
                 // }
                 const src = resolveRelativePath(
-                  window.location.hash.replace("#", "public"),
+                  window.location.hash.replace("#/", ""),
                   props.src
                 );
                 return <img {...props} src={src} />;
