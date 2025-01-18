@@ -25,35 +25,6 @@ import "../styles/MarkdownRenderer.css";
 
 const MarkdownRenderer = ({ markdownContent }) => {
     const location = useLocation();
-    // const [checkboxStates, setCheckboxStates] = useState({});
-
-    const fileToRender = filename === undefined ? 'disclaimer' : filename;
-
-    const fetchFile = useCallback((file) => {
-        fetch(`/notes/${file}.md`)
-            .then((response) => response.text())
-            .then((text) => {
-                // if (text.includes("<!DOCTYPE html>")) {
-                //     console.log(`Failed to fetch file: /notes/${file}.md`);
-                //     throw new Error(`File not found: /notes/${file}.md`);
-                // }
-                setContent(text);
-            })
-            .catch((error) => {
-                console.error(error);
-                if (file !== 'disclaimer') {
-                    console.log(`Retrying with disclaimer.md`);
-                    fetchFile('disclaimer');
-                } else {
-                    console.log(`Failed to fetch file: /notes/${file}.md`);
-                }
-            });
-    }, []);
-
-    useEffect(() => {
-        fetchFile(fileToRender);
-    }, [fileToRender, fetchFile]);
-
     // make the checkbox can be checked or unchecked
     // const handleCheckboxChange = (event) => {
     //     console.log(event.target.checked);
@@ -72,9 +43,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
     //     }));
     //     console.log(event.target.checked);
     //     console.log(index)
-
     // };
-
 
     const handleSmoothScroll = (id) => {
         const element = document.getElementById(id);
