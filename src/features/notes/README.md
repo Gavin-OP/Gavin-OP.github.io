@@ -1,5 +1,12 @@
 # Notes System
 
+## Agenda
+- [x] Start with env variables and GitHub.js
+2. Markdown renderer
+3. Fetch file and use Markdown Renderer
+4. reate Menu
+5. Integrate Menu and Markdown Renderer
+
 ## Target Audience
 
 - All contributors
