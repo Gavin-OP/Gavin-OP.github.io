@@ -150,17 +150,17 @@ Markdown也可以将链接设置为变量，在文末为变量赋值[Baidu][1]�
 
 ## 图片
 
-Markdown支持插入图片。![钢铁侠](http://img.netbian.com/file/2019/0508/a9e771a47c5bbecb33550576bcb3fa10.jpg "钢铁侠壁纸")
+Markdown支持插入图片。![钢铁侠](../../image/iron_man_markdown.jpg "钢铁侠壁纸")
 
 插入图片方法为`![显示字段](图片地址 "鼠标悬浮时显示信息")`。
 
 Markdown也可以将图片设置为变量，在文末为变量赋值[钢铁侠][3]
 
-[3]: http://img.netbian.com/file/2019/0508/a9e771a47c5bbecb33550576bcb3fa10.jpg
+[3]: ../../image/iron_man_markdown.jpg
 
 Markdown无法指定图片的高度与宽度，但是可以通过缩放调整图片的大小。
 
-<img src="http://img.netbian.com/file/2019/0508/a9e771a47c5bbecb33550576bcb3fa10.jpg" width="50%">
+<img src="../../image/iron_man_markdown.jpg" width="50%">
 
 语法为`<img + space + src="url" + space + width="50%">`。
 
