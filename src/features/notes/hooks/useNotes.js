@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { GitHubService } from '../services/githubService';
 
 export function useNotes(initialPath = 'disclaimer') {
@@ -10,12 +10,13 @@ export function useNotes(initialPath = 'disclaimer') {
     error: null
   });
 
-  const githubService = new GitHubService(
+  // Create GitHub service instance once
+  const githubService = useMemo(() => new GitHubService(
     process.env.REACT_APP_GITHUB_OWNER,
     process.env.REACT_APP_GITHUB_REPO
-  );
+  ), []); // Empty dependency array as these values won't change
 
-  // Fetch file tree
+  // Fetch file tree only once when component mounts
   useEffect(() => {
     const fetchFileTree = async () => {
       try {
@@ -31,7 +32,7 @@ export function useNotes(initialPath = 'disclaimer') {
     };
 
     fetchFileTree();
-  }, []);
+  }, []); // Empty dependency array as we only want this to run once
 
   // Fetch file content when path changes
   useEffect(() => {
