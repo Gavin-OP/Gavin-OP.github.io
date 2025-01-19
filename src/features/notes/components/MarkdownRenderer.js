@@ -176,16 +176,16 @@ const MarkdownRenderer = ({ markdownContent }) => {
               //   props.src &&
               //   (props.src.startsWith("/") || props.src.startsWith("."))
               // ) {
-                // const hashPath = window.location.hash.replace("#", "public");
-                // if (props.src.startsWith("/")) {
-                //   const src = `${hashPath}${props.src}`;
-                //   return <img {...props} src={src} />;
-                // } else if (props.src.startsWith(".")) {
-                //   const src = `${hashPath}/${props.src}`;
-                //   return <img {...props} src={src} />;
-                // }
-              
-              if (props.src) {
+              // const hashPath = window.location.hash.replace("#", "public");
+              // if (props.src.startsWith("/")) {
+              //   const src = `${hashPath}${props.src}`;
+              //   return <img {...props} src={src} />;
+              // } else if (props.src.startsWith(".")) {
+              //   const src = `${hashPath}/${props.src}`;
+              //   return <img {...props} src={src} />;
+              // }
+
+              if (props.src && !props.src.startsWith("http")) {
                 const src = resolveRelativePath(
                   window.location.hash.replace("#/", ""),
                   props.src
@@ -195,8 +195,6 @@ const MarkdownRenderer = ({ markdownContent }) => {
               }
               return <img {...props} />;
             },
-
-
           }}
         >
           {markdownContent}
