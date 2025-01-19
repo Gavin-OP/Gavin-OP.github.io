@@ -172,19 +172,6 @@ const MarkdownRenderer = ({ markdownContent }) => {
 
             // make the image path correct for relative import
             img({ node, ...props }) {
-              // if (
-              //   props.src &&
-              //   (props.src.startsWith("/") || props.src.startsWith("."))
-              // ) {
-              // const hashPath = window.location.hash.replace("#", "public");
-              // if (props.src.startsWith("/")) {
-              //   const src = `${hashPath}${props.src}`;
-              //   return <img {...props} src={src} />;
-              // } else if (props.src.startsWith(".")) {
-              //   const src = `${hashPath}/${props.src}`;
-              //   return <img {...props} src={src} />;
-              // }
-
               if (props.src && !props.src.startsWith("http")) {
                 const src = resolveRelativePath(
                   window.location.hash.replace("#/", ""),
