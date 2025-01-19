@@ -25,6 +25,33 @@ import "../styles/MarkdownRenderer.css";
 
 const MarkdownRenderer = ({ markdownContent }) => {
   const location = useLocation();
+
+  // scroll to footnotes and scroll back
+  const handleSmoothScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // get current url for footnotes
+  const getCurrentUrl = () => {
+    return `${window.location.origin}${location.pathname}${location.hash}`;
+  };
+
+  // make relative path import to correct path relative to public folder
+  const resolveRelativePath = (base, relative) => {
+    const stack = base.split("/");
+    const parts = relative.split("/");
+    stack.pop();
+    for (let i = 0; i < parts.length; i++) {
+      if (parts[i] === ".") continue;
+      if (parts[i] === "..") stack.pop();
+      else stack.push(parts[i]);
+    }
+    return stack.join("/");
+  };
+
   // make the checkbox can be checked or unchecked
   // const handleCheckboxChange = (event) => {
   //     console.log(event.target.checked);
@@ -44,29 +71,6 @@ const MarkdownRenderer = ({ markdownContent }) => {
   //     console.log(event.target.checked);
   //     console.log(index)
   // };
-
-  const handleSmoothScroll = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const getCurrentUrl = () => {
-    return `${window.location.origin}${location.pathname}${location.hash}`;
-  };
-
-  const resolveRelativePath = (base, relative) => {
-    const stack = base.split("/");
-    const parts = relative.split("/");
-    stack.pop();
-    for (let i = 0; i < parts.length; i++) {
-      if (parts[i] === ".") continue;
-      if (parts[i] === "..") stack.pop();
-      else stack.push(parts[i]);
-    }
-    return stack.join("/");
-  };
 
   return (
     <div className="markdown-container">
@@ -98,28 +102,6 @@ const MarkdownRenderer = ({ markdownContent }) => {
           // }}
 
           components={{
-            // pre({ node, className, children, ...props }) {
-            //     if (children["type"] === "code") {
-            //         try {
-            //             const codeNode = children.children[0];
-            //             console.log(codeNode)
-            //             const match = children["props"]["className"].match(/language-(\w+)/)
-            //             return (
-
-            //                 <pre className='md-fences'>
-            //                     {children}
-            //                 </pre>
-            //             )
-            //         } catch (e) {
-            //             return (
-            //                 <pre className='md-fences'>
-            //                     {children}
-            //                 </pre>
-            //             )
-            //         }
-            //     }
-            // },
-
             // make the code block formatted
             pre({ node, className, children, ...props }) {
               const codeNode = node.children[0];
@@ -183,6 +165,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
               return <img {...props} />;
             },
 
+
             // for latex block that is too wide, make it scrollable
             span({ node, ...props }) {
               if (
@@ -203,6 +186,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
               }
               return <span {...props}>{props.children}</span>;
             },
+
           }}
         >
           {markdownContent}
