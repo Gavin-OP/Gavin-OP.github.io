@@ -57,3 +57,5 @@ ls -l
 ```
 
 ![test image](../../image/NKY_BS_IV_Surface.png)
+
+![test http image](https://gavin-op.github.io/image/price.png)
