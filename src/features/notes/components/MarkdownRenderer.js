@@ -25,6 +25,7 @@ import "../styles/MarkdownRenderer.css";
 
 const MarkdownRenderer = ({ markdownContent }) => {
   const location = useLocation();
+  // const [checkboxStates, setCheckboxStates] = useState({});
 
   // scroll to footnotes and scroll back
   const handleSmoothScroll = (id) => {
@@ -64,12 +65,12 @@ const MarkdownRenderer = ({ markdownContent }) => {
   //     console.log(event.target.checked);
   // };
   // const handleCheckboxChange = (event, index) => {
-  //     setCheckboxStates((prevStates) => ({
-  //         ...prevStates,
-  //         [index]: !prevStates[index],
-  //     }));
-  //     console.log(event.target.checked);
-  //     console.log(index)
+  //   setCheckboxStates((prevStates) => ({
+  //     ...prevStates,
+  //     [index]: !prevStates[index],
+  //   }));
+  //   console.log(event.target.checked);
+  //   console.log(index);
   // };
 
   return (
@@ -91,15 +92,6 @@ const MarkdownRenderer = ({ markdownContent }) => {
           //     },
           // }}
 
-          // make the checkbox disable is false
-          // components={{
-          //     input({ node, ...props }) {
-          //         if (props.type === 'checkbox') {
-          //             return <input type="checkbox" {...props} disabled={false} />;
-          //         }
-          //         return <input {...props} />;
-          //     },
-          // }}
 
           components={{
             // make the code block formatted
@@ -165,7 +157,6 @@ const MarkdownRenderer = ({ markdownContent }) => {
               return <img {...props} />;
             },
 
-
             // for latex block that is too wide, make it scrollable
             span({ node, ...props }) {
               if (
@@ -187,6 +178,25 @@ const MarkdownRenderer = ({ markdownContent }) => {
               return <span {...props}>{props.children}</span>;
             },
 
+            // check box
+            // input({ node, ...props }) {
+            //   if (props.type === "checkbox") {
+            //     const index =
+            //       node && node.position && node.position.start
+            //         ? node.position.start.offset
+            //         : null;
+            //     return (
+            //       <input
+            //         type="checkbox"
+            //         {...props}
+            //         disabled={false}
+            //         checked={checkboxStates[index] || false}
+            //         onChange={(event) => handleCheckboxChange(event, index)}
+            //       />
+            //     );
+            //   }
+            //   return <input {...props} />;
+            // },
           }}
         >
           {markdownContent}
