@@ -182,6 +182,27 @@ const MarkdownRenderer = ({ markdownContent }) => {
               }
               return <img {...props} />;
             },
+
+            // for latex block that is too wide, make it scrollable
+            span({ node, ...props }) {
+              if (
+                props.className &&
+                props.className.includes("katex-display")
+              ) {
+                return (
+                  <span
+                    {...props}
+                    style={{
+                      ...props.style,
+                      overflowX: "auto",
+                    }}
+                  >
+                    {props.children}
+                  </span>
+                );
+              }
+              return <span {...props}>{props.children}</span>;
+            },
           }}
         >
           {markdownContent}
