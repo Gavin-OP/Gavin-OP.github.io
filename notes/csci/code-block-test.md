@@ -59,3 +59,19 @@ ls -l
 ![test image](../../image/NKY_BS_IV_Surface.png)
 
 ![test http image](https://gavin-op.github.io/image/price.png)
+
+$$
+\textbf{Setting:}\\
+\text{\ Toss\ a\ coin\ 1\ times\ and\ define\ $X$\ to\ be\ the\ number\ of\ ''heads''\ observed.}\\
+~\\
+X\sim Bern(p)\\
+pmf:\ f(0) = 1 - p\quad f(1)=p\\
+E(X)=\mu=p
+\ \ and\ \ 
+Var(X)=\sigma^2=p\left(1-p\right) 
+
+~\\
+
+mgf:\ M\left(t\right)=
+pe^t+1-p \\
+$$
