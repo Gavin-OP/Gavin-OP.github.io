@@ -1,17 +1,16 @@
-# Gavin-OP.github.io _(Gavin's Website)_ <!-- omit in toc -->
+# Gavin-OP.github.io _(Gavin's Website & Notes System)_ <!-- omit in toc -->
 
-![Website Homepage](./public/image/sample_homepage.png)
+![Website Homepage](https://gavin-op.github.io/image/sample_homepage.png)
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-The personal website for Gavin to showcase his skills, archive memories, and record his personal life.  
-
-The website is build based on ReactJS, HTML, CSS, NodeJS, and Express. The repo contains the design, documentation, and implementation of Gavin's personal website.
+Gavin's personal website and notes system, built using ReactJS, HTML, CSS, NodeJS, and Markdown. This repository contains the design, documentation, and implementation of the website and notes.  
 
 ## Table of Contents <!-- omit in toc -->
 
 - [Install](#install)
 - [Usage](#usage)
+- [Deployment](#deployment)  
 - [Todo List](#todo-list)
 - [References](#references)
 - [Contributing](#contributing)
@@ -20,8 +19,8 @@ The website is build based on ReactJS, HTML, CSS, NodeJS, and Express. The repo 
 ## Install  
 
 1. Install [NodeJS, npm](https://nodejs.org/en/download) and [Git](https://git-scm.com/downloads).
-2. Open terminal in the directory where you want to install the repo
-3. Use the following command to clone the repo
+2. Open command prompt (terminal) in the directory where you want to install this repository (i.e. Gavin-OP.github.io). 
+3. Clone the repository using following command in command prompt (terminal). 
 
    ```shell
    git clone https://github.com/Gavin-OP/Gavin-OP.github.io.git
@@ -29,10 +28,27 @@ The website is build based on ReactJS, HTML, CSS, NodeJS, and Express. The repo 
 
 ## Usage
 
-- run `npm install` to install all dependencies
-- run `npm start` to start the website locally  
-- run `npm run deploy` to build the website and deploy to gh-pages branch  
-- update master branch by git
+1. Open command prompt (terminal) inside the cloned repository. 
+2. Install all required dependencies by running:
+   
+   ```shell
+   npm install
+   ```
+
+3. Configure the project by setting up environment variables in a `.env` file. The content in the `.env` file can be:
+   ```shell
+   GITHUB_APP=<your token>
+   ```
+   
+3. Start the website locally by running: 
+
+   ```
+   npm start
+   ```
+
+## Deployment
+
+Pushing changes to the `master` branch will automatically trigger the build process. The website will be built and the output will be pushed to the `gh-pages` branch, which will then deploy the website. **Ensure that all changes are thoroughly tested before pushing to `master`. 
 
 ## Todo List
 
@@ -44,14 +60,13 @@ The website is build based on ReactJS, HTML, CSS, NodeJS, and Express. The repo 
 ## References
 
 [25 React Website Design Examples We Love](https://blog.hubspot.com/website/react-websites-examples)  
-[How To Create A Website Like Apple](https://internetdevels.com/blog/how-to-create-a-website-like-apple)
-
+[How To Create A Website Like Apple](https://internetdevels.com/blog/how-to-create-a-website-like-apple)  
 [终极解决：Error: error:0308010C:digital envelope routines::unsupported-CSDN博客](https://blog.csdn.net/m0_48300767/article/details/131450325)  
-[react-pdf](https://react-pdf.org/)
+[react-pdf](https://react-pdf.org/)  
 
 ## Contributing
 
-PRs and [issues](https://github.com/Gavin-OP/Gavin-OP.github.io/issues) are gladly accepted!  
+Contributions are welcome! [PRs](https://github.com/Gavin-OP/Gavin-OP.github.io/pulls) and [issues](https://github.com/Gavin-OP/Gavin-OP.github.io/issues) are gladly accepted. Notes System NEED contributors!!  
 
 ## License  
 
