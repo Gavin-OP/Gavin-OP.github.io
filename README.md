@@ -52,17 +52,16 @@ Pushing changes to the `master` branch will automatically trigger the build proc
 
 ## Todo List
 
-- [ ] ⭐⭐⭐⭐⭐Design the website layout, what should be included??? reference [How to jazz up your website like Apple with JavaScript](https://medium.com/geekculture/how-to-jazz-up-your-website-like-apple-with-javascript-eed2bf227fec)
-- [ ] ⭐⭐Footer change hover CSS
-- [ ] ⭐html header, footer, and body
-- [ ] ⭐Add a NodeJS backend server to serve all the files, reference [How to Create a React App with a Node Backend: The Complete Guide](https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/)
+- [ ] Design the website layout, what should be included?[^1]
+- [ ] Add a NodeJS backend server to serve all the files.[^2]  
+
+[^1]: reference [How to jazz up your website like Apple with JavaScript](https://medium.com/geekculture/how-to-jazz-up-your-website-like-apple-with-javascript-eed2bf227fec)  
+[^2]: reference [How to Create a React App with a Node Backend: The Complete Guide](https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/)  
 
 ## References
 
 [25 React Website Design Examples We Love](https://blog.hubspot.com/website/react-websites-examples)  
 [How To Create A Website Like Apple](https://internetdevels.com/blog/how-to-create-a-website-like-apple)  
-[终极解决：Error: error:0308010C:digital envelope routines::unsupported-CSDN博客](https://blog.csdn.net/m0_48300767/article/details/131450325)  
-[react-pdf](https://react-pdf.org/)  
 
 ## Contributing
 
