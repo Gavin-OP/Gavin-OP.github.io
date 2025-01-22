@@ -72,6 +72,7 @@ export class GitHubService {
           recursive: true,
         }
       );
+      console.log("fetching file tree");
 
       return this.transformGitHubTree(response.data.tree);
     } catch (error) {
@@ -94,7 +95,7 @@ export class GitHubService {
   async getFileContent(path) {
     // check whether the path is valid, if not, display the default file
     const defaultPath = `notes/disclaimer.md`;
-    const validPath = await this.isValidPath(path) ? path : defaultPath;
+    const validPath = (await this.isValidPath(path)) ? path : defaultPath;
 
     try {
       const response = await fetch(`${validPath}`);
