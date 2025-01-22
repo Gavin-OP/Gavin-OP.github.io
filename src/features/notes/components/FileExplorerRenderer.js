@@ -33,10 +33,10 @@ const FileExplorerRenderer = ({
     if (explorerData.isFolder) {
       setExpand(!expand);
       console.log("Folder Clicked: ", explorerData.path);
-      // onFolderClick && onFolderClick(explorerData.path);
+      onFolderClick && onFolderClick(explorerData.path);
     } else {
       console.log("File Clicked: ", explorerData.path);
-      // onFileClick && onFileClick(explorerData.path);
+      onFileClick && onFileClick(explorerData.path);
     }
   };
 
