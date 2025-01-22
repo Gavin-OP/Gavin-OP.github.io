@@ -36,3 +36,7 @@ If want to create a branch to upload the notes, one can name the branch as notes
    - OP: FINA4400, FINA4380
 
 - [ ] Notes Menu Design
+
+## References
+
+- [基于图论的思维导图开源软件：ProjectGraph 1.0宣传片](https://www.bilibili.com/video/BV1W4k7YqEgU/)
