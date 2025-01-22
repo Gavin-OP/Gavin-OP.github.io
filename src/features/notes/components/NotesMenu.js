@@ -1,5 +1,6 @@
 // use https://api.github.com/repos/Gavin-OP/Gavin-OP.github.io/contents/public/file?ref=master to get the file list
 // https://api.github.com/repos/Gavin-OP/Gavin-OP.github.io/contents/<foldername>?ref=<branch_name>
+// Should seperate the notes menu renderer and fetch file. 
 // TODO
 // 1. Render too slow
 // 2. Icon to display menu and close menu
@@ -7,16 +8,17 @@
 // 4. Show the parent folder tree if click on a file
 
 
+
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Octokit } from '@octokit/core';
 import '../styles/NotesMenu.css';
-import FileExplorer from './FileExplorer';
+import FileExplorerRenderer from './FileExplorerRenderer';
 import { shadesOfPurple } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
 
-const NotesMenu = ({ currentPath }) => {
+const NotesMenu = ({ fileTree, currentPath }) => {
     const [files, setFiles] = useState([]);
     const [fileContent, setFileContent] = useState(null);
     const navigate = useNavigate();
@@ -160,7 +162,7 @@ const NotesMenu = ({ currentPath }) => {
         <div className="notes-menu">
             {/* {renderFiles(files)} */}
             {files.length > 0 && (
-                <FileExplorer explorerData={{
+                <FileExplorerRenderer explorerData={{
                     name: 'notes', isFolder: true, items: files
                     // .map(file => ({
                     //     name: file.name,
@@ -172,6 +174,8 @@ const NotesMenu = ({ currentPath }) => {
                     onFolderClick={handleFolderClick}
                     onFileClick={handleFileClick}
                 />
+
+                // <FileExplorerRenderer explorerData={{fileTree}}/>
             )}
         </div>
     );
