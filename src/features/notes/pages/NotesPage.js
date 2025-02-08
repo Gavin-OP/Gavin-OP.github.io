@@ -47,15 +47,13 @@
 
 // export default NotesPage;
 
-import React from "react";
-import { GitHubService } from "../../../services/GitHub";
-import { GITHUB_CONFIG } from "../../../utils/Constants";
+import React, { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useNotes } from "../hooks/useNotes";
 import MarkdownRenderer from "../components/MarkdownRenderer";
 import FileExplorerRenderer from "../components/FileExplorerRenderer";
-import { useNotes } from "../hooks/useNotes";
-import { useNavigate } from "react-router-dom";
 
-const TestPage = () => {
+const NotesPage = () => {
   const {
     fileTree,
     currentContent,
@@ -65,15 +63,25 @@ const TestPage = () => {
     currentPath,
   } = useNotes();
   const navigate = useNavigate();
+  const location = useLocation();
 
+  // update current path based on input URL
+  useEffect(() => {
+    const path = location.pathname.replace("/notes/", "notes/");
+    if (path !== currentPath) {
+      setCurrentPath(path);
+    }
+  }, [location.pathname, currentPath, setCurrentPath]);
+
+  // handle file and folder clicks
   const handleFileClick = (path) => {
     setCurrentPath(path);
-    navigate(`${path.replace("notes/", "")}`);
+    navigate(`/${path}`);
   };
 
   const handleFolderClick = (path) => {
     setCurrentPath(path);
-    navigate(`${path.replace("notes/", "")}`);
+    navigate(`/${path}`);
   };
 
   // return (
@@ -117,4 +125,4 @@ const TestPage = () => {
   );
 };
 
-export default TestPage;
+export default NotesPage;
