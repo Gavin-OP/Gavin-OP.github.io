@@ -33,7 +33,7 @@
  * 3. Handle the current path highlighting.
  */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   VscChevronRight,
   VscChevronDown,
@@ -49,6 +49,13 @@ const FileExplorerRenderer = ({
   onFolderClick,
 }) => {
   const [expand, setExpand] = useState(false);
+
+  // expand folder if currentPath includes the folder path
+  useEffect(() => {
+    if (explorerData && currentPath.startsWith(explorerData.path)) {
+      setExpand(true);
+    }
+  }, [currentPath, explorerData]);
 
   // if explorerData is null or undefined, return null
   if (!explorerData) {
