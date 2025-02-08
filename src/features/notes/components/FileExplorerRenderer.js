@@ -52,22 +52,16 @@ const FileExplorerRenderer = ({
 
   // if explorerData is null or undefined, return null
   if (!explorerData) {
-    console.log("explorerData", explorerData);
     return null;
   }
-
-  console.log("explorerData", explorerData);
-  console.log("currentPath in FileExplorerRenderer: ", currentPath);
 
   // handle click event for folder and file
   const handleClick = (e) => {
     e.stopPropagation();
     if (explorerData.isFolder) {
       setExpand(!expand);
-      console.log("Folder Clicked: ", explorerData.path);
       onFolderClick && onFolderClick(explorerData.path);
     } else {
-      console.log("File Clicked: ", explorerData.path);
       onFileClick && onFileClick(explorerData.path);
     }
   };
@@ -75,7 +69,6 @@ const FileExplorerRenderer = ({
   // style for current path
   const isCurrentPath = explorerData.path === currentPath;
   const itemStyle = { fontWeight: isCurrentPath ? "bold" : "normal" };
-  console.log("isCurrentPath: ", isCurrentPath);
 
   return (
     <div>
