@@ -1,10 +1,31 @@
-// TODO
-// 1. inventory?
-// 2. test getFileContent
+/**
+ * GitHubService Class
+ *
+ * This class centralizes all GitHub API calls. It handles fetching the file tree
+ * and the content of individual files from a GitHub repository. It also provides
+ * utility functions to transform the file tree into a hierarchical structure.
+ *
+ * Constructor Parameters:
+ * - owner: String representing the GitHub repository owner.
+ * - repo: String representing the GitHub repository name.
+ * - branch: String representing the branch name.
+ * - base_path: String representing the base path for the notes.
+ * - auth: String representing the GitHub authentication token.
+ *
+ * Methods:
+ * - transformGitHubTree: Transforms a flat GitHub tree into a hierarchical structure.
+ * - getAllNotes: Fetches the entire file tree from the GitHub repository.
+ * - isValidPath: Checks if a given path is valid.
+ * - getFileContent: Fetches the content of a file from the GitHub repository.
+ *
+ * TODO:
+ * 1. Add inventory functionality.
+ * 2. Test the getFileContent method.
+ */
 import { Octokit } from "@octokit/core";
 import { GITHUB_CONFIG } from "../utils/Constants";
 
-// Centralize all GitHub API calls
+// centralize all GitHub API calls
 export class GitHubService {
   constructor(
     owner = GITHUB_CONFIG.owner,
@@ -22,8 +43,12 @@ export class GitHubService {
     });
   }
 
+  /**
+   * Transforms a flat GitHub tree into a hierarchical structure.
+   * @param {Array} tree - The flat GitHub tree.
+   * @returns {Object} - The hierarchical tree structure.
+   */
   transformGitHubTree(tree) {
-    // Transform flat tree into hierarchical structure
     // if want any order or inventory, add here
     const root = {
       name: "notes",
@@ -61,6 +86,10 @@ export class GitHubService {
     return root;
   }
 
+  /**
+   * Fetches the entire file tree from the GitHub repository.
+   * @returns {Object} - The hierarchical file tree structure.
+   */
   async getAllNotes() {
     try {
       const response = await this.octokit.request(
@@ -81,6 +110,11 @@ export class GitHubService {
     }
   }
 
+  /**
+   * Checks if a given path is valid.
+   * @param {String} path - The path to check.
+   * @returns {Boolean} - True if the path is valid, false otherwise.
+   */
   async isValidPath(path) {
     try {
       const response = await fetch(`${path}`);
@@ -92,6 +126,11 @@ export class GitHubService {
     }
   }
 
+  /**
+   * Fetches the content of a file from the GitHub repository.
+   * @param {String} path - The path of the file to fetch.
+   * @returns {String} - The content of the file.
+   */
   async getFileContent(path) {
     // check whether the path is valid, if not, display the default file
     const defaultPath = `notes/disclaimer.md`;

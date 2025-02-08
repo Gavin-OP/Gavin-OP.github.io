@@ -1,6 +1,34 @@
+/**
+ * useNotes Hook
+ *
+ * This custom hook is responsible for managing the state and logic related to
+ * fetching and displaying notes from a GitHub repository. It handles fetching
+ * the file tree and the content of individual files, and provides functions
+ * to update the current path.
+ *
+ * Parameters:
+ * - initialPath: String representing the initial path to be loaded.
+ *
+ * State:
+ * - fileTree: Object containing the structure of the file tree.
+ * - currentContent: String containing the content of the currently selected file.
+ * - currentPath: String representing the current selected path.
+ * - isLoading: Boolean indicating whether data is being loaded.
+ * - error: String containing any error message encountered during fetching.
+ *
+ * Functions:
+ * - setCurrentPath: Function to update the current path and fetch the corresponding content.
+ *
+ * Usage:
+ * const { fileTree, currentContent, isLoading, error, setCurrentPath } = useNotes();
+ *
+ * Example:
+ * const { fileTree, currentContent, isLoading, error, setCurrentPath } = useNotes("notes/README.md");
+ *
+ */
 import { useState, useEffect, useMemo } from "react";
-import { GitHubService } from "../../../services/GitHub";
 import { GITHUB_CONFIG } from "../../../utils/Constants";
+import { GitHubService } from "../../../services/GitHub";
 
 export function useNotes(initialPath = "disclaimer") {
   const [state, setState] = useState({
@@ -67,6 +95,7 @@ export function useNotes(initialPath = "disclaimer") {
     fetchContent();
   }, [state.currentPath]);
 
+  // function to update the current path
   const setCurrentPath = (path) => {
     setState((prev) => ({ ...prev, currentPath: path }));
   };
