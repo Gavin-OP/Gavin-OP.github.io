@@ -1,15 +1,34 @@
-// This is a file to render the markdown file to HTML.
-// It takes the Markdown file string as input and renders it to HTML.
-// TODO
-// 1. Add the clickable checkbox
-// 2. Add support for Mermaid
-// 3. Add a report button for the markdown files, so that can report mistakes
-// 4. add a button to copy the code in the markdown file
-// 5. Convert the markdown file to pdf
+/**
+ * MarkdownRenderer Component
+ *
+ * This component is responsible for rendering markdown content to HTML.
+ * It takes a markdown string as input and renders it using various plugins
+ * to support features like GitHub Flavored Markdown (GFM), math equations,
+ * syntax highlighting, and raw HTML.
+ *
+ * Props:
+ * - markdownContent: String containing the markdown content to be rendered.
+ *
+ * Features:
+ * - Supports GitHub Flavored Markdown (GFM) for tables, strikethrough, etc.
+ * - Renders math equations using KaTeX.
+ * - Highlights code blocks using react-syntax-highlighter.
+ * - Supports raw HTML rendering.
+ * - Handles smooth scrolling to footnotes.
+ * - Resolves relative image paths to be relative to the public folder.
+ * - Makes LaTeX blocks scrollable if they are too wide.
+ *
+ * TODO:
+ * 1. Add clickable checkboxes.
+ * 2. Add support for Mermaid diagrams.
+ * 3. Add a report button for reporting mistakes in markdown files.
+ * 4. Add a button to copy code blocks.
+ * 5. Add functionality to convert markdown to PDF.
+ */
 
 import React, { useState, useEffect, useCallback } from "react";
-import ReactMarkdown from "react-markdown";
 import { useLocation } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeKatex from "rehype-katex";
@@ -24,7 +43,6 @@ import "../styles/MarkdownRenderer.css";
 // import 'mermaid/dist/mermaid.esm.min.mjs';
 
 const MarkdownRenderer = ({ markdownContent }) => {
-  const location = useLocation();
   // const [checkboxStates, setCheckboxStates] = useState({});
 
   // scroll to footnotes and scroll back
@@ -36,6 +54,8 @@ const MarkdownRenderer = ({ markdownContent }) => {
   };
 
   // get current url for footnotes
+  // get the current location make footnotes scrollable
+  const location = useLocation();
   const getCurrentUrl = () => {
     return `${window.location.origin}${location.pathname}${location.hash}`;
   };
@@ -91,7 +111,6 @@ const MarkdownRenderer = ({ markdownContent }) => {
           //         return <input {...props} />;
           //     },
           // }}
-
 
           components={{
             // make the code block formatted
