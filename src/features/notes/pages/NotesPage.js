@@ -52,6 +52,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useNotes } from "../hooks/useNotes";
 import MarkdownRenderer from "../components/MarkdownRenderer";
 import FileExplorerRenderer from "../components/FileExplorerRenderer";
+import "../styles/NotesPage.css";
 
 const NotesPage = () => {
   const {
@@ -106,7 +107,7 @@ const NotesPage = () => {
     <div
       style={{ display: "flex", padding: "20px", backgroundColor: "#f5f5f5" }}
     >
-      <div style={{ flex: 1, marginRight: "20px" }}>
+      <div className="notes-menu" style={{ flex: 1, marginRight: "20px" }}>
         <FileExplorerRenderer
           explorerData={fileTree}
           currentPath={currentPath}
