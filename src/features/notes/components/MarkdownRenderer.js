@@ -43,9 +43,13 @@ import "../styles/MarkdownRenderer.css";
 // import 'mermaid/dist/mermaid.esm.min.mjs';
 
 const MarkdownRenderer = ({ markdownContent }) => {
-  // const [checkboxStates, setCheckboxStates] = useState({});
+  // get current url to make the footnotes clickable
+  const location = useLocation();
+  const getCurrentUrl = () => {
+    return `${window.location.origin}${location.pathname}${location.hash}`;
+  };
 
-  // scroll to footnotes and scroll back
+  // scroll to footnotes and scroll back smoothly
   const handleSmoothScroll = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -53,14 +57,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
     }
   };
 
-  // get current url for footnotes
-  // get the current location make footnotes scrollable
-  const location = useLocation();
-  const getCurrentUrl = () => {
-    return `${window.location.origin}${location.pathname}${location.hash}`;
-  };
-
-  // make relative path import to correct path relative to public folder
+  // make relative path import to correct path relative to public folder on deployment
   const resolveRelativePath = (base, relative) => {
     const stack = base.split("/");
     const parts = relative.split("/");
@@ -74,6 +71,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
   };
 
   // make the checkbox can be checked or unchecked
+  // const [checkboxStates, setCheckboxStates] = useState({});
   // const handleCheckboxChange = (event) => {
   //     console.log(event.target.checked);
   // }
@@ -100,20 +98,8 @@ const MarkdownRenderer = ({ markdownContent }) => {
           className="markdown-body"
           remarkPlugins={[remarkGfm, remarkMath]}
           rehypePlugins={[rehypeRaw, rehypeKatex]}
-          // make the checkbox can be check or unchecked, use handleCheckBoxChange
-          // components={{
-          //     input({ node, ...props }) {
-          //         console.log(node.position);
-          //         if (props.type === 'checkbox') {
-          //             const index = node && node.position && node.position.start ? node.position.start.offset : null;
-          //             return <input type="checkbox" {...props} disabled={false} checked={checkboxStates[index] || false} onChange={(event) => handleCheckboxChange(event, index)}/>;
-          //         }
-          //         return <input {...props} />;
-          //     },
-          // }}
-
           components={{
-            // make the code block formatted
+            // make the code block formatted and syntax highlighted
             pre({ node, className, children, ...props }) {
               const codeNode = node.children[0];
               const match = /language-(\w+)/.exec(
@@ -135,7 +121,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
               );
             },
 
-            // make the footnote link clickable
+            // make the footnote link clickable and scroll to the footnote
             a({ node, ...props }) {
               if (
                 props.href &&
@@ -197,7 +183,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
               return <span {...props}>{props.children}</span>;
             },
 
-            // check box
+            // check box try 1
             // input({ node, ...props }) {
             //   if (props.type === "checkbox") {
             //     const index =
@@ -216,6 +202,16 @@ const MarkdownRenderer = ({ markdownContent }) => {
             //   }
             //   return <input {...props} />;
             // },
+
+            // check box try 2
+            //     input({ node, ...props }) {
+            //         console.log(node.position);
+            //         if (props.type === 'checkbox') {
+            //             const index = node && node.position && node.position.start ? node.position.start.offset : null;
+            //             return <input type="checkbox" {...props} disabled={false} checked={checkboxStates[index] || false} onChange={(event) => handleCheckboxChange(event, index)}/>;
+            //         }
+            //         return <input {...props} />;
+            //     },
           }}
         >
           {markdownContent}
