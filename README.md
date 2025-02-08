@@ -69,4 +69,4 @@ Contributions are welcome! [PRs](https://github.com/Gavin-OP/Gavin-OP.github.io/
 
 ## License  
 
-[UNLICENSE](./LICENSE)
+[MIT LICENSE](./LICENSE)
