@@ -1,13 +1,44 @@
-// TODO
-// 1. Do not show .md extension
-// 2. Where should I put the onclick logic?
-// 3. how should we deal with current path?
+/**
+ * FileExplorerRenderer Component
+ *
+ * This component is responsible for rendering a file explorer tree structure.
+ * It displays folders and files, and allows users to expand/collapse folders
+ * and select files. The current path is highlighted in bold.
+ *
+ * Props:
+ * - explorerData: Object containing the file/folder structure. Each item in the structure
+ *   should have the following properties:
+ *   - name: The name of the file or folder.
+ *   - path: The path (start with `notes/`) of the file or folder.
+ *   - isFolder: Boolean indicating whether the item is a folder.
+ *   - items: Array of child items (if the item is a folder).
+ * - currentPath: String representing the current selected path (start with `notes/`).
+ * - onFileClick: Function to handle file click events. Receives the file path as an argument.
+ * - onFolderClick: Function to handle folder click events. Receives the folder path as an argument.
+ *
+ * State:
+ * - expand: Boolean indicating whether the folder is expanded.
+ *
+ * Usage:
+ * <FileExplorerRenderer
+ *   explorerData={fileTree}
+ *   currentPath={currentPath}
+ *   onFileClick={handleFileClick}
+ *   onFolderClick={handleFolderClick}
+ * />
+ *
+ * TODO:
+ * 1. Do not show .md extension in file names.
+ * 2. Determine where to put the onclick logic.
+ * 3. Handle the current path highlighting.
+ */
+
 import { useState } from "react";
 import {
   VscChevronRight,
   VscChevronDown,
-  VscFolder,
   VscFile,
+  // VscFolder,
 } from "react-icons/vsc";
 import "../styles/FileExplorerRenderer.css";
 
@@ -28,6 +59,7 @@ const FileExplorerRenderer = ({
   console.log("explorerData", explorerData);
   console.log("currentPath in FileExplorerRenderer: ", currentPath);
 
+  // handle click event for folder and file
   const handleClick = (e) => {
     e.stopPropagation();
     if (explorerData.isFolder) {
@@ -40,16 +72,16 @@ const FileExplorerRenderer = ({
     }
   };
 
+  // style for current path
   const isCurrentPath = explorerData.path === currentPath;
-  console.log("isCurrentPath: ", isCurrentPath);
-
   const itemStyle = { fontWeight: isCurrentPath ? "bold" : "normal" };
+  console.log("isCurrentPath: ", isCurrentPath);
 
   return (
     <div>
       <div
         className={`file-explorer-item ${
-          explorerData.isFolder ? "folder" : "folder"
+          explorerData.isFolder ? "folder" : "file"
         }`}
         onClick={handleClick}
         style={itemStyle}
@@ -88,55 +120,6 @@ const FileExplorerRenderer = ({
       )}
     </div>
   );
-
-  //     if (explorerData.isFolder) {
-  //         // render folder component
-  //         return (
-  //             <div>
-  //                 {/* display folder expand icon, folder icon, and folder name */}
-  //                 <div
-  //                     className="folder"
-  //                     style={{ cursor: "pointer" }}
-  //                     onClick={() => setExpand(!expand)}
-  //                 >
-  //                     <span>
-  //                         {expand ? <VscChevronDown /> : <VscChevronRight />}
-  //                         {/* <VscFolder /> */}
-  //                         <label>{explorerData.name}</label>
-  //                     </span>
-  //                 </div>
-
-  //                 {/* if expand the folder, then render the content inside the folder */}
-  //                 <div
-  //                     id="folderContainer"
-  //                     style={{ display: expand ? "block" : "none", marginLeft: 15 }}
-  //                 >
-  //                     {explorerData.items.map((item, index) => {
-  //                         console.log(explorerData);
-  //                         return (
-  //                             <FileExplorer
-  //                                 explorerData={item}
-  //                                 key={index}
-  //                                 onFolderClick={onFolderClick}
-  //                                 onFileClick={onFileClick}
-  //                             />
-  //                         );
-  //                     })}
-  //                 </div>
-  //             </div>
-  //         );
-
-  //     } else {
-  //         // render file component
-  //         return (
-  //             <div className="folder">
-  //                 <span>
-  //                     <VscFile />
-  //                     <label>{explorerData.name}</label>
-  //                 </span>
-  //             </div>
-  //         );
-  //     }
 };
 
 export default FileExplorerRenderer;
