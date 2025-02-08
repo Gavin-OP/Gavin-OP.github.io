@@ -9,9 +9,9 @@ Special thanks to all the contributors who have generously shared their knowledg
 - [Anita](mailto:1155173850@link.cuhk.edu.hk)  
 - [Gavin OP](mailto:HaoxiangZhang@link.cuhk.edu.hk)
 - [QIU Kexin (Chloe)](mailto:1155173885@link.cuhk.edu.hk)  
+- [Rosa](mailto:ruoshui2021@gmail.com)
 - [WANG Yuxin (Eleanor)](mailto:yuxin0359@gmail.com)  
 - [William](mailto:2004yangyilin@gmail.com)
-- [XIONG Ruoshui (Rosa)](mailto:ruoshui2021@gmail.com)
 - [ZHAI Yunxiao (Clay)](mailto:clay.zhai@link.cuhk.edu.hk)
 
 Thank you for your understanding and support.
