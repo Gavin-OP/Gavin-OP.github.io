@@ -1,15 +1,34 @@
-// This is a file to render the markdown file to HTML.
-// It takes the Markdown file string as input and renders it to HTML.
-// TODO
-// 1. Add the clickable checkbox
-// 2. Add support for Mermaid
-// 3. Add a report button for the markdown files, so that can report mistakes
-// 4. add a button to copy the code in the markdown file
-// 5. Convert the markdown file to pdf
+/**
+ * MarkdownRenderer Component
+ *
+ * This component is responsible for rendering markdown content to HTML.
+ * It takes a markdown string as input and renders it using various plugins
+ * to support features like GitHub Flavored Markdown (GFM), math equations,
+ * syntax highlighting, and raw HTML.
+ *
+ * Props:
+ * - markdownContent: String containing the markdown content to be rendered.
+ *
+ * Features:
+ * - Supports GitHub Flavored Markdown (GFM) for tables, strikethrough, etc.
+ * - Renders math equations using KaTeX.
+ * - Highlights code blocks using react-syntax-highlighter.
+ * - Supports raw HTML rendering.
+ * - Handles smooth scrolling to footnotes.
+ * - Resolves relative image paths to be relative to the public folder.
+ * - Makes LaTeX blocks scrollable if they are too wide.
+ *
+ * TODO:
+ * 1. Add clickable checkboxes.
+ * 2. Add support for Mermaid diagrams.
+ * 3. Add a report button for reporting mistakes in markdown files.
+ * 4. Add a button to copy code blocks.
+ * 5. Add functionality to convert markdown to PDF.
+ */
 
 import React, { useState, useEffect, useCallback } from "react";
-import ReactMarkdown from "react-markdown";
 import { useLocation } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeKatex from "rehype-katex";
@@ -24,10 +43,13 @@ import "../styles/MarkdownRenderer.css";
 // import 'mermaid/dist/mermaid.esm.min.mjs';
 
 const MarkdownRenderer = ({ markdownContent }) => {
+  // get current url to make the footnotes clickable
   const location = useLocation();
-  // const [checkboxStates, setCheckboxStates] = useState({});
+  const getCurrentUrl = () => {
+    return `${window.location.origin}${location.pathname}${location.hash}`;
+  };
 
-  // scroll to footnotes and scroll back
+  // scroll to footnotes and scroll back smoothly
   const handleSmoothScroll = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -35,12 +57,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
     }
   };
 
-  // get current url for footnotes
-  const getCurrentUrl = () => {
-    return `${window.location.origin}${location.pathname}${location.hash}`;
-  };
-
-  // make relative path import to correct path relative to public folder
+  // make relative path import to correct path relative to public folder on deployment
   const resolveRelativePath = (base, relative) => {
     const stack = base.split("/");
     const parts = relative.split("/");
@@ -54,6 +71,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
   };
 
   // make the checkbox can be checked or unchecked
+  // const [checkboxStates, setCheckboxStates] = useState({});
   // const handleCheckboxChange = (event) => {
   //     console.log(event.target.checked);
   // }
@@ -80,21 +98,8 @@ const MarkdownRenderer = ({ markdownContent }) => {
           className="markdown-body"
           remarkPlugins={[remarkGfm, remarkMath]}
           rehypePlugins={[rehypeRaw, rehypeKatex]}
-          // make the checkbox can be check or unchecked, use handleCheckBoxChange
-          // components={{
-          //     input({ node, ...props }) {
-          //         console.log(node.position);
-          //         if (props.type === 'checkbox') {
-          //             const index = node && node.position && node.position.start ? node.position.start.offset : null;
-          //             return <input type="checkbox" {...props} disabled={false} checked={checkboxStates[index] || false} onChange={(event) => handleCheckboxChange(event, index)}/>;
-          //         }
-          //         return <input {...props} />;
-          //     },
-          // }}
-
-
           components={{
-            // make the code block formatted
+            // make the code block formatted and syntax highlighted
             pre({ node, className, children, ...props }) {
               const codeNode = node.children[0];
               const match = /language-(\w+)/.exec(
@@ -116,7 +121,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
               );
             },
 
-            // make the footnote link clickable
+            // make the footnote link clickable and scroll to the footnote
             a({ node, ...props }) {
               if (
                 props.href &&
@@ -178,7 +183,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
               return <span {...props}>{props.children}</span>;
             },
 
-            // check box
+            // check box try 1
             // input({ node, ...props }) {
             //   if (props.type === "checkbox") {
             //     const index =
@@ -197,6 +202,16 @@ const MarkdownRenderer = ({ markdownContent }) => {
             //   }
             //   return <input {...props} />;
             // },
+
+            // check box try 2
+            //     input({ node, ...props }) {
+            //         console.log(node.position);
+            //         if (props.type === 'checkbox') {
+            //             const index = node && node.position && node.position.start ? node.position.start.offset : null;
+            //             return <input type="checkbox" {...props} disabled={false} checked={checkboxStates[index] || false} onChange={(event) => handleCheckboxChange(event, index)}/>;
+            //         }
+            //         return <input {...props} />;
+            //     },
           }}
         >
           {markdownContent}

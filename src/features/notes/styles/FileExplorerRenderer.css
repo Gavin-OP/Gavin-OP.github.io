@@ -1,11 +1,11 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* .folderContainerBody {
@@ -15,112 +15,126 @@ body {
 } */
 
 .empty-state {
-    margin: 5px;
-    display: flex;
-    height: calc(100vh - 10px);
-    align-items: center;
-    justify-content: center;
-}
-
-/* .folder-container {
-    padding: 5px;
-    background-color: #393E41;
-    display: flex;
-    flex-direction: column;
-} */
-
-.folder:hover {
-    /* background-color: rgb(120, 120, 120); */
-    border-radius: 5px;
-}
-
-.folder:hover .buttons-container {
-    visibility: visible;
-
-}
-
-.folder>div>button {
-    font-size: 16px;
-}
-
-.folder {
-    /* background-color: #393E41; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 3px 4px;
-    width: 300px;
-    position: relative;
-}
-
-.folder>span {
-    /* color: #fff; */
-
-}
-
-button {
-    background-color: transparent;
-    color: #fff;
-    border: 0;
-    cursor: pointer;
-    padding: 0 4px;
-}
-
-.folder>span>label {
-    display: inline-block;
-    margin: 3px 5px;
-    position: absolute;
-    top: 1.5px;
-}
-
-.addItem {
-    background-color: #393E41;
-    align-items: center;
-    padding: 5px 3px;
-    width: 300px;
-    position: relative;
-}
-
-.addItem>span {
-    color: white;
-    padding-right: 5px;
-}
-
-.buttons-container {
-    display: flex;
-    visibility: hidden;
-
-}
-
-.folder>span>input {
-    width: 75%;
-    margin-left: 5px;
-}
-
-.file-explorer {
-    font-size: 14px;
-    user-select: none;
-    width: 300px;
+  margin: 5px;
+  display: flex;
+  height: calc(100vh - 10px);
+  align-items: center;
+  justify-content: center;
 }
 
 .file-explorer-item {
-    display: flex;
-    align-items: center;
-    padding: 4px 8px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  /* color: #282828; */
+  color: #242424;
+  /* cursor: pointer; */
 }
 
 .file-explorer-item:hover {
-    /* background-color: rgba(0, 0, 0, 0.05); */
+  /* color: black;
+  font-weight: bolder; */
+  background-color: rgba(0, 0, 0, 0.05);
 }
-
-
 
 .file-explorer-children {
-    display:block;
-    margin-left: 16px;
-    border-left: 1px solid #e0e0e0;
+  display: block;
+  margin-left: 16px;
+  border-left: 1px solid #e0e0e07c;
 }
+
+.folder,
+.file {
+  /* background-color: #393E41; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 4px;
+  width: 300px;
+  position: relative;
+  cursor: pointer;
+}
+
+.folder:hover,
+.file:hover {
+  /* background-color: rgb(120, 120, 120); */
+  border-radius: 5px;
+}
+
+.folder > span,
+.file > span {
+  /* color: #fff; */
+}
+
+.folder > span > label,
+.file > span > label {
+  display: inline-block;
+  margin: 3px 5px;
+  position: absolute;
+  top: 1.5px;
+}
+
+/* .folder > span > input {
+  width: 75%;
+  margin-left: 5px;
+}
+
+.folder > div > button {
+  font-size: 16px;
+} */
+
+/* .file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 4px;
+  width: 300px;
+  position: relative;
+  cursor: pointer;
+} */
+
+/* .file > span > label {
+  display: inline-block;
+  margin: 3px 5px;
+  position: absolute;
+  top: 1.5px;
+} */
+/* .folder:hover .buttons-container {
+  visibility: visible;
+} */
+
+/* button {
+  background-color: transparent;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  padding: 0 4px;
+} */
+
+/* .buttons-container {
+  display: flex;
+  visibility: hidden;
+} */
+
+/* .addItem {
+  background-color: #393e41;
+  align-items: center;
+  padding: 5px 3px;
+  width: 300px;
+  position: relative;
+} */
+
+/* .addItem > span {
+  color: white;
+  padding-right: 5px;
+} */
+
+/* .file-explorer {
+  font-size: 14px;
+  user-select: none;
+  width: 300px;
+} */
+
 /* 
 .file-explorer {
     font-size: 14px;
