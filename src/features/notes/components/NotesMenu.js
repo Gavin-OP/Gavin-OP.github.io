@@ -12,7 +12,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Octokit } from '@octokit/core';
-import '../styles/NotesMenu.css';
+import '../styles/NotesPage.css';
 import FileExplorerRenderer from './FileExplorerRenderer';
 import { shadesOfPurple } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
