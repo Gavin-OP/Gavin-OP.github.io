@@ -49,13 +49,19 @@ const FileExplorerRenderer = ({
   onFolderClick,
 }) => {
   const [expand, setExpand] = useState(false);
+  const [hasExpanded, setHasExpanded] = useState(false);
 
-  // expand folder if currentPath includes the folder path
+  // expand folder if currentPath includes the folder path when component mounts
   useEffect(() => {
-    if (explorerData && currentPath.startsWith(explorerData.path)) {
+    if (
+      !hasExpanded &&
+      explorerData &&
+      currentPath.startsWith(explorerData.path)
+    ) {
       setExpand(true);
+      setHasExpanded(true);
     }
-  }, [currentPath, explorerData]);
+  }, [currentPath, explorerData, hasExpanded]);
 
   // if explorerData is null or undefined, return null
   if (!explorerData) {
