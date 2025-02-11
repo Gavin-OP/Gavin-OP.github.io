@@ -81,8 +81,8 @@ const NotesPage = () => {
   };
 
   const handleFolderClick = (path) => {
-    setCurrentPath(path);
-    navigate(`/${path}`);
+    // setCurrentPath(path);
+    // navigate(`/${path}`);
   };
 
   // return (
