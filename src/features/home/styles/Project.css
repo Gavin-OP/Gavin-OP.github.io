@@ -1,313 +1,309 @@
 .project-section {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    align-items: center;
-    margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  margin-bottom: 5rem;
 }
 
 .project-highlight {
-    float: right;
-    text-align: right;
-    background: linear-gradient(to right, #15e8ad, #37e96c, #03f6f4, #58b2fb, #0279ff, #5849b8);
-    font-weight: bold;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: 6rem;
-    padding-right: 5rem;
-    width: 60%;
+  float: right;
+  text-align: right;
+  background: linear-gradient(
+    to right,
+    #15e8ad,
+    #37e96c,
+    #03f6f4,
+    #58b2fb,
+    #0279ff,
+    #5849b8
+  );
+  font-weight: bold;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 6rem;
+  padding-right: 5rem;
+  width: 60%;
 }
 
-
-
 .project-cards-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    height: 600px;
-    max-width: 1500px;
-    width: calc((100%) - 4rem);
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  height: 600px;
+  max-width: 1500px;
+  width: calc((100%) - 4rem);
+  overflow: hidden;
 }
 
 .project-cards-wrapper {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: calc((100% * 2 / 2) + 4rem);
-    margin-bottom: 2rem;
-    height: 600px;
+  display: flex;
+  transition: transform 0.5s ease;
+  width: calc((100% * 2 / 2) + 4rem);
+  margin-bottom: 2rem;
+  height: 600px;
 }
 
 .project-item {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 
-    background-size: cover;
-    background-position: center;
-    background-color: #1d1f20;
+  background-size: cover;
+  background-position: center;
+  background-color: #1d1f20;
 
-    border-radius: 35px;
+  border-radius: 35px;
 
-    margin: 1rem;
-    padding-top: 2rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    width: 400px;
-    height: 100%;
+  margin: 1rem;
+  padding-top: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  width: 400px;
+  height: 100%;
 
-    cursor: pointer;
-    overflow: hidden;
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-
 .project-item.active {
-    flex: 1;
-    border-radius: 35px;
-    margin: 1rem;
-    padding-left: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  flex: 1;
+  border-radius: 35px;
+  margin: 1rem;
+  padding-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
 .project-content {
-    display: flex;
-    height: 98%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
+  display: flex;
+  height: 98%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .project-cards-container .project-item.active .project-content {
-    bottom: 20px;
-    margin-top: 1rem;
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  bottom: 20px;
+  margin-top: 1rem;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
 .project-image-container {
-    height: 370px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+  height: 370px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 1s cubic-bezier(0.05, 0.61, 0.41, 0.95), transform 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s cubic-bezier(0.05, 0.61, 0.41, 0.95),
+    transform 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
 .project-cards-container .project-item.active .project-image-container {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: inline-block;
-    opacity: 1;
-    pointer-events: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: inline-block;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .project-image {
-    height: 100%;
-    max-width: 490px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 1s cubic-bezier(0.05, 0.61, 0.41, 0.95), transform 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  height: 100%;
+  max-width: 490px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.05, 0.61, 0.41, 0.95),
+    transform 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
 .project-cards-container .project-item.active .project-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
 }
 
 .project-icons {
-    cursor: pointer;
-    position: absolute;
-    bottom: 50px;
-    right: 70px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  bottom: 50px;
+  right: 70px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  opacity: 0;
 }
 
-
 .project-icons button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #86868b;
-    /* opacity: 0; */
-    margin-right: 1rem;
-    /* Default: Hidden */
-    /* margin-left: auto; */
-    /* Push button to the right */
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #86868b;
+  /* opacity: 0; */
+  margin-right: 1rem;
+  /* Default: Hidden */
+  /* margin-left: auto; */
+  /* Push button to the right */
 }
 
 .project-cards-container .project-item .project-icons a {
-    pointer-events: auto;
+  pointer-events: auto;
 }
 
 .project-cards-container .project-item:not(.active) .project-icons a {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .project-cards-container .project-item.active .project-icons {
-    opacity: 1;
-    /* Active state: Visible */
-    transition: 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  opacity: 1;
+  /* Active state: Visible */
+  transition: 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
 .project-cards-container .project-item.active .project-icons button:hover {
-    color: #fff;
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  color: #fff;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
 /* project 1 */
 .project-detail1 {
-    text-align: center;
-    justify-content: center;
-    padding-top: 4rem;
-    pointer-events: none;
-    color: #89898d;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 1s cubic-bezier(0.05, 0.61, 0.41, 0.95), transform 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-    white-space: nowrap;
+  text-align: center;
+  justify-content: center;
+  padding-top: 4rem;
+  pointer-events: none;
+  color: #89898d;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.05, 0.61, 0.41, 0.95),
+    transform 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  white-space: nowrap;
 }
 
 .project-cards-container .project-item.active .project-detail1 {
-    padding-top: 4rem;
-    text-align: center;
-    justify-content: start;
-    color: #89898d;
-    display: block;
-    opacity: 1;
-    transition: 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  padding-top: 4rem;
+  text-align: center;
+  justify-content: start;
+  color: #89898d;
+  display: block;
+  opacity: 1;
+  transition: 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-
 .project-small-detail1 {
-    font-size: 40px;
-    font-weight: 700;
-    color: white;
-    display: inline-block;
-    opacity: 1;
-    height: auto;
-    transition: opacity 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), height 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  display: inline-block;
+  opacity: 1;
+  height: auto;
+  transition: opacity 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95),
+    height 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
 .project-cards-container .project-item.active .project-small-detail1 {
-    opacity: 0;
-    pointer-events: none;
-    transition: 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
 #project-wechat-analysis {
-    background-size: cover;
-    background-position: left center;
-    background-image: url(../../../../public/image/wechat_analysis_backgroud.png);
+  background-size: cover;
+  background-position: left center;
+  background-image: url(../../../../public/image/wechat_analysis_backgroud.png);
 }
 
 #project-wechat-analysis::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 #project-image1 {
-    height: 60%;
-    margin-top: 2rem;
-    max-width: 700px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+  height: 60%;
+  margin-top: 2rem;
+  max-width: 700px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
-
-
 
 /* project 3 */
 .project-detail3 {
-    text-align: center;
-    justify-content: center;
-    padding-top: 4rem;
-    color: #89898d;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 1s cubic-bezier(0.05, 0.61, 0.41, 0.95), transform 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-    white-space: nowrap;
+  text-align: center;
+  justify-content: center;
+  padding-top: 4rem;
+  color: #89898d;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.05, 0.61, 0.41, 0.95),
+    transform 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  white-space: nowrap;
 }
 
 .project-cards-container .project-item.active .project-detail3 {
-    padding-top: 4rem;
-    text-align: center;
-    justify-content: start;
-    color: #89898d;
-    display: block;
-    opacity: 1;
+  padding-top: 4rem;
+  text-align: center;
+  justify-content: start;
+  color: #89898d;
+  display: block;
+  opacity: 1;
 }
 
 .project-small-detail3 {
-    font-size: 40px;
-    font-weight: 700;
-    color: white;
-    display: inline-block;
-    transition: opacity 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), height 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-    opacity: 1;
-    height: auto;
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  display: inline-block;
+  transition: opacity 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95),
+    height 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  opacity: 1;
+  height: auto;
 }
 
 .project-cards-container .project-item.active .project-small-detail3 {
-    opacity: 0;
-    pointer-events: none;
-    transition: 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: 1.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
 #project-image3 {
-    height: 77%;
-    max-width: 700px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+  height: 77%;
+  max-width: 700px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* .projectcard-container .project-item .shadow {
     position: absolute;
@@ -388,8 +384,6 @@
 .projectcard-container .project-item:nth-child(5) .iconfont {
     color: #ac92ec;
 } */
-
-
 
 /* .projectcard-container .project-item.active .shadow {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.35) 65%, transparent);
