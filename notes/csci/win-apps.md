@@ -1,10 +1,10 @@
-# Windows电脑必装
+# Windows 电脑必装软件
 
 > 作者：OP
 >
 > 创作时间：2021/06/15
 >
-> 上次修改时间：2025/01/11
+> 上次修改时间：2025/03/22
 
 ## 编程相关软件
 
@@ -36,8 +36,9 @@
 
 ### Python
 
-- [x] Python 3.12
+- [x] Python 3.13
 - [x] Visual Studio Code[^1]
+- [ ] Cursor
 - [ ] Atom
 - [ ] Pycharm
 
@@ -56,6 +57,7 @@
 ### SQL
 
 - [ ] DBeaver
+- [ ] PostgreSQL
 - [ ] Access
 - [ ] SQL Server
 - [ ] SQLite
@@ -119,7 +121,6 @@
 - [ ] ~~CUHK Wifi Printing Drive~~
 
 
-
 ## 社交相关软件
 
 - [x] 微信
@@ -143,13 +144,11 @@
 - [ ] 阿里云盘
 
 
-
 ## 电脑清理相关软件
 
 - [x] LockHunter
 - [x] SpaceSniffer
 - [x] Geek Uninstaller
-
 
 
 ## 音乐相关软件
@@ -159,12 +158,11 @@
 - [ ] 网易云音乐[^4]
 
 
-
-### 金融相关软件
+## 金融相关软件
 
 - [ ] 东方财富终端
 - [ ] 富途牛牛
-
+- [ ] Bloomberg
 
 
 ## 其他软件
@@ -202,11 +200,9 @@
 - [ ] Better ChatGPT
 
 
-
 ## 字幕组
 
 - [ ] Aegisub
-
 
 
 ## 常用网址
@@ -226,9 +222,19 @@
 - [ ] [uupoop](https://www.uupoop.com/#/) (在线PS)
 - [ ] ~~[CUSIS]~~
 
+### AI 相关
+
+- [ ] 腾讯元宝
+- [ ] DeepSeek
+- [ ] Poe
+
+### 金融相关
+
+- [ ] 金十数据
+- [ ] 华尔街见闻
 
 
-## 网页app
+## 网页 App
 
 ### 基本资料
 
@@ -244,8 +250,7 @@
 * 创建网页app的方法二
   > 使用Microsoft Edge直接创建
 
-
-### 网页App相关
+### 网页 App 相关
 
 - [ ] Linkedin[^4]
 - [x] Spotify[^4]
@@ -258,10 +263,10 @@
 - [ ] CUSIS[^4]
 
 
-
-[^1]: `Python` 和 `C++`都可以用Visual Studio Code
-[^2]: `R`和`SAS`都可以用Notepad--
+[^1]: `Python` 和 `C++`都可以用V isual Studio Code
+[^2]: `R`和`SAS`都可以用 Notepad--
 [^4]: 可以使用网页 App
-[^3]: VIM需要安装vim-plug，其他配置需要更改 \_vimrc 文件。具体的vimrc设置参考[vimrc config](https://github.com/Gavin-OP/vimrc)
+[^3]: VIM 需要安装 vim-plug，其他配置需要更改 `\_vimrc` 文件。具体的 vimrc 设置参考 [vimrc config](https://github.com/Gavin-OP/vimrc)
+
 [^5]: 需要打开 Hyper-V 和 Windows Subsystem for Linux
 
