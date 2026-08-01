@@ -122,13 +122,13 @@ const Project = () => {
                     <a
                       key={action.href}
                       href={action.href}
+                      className={action.className}
+                      aria-label={action.ariaLabel}
                       target={action.external ? "_blank" : undefined}
                       rel={action.external ? "noreferrer" : undefined}
                       onClick={(event) => event.stopPropagation()}
                     >
-                      <button className={action.className} aria-label={action.ariaLabel}>
-                        <FontAwesomeIcon icon={action.icon} />
-                      </button>
+                      <FontAwesomeIcon icon={action.icon} />
                     </a>
                   ))}
                 </div>
