@@ -9,19 +9,17 @@
   text-align: center;
   width: 100%;
   max-width: 1500px;
-  margin: 0 auto;
 }
 
 .project-showcase__heading p {
-  text-align: center;
+  text-align: start;
   font-size: clamp(3.5rem, 8vw, 6rem);
   color: #86868b;
-  padding: 0;
-  margin: 0;
+  padding-left: 5rem;
 }
 
 .project-showcase__highlight {
-  text-align: center;
+  text-align: right;
   background: linear-gradient(
     to right,
     #15e8ad,
@@ -35,30 +33,26 @@
   -webkit-background-clip: text;
   color: transparent;
   font-size: clamp(3.5rem, 8vw, 6rem);
-  padding: 0;
-  margin-top: 0.5rem;
+  padding-right: 5rem;
 }
 
 .project-showcase__cards-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5rem 0 0;
-  padding: 0 2rem;
+  margin: 5rem 2rem 0;
   height: 600px;
   max-width: 1500px;
-  width: 100%;
+  width: calc(100% - 4rem);
   overflow: hidden;
 }
 
 .project-showcase__cards-wrapper {
   display: flex;
   transition: transform 0.5s ease;
-  width: 100%;
+  width: calc(100% + 4rem);
   margin-bottom: 2rem;
   height: 600px;
-  justify-content: center;
-  gap: 1rem;
 }
 
 .project-showcase__item {
@@ -71,7 +65,7 @@
   background-color: #1d1f20;
   border-radius: 35px;
   margin: 1rem;
-  padding: 2rem 2rem 0;
+  padding: 2rem 4rem 0;
   width: 400px;
   height: 100%;
   cursor: pointer;
@@ -129,16 +123,17 @@
 .project-showcase__detail {
   text-align: center;
   justify-content: center;
-  padding-top: 1rem;
+  padding-top: 4rem;
   color: #89898d;
   pointer-events: none;
-  position: relative;
+  position: absolute;
+  top: 0;
   width: 100%;
   opacity: 0;
   transition:
     opacity 1s cubic-bezier(0.05, 0.61, 0.41, 0.95),
     transform 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .project-showcase__item--active .project-showcase__detail {
@@ -188,12 +183,6 @@
     transform 1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-.project-showcase__image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
 .project-showcase__item--active .project-showcase__image {
   width: 100%;
   height: 100%;
@@ -217,13 +206,11 @@
   cursor: pointer;
   position: absolute;
   z-index: 2;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 50px;
+  right: 70px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
+  align-items: flex-end;
+  justify-content: flex-end;
   opacity: 0;
 }
 
