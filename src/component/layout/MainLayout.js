@@ -4,9 +4,9 @@ import '../styles/MainLayout.css';
 
 const MainLayout = ({ children, showNav = true }) => {
     return (
-        <div className="layout">
+        <div className="main-layout">
             {showNav && <Navbar />}
-            <main className="main-content">{children}</main>
+            <main className="main-layout__content">{children}</main>
             <Footer />
         </div>
     );

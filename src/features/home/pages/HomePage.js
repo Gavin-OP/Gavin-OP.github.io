@@ -10,15 +10,12 @@ import Project from '../components/Project.js';
 
 const HomePage = () => {
   return (
-    <div className="home-container">
+    <div className="home-page">
       <MainLayout showNav>
         <Header />
         <Internship />
         <Project />
-        {/* <Fireworks /> */}
-        {/* create a button link to Birthday and using Router Link */}
       </MainLayout>
-
     </div>
   );
 };

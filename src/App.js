@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/styles/design-tokens.css';
 import { Suspense } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { routes } from './router/Routes';
@@ -19,4 +20,3 @@ function App() {
 }
 
 export default App;
-

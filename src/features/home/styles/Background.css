@@ -1,151 +1,87 @@
-.header-container {
+.profile-hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* max-width: 100vw; */
-    /* min-height: 85vh; */
     margin: 0 auto;
-    /* overflow: hidden; */
-    justify-content: space-between;
-    /* background-color: #dbdbdb; */
 }
 
-.header-text-container {
-    display: flex;
-    flex-wrap: wrap;
-    /* width: 65vw; */
-    max-width: 1500px;
-    margin-bottom: 7rem;
+.profile-hero__content {
+    width: min(1500px, 100%);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1rem, 4vw, 2.5rem);
+    margin-bottom: clamp(2.5rem, 8vw, 6rem);
 }
 
-.spaceholder {
-    flex: 1;
-    display: block;
-    min-height: 250px;
+.profile-hero__spacer {
+    min-height: clamp(72px, 14vh, 240px);
 }
 
-.left-content {
-    flex: 1;
-    text-align: left;
-    font-size: 50px;
-    font-weight: bold;
-    /* margin-top: 30vh; */
-    padding-left: 5%
+.profile-hero__identity {
+    padding-left: clamp(0.35rem, 3vw, 4rem);
 }
 
-.left-content h2 {
-    font-size: 70px;
-    font-weight: bold;
-    background: linear-gradient(to bottom, #ffffff, #555555);
-    -webkit-background-clip: text;
-    color: transparent;
-    display: inline;
-}
-
-.left-content h1 {
-    font-size: 180px;
-    font-weight: bold;
-    background: linear-gradient(to bottom, #ffffff, #555555);
+.profile-hero__identity h1 {
+    margin: 0;
+    font-size: clamp(3.5rem, 14vw, 11rem);
+    line-height: 0.92;
+    font-weight: 700;
+    background: linear-gradient(to bottom, #fefefe, #767a81);
     -webkit-background-clip: text;
     color: transparent;
 }
 
-.right-content {
-    flex: 1;
+.profile-hero__identity h2 {
+    margin: 0;
+    font-size: clamp(1.5rem, 4.8vw, 4.25rem);
+    font-weight: 600;
+    background: linear-gradient(to bottom, #fefefe, #767a81);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.profile-hero__intro {
     text-align: left;
-    font-size: 30px;
-    /* margin-top: 30vh; */
-    padding-left: 5%;
-    padding-top: 6%;
-    color: #dbd9d9;
-    /* padding-right: 3%; */
+    font-size: clamp(1rem, 2.2vw, 1.8rem);
+    line-height: 1.5;
+    color: var(--text-secondary);
+    padding: clamp(0.5rem, 2vw, 1.25rem) clamp(0.35rem, 3vw, 3rem) 0;
 }
 
-.OP {
-    color: #86868b;
+.profile-hero__tagline {
+    color: var(--text-tertiary);
 }
 
-.right-content span {
+.profile-hero__intro span {
+    font-weight: 700;
     background: linear-gradient(to right, #03b1f6, #6b85fe, #8c4fff, #ee3afe);
-    font-weight: bold;
     -webkit-background-clip: text;
     color: transparent;
 }
 
-.gradient-line {
-    height: 2px;
-    width: 80%;
-    background: linear-gradient(to right, #0b0d0f, #dbdbdb61, #0b0d0f);
-    max-width: 1500px;
+.profile-hero__divider {
+    height: 1px;
+    width: min(1500px, 80%);
+    background: linear-gradient(to right, #0b0d0f, rgba(219, 219, 219, 0.42), #0b0d0f);
 }
 
-/* 
-.arrow-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: -23.2rem;
-    z-index: 1;
-}
-
-.arrow {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    border: 2px solid #dbdbdb;
-    border-top: 2px solid transparent;
-    animation: spin 3s infinite linear;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
+@media (max-width: 1023px) {
+    .profile-hero__content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
-    to {
-        transform: rotate(360deg);
+    .profile-hero__intro {
+        max-width: 700px;
     }
 }
 
-.gradient-circle {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    margin-bottom: 2rem;
-}
-
-.gradient-circle::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, #0b0d0f, #dbdbdb61, #0b0d0f);
-    border-radius: 1px;
-    animation: spin 3s infinite linear;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
+@media (max-width: 767px) {
+    .profile-hero__content {
+        margin-bottom: 2rem;
     }
 
-    to {
-        transform: rotate(360deg);
+    .profile-hero__identity h1 {
+        line-height: 1;
     }
-} */
-
-/* # make a gradient circle background for this section */
-/* .header-container::before {
-    content: '';
-    position: absolute;
-    top: 50;
-    left: 50;
-    width: 10%;
-    height: 10%;
-    background: linear-gradient(to top right, #13002c, #000000);
-    z-index: -1;
-} */
+}

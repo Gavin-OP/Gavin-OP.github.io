@@ -1,5 +1,5 @@
 import YearEndReport from '../components/YearEndReport';
-// import Navigation from '../component/common/Navbar';
+import '../styles/YearEndReport.css';
 
 const BirthdayPage = () => {
     return (

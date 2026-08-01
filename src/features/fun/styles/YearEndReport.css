@@ -1,25 +1,45 @@
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+.birthday-container {
+    width: 100%;
+    min-height: 100vh;
 }
 
-.page {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
+.year-end-report {
+    min-height: 100vh;
+    scroll-snap-type: y mandatory;
 }
 
-.page.active {
-  opacity: 1;
+.year-end-report__page {
+    min-height: 100svh;
+    width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(0.5rem, 2vw, 1.25rem);
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fade-in-up 420ms ease forwards;
 }
 
-.full-screen-image {
-  width: 100vw; /* Set the width to 100vw to match the screen width */
-  height: auto; /* Maintain the aspect ratio */
-  max-height: 100vh; /* Ensure the image doesn't exceed the screen height */
+.year-end-report__image {
+    width: min(1200px, 100%);
+    max-height: calc(100svh - 1.5rem);
+    object-fit: contain;
+    border-radius: clamp(0.75rem, 2vw, 1.25rem);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.24);
+}
+
+@keyframes fade-in-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .year-end-report__page {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
 }

@@ -1,12 +1,22 @@
 import '../styles/Internship.css';
-import React, { useRef } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+
+const getVisibleCards = () => {
+    if (window.innerWidth < 768) {
+        return 1;
+    }
+
+    if (window.innerWidth < 1180) {
+        return 2;
+    }
+
+    return 3;
+};
 
 const Internship = () => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
-    const [isPrevDisabled, setIsPrevDisabled] = React.useState(true);
-    const [isNextDisabled, setIsNextDisabled] = React.useState(false);
-    const cardsWrapperRef = useRef(null);
+    const [visibleCards, setVisibleCards] = React.useState(getVisibleCards);
 
     const cardsData = [
         {
@@ -39,22 +49,30 @@ const Internship = () => {
         },
     ]
 
+    const maxIndex = useMemo(
+        () => Math.max(cardsData.length - visibleCards, 0),
+        [cardsData.length, visibleCards]
+    );
+
+    useEffect(() => {
+        const handleResize = () => {
+            setVisibleCards(getVisibleCards());
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        setCurrentIndex((prevIndex) => Math.min(prevIndex, maxIndex));
+    }, [maxIndex]);
+
     const handlePrev = () => {
-        setCurrentIndex((prevIndex) => {
-            const newIndex = prevIndex === 0 ? 0 : prevIndex - 1;
-            setIsPrevDisabled(newIndex === 0);
-            setIsNextDisabled(false);
-            return newIndex;
-        });
+        setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
     };
 
     const handleNext = () => {
-        setCurrentIndex((prevIndex) => {
-            const newIndex = prevIndex === cardsData.length - 3 ? prevIndex : prevIndex + 1;
-            setIsNextDisabled(newIndex === cardsData.length - 3);
-            setIsPrevDisabled(false);
-            return newIndex; 
-        });
+        setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, maxIndex));
     };
 
 
@@ -70,11 +88,18 @@ const Internship = () => {
 
             {/* internsihp card components */}
             <div className="internship-cards-container">
-                <div className='internship-cards-wrapper' ref={cardsWrapperRef} style={{ transform: `translateX(-${currentIndex * 100 / 3}%)` }}>
+                <div
+                    className='internship-cards-wrapper'
+                    style={{ transform: `translateX(-${(currentIndex * 100) / visibleCards}%)` }}
+                >
                 {cardsData.map((card) => (
                     <div key={card.id} className='internship-card'>
                         <h1>{card.title}</h1>
-                        <h2><span className={`company-name${card.id}`}>{card.company}</span>, <br></br> <span style={{fontSize:"25px"}}>{card.position}</span></h2>
+                        <h2>
+                            <span className={`company-name${card.id}`}>{card.company}</span>
+                            , <br></br>
+                            <span className="internship-position">{card.position}</span>
+                        </h2>
 
                         <div className='internship-details'>
                             <p>{card.details}</p>
@@ -90,14 +115,18 @@ const Internship = () => {
                 <button 
                 onClick={handlePrev} 
                 className='internship-card-switch-button' 
-                disabled={isPrevDisabled}>
+                disabled={currentIndex <= 0}
+                aria-label="Previous internship cards"
+                >
                     <SlArrowLeft/>
                 </button>
 
                 <button 
                 onClick={handleNext} 
                 className='internship-card-switch-button' 
-                disabled={isNextDisabled}>
+                disabled={currentIndex >= maxIndex}
+                aria-label="Next internship cards"
+                >
                     <SlArrowRight/>
                 </button>
             </div>

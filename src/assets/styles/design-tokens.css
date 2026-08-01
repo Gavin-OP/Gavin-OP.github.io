@@ -1,0 +1,23 @@
+:root {
+  --surface-base: #0b0d0f;
+  --surface-elevated: #151719;
+  --surface-card: #1d1f20;
+  --surface-card-strong: #25282b;
+  --text-primary: #f5f5f7;
+  --text-secondary: #d2d2d7;
+  --text-tertiary: #8f9094;
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --focus-ring: #7aa7ff;
+  --radius-xl: 2rem;
+  --radius-lg: 1.5rem;
+  --space-section: clamp(3.5rem, 8vw, 7rem);
+  --space-content: clamp(1rem, 3vw, 2.5rem);
+  --motion-standard: 220ms ease;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --radius-xl: 1.25rem;
+    --radius-lg: 1rem;
+  }
+}

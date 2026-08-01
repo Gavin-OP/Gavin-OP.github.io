@@ -1,0 +1,14 @@
+.main-layout {
+  margin: 0 auto;
+  width: min(1600px, calc(100% - 2rem));
+}
+
+.main-layout__content {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .main-layout {
+    width: calc(100% - 1rem);
+  }
+}

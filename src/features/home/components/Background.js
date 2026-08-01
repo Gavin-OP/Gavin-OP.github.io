@@ -3,15 +3,15 @@ import '../styles/Background.css';
 
 const Background = () => {
     return (
-        <section id='profile' className="header-container">
-            <div className='spaceholder'></div>
-            <div className="header-text-container">
-                <div className="left-content">
+        <section id='profile' className="profile-hero">
+            <div className='profile-hero__spacer'></div>
+            <div className="profile-hero__content">
+                <div className="profile-hero__identity">
                     <h1>Gavin</h1>
                     <h2>ZHANG Haoxiang</h2>
                 </div>
-                <div className="right-content">
-                    <p className="OP">Hi, this is OP.</p>
+                <div className="profile-hero__intro">
+                    <p className="profile-hero__tagline">Hi, this is OP.</p>
                     <p>
                         I am a <span>Quantitative Finance and Risk Management</span> undergraduate at CUHK.
                     </p>
@@ -20,12 +20,7 @@ const Background = () => {
                     </p>
                 </div>
             </div>
-            <div className="arrow-container">
-                <span className="arrow"></span>
-                <span className="gradient-line"></span>
-            </div>
-            <div className="gradient-circle"></div>
-            <div className="gradient-line"></div>
+            <div className="profile-hero__divider"></div>
         </section>
     );
 };
