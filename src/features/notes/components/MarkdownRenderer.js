@@ -26,7 +26,7 @@
  * 5. Add functionality to convert markdown to PDF.
  */
 
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -39,7 +39,6 @@ import { xcode } from "react-syntax-highlighter/dist/esm/styles/hljs";
 // import remarkMermaid from 'remark-mermaid';
 
 import "katex/dist/katex.min.css";
-import "../styles/MarkdownRenderer.css";
 // import 'mermaid/dist/mermaid.esm.min.mjs';
 
 const MarkdownRenderer = ({ markdownContent }) => {
@@ -100,10 +99,10 @@ const MarkdownRenderer = ({ markdownContent }) => {
           rehypePlugins={[rehypeRaw, rehypeKatex]}
           components={{
             // make the code block formatted and syntax highlighted
-            pre({ node, className, children, ...props }) {
+            pre({ node, children, ...props }) {
               const codeNode = node.children[0];
               const match = /language-(\w+)/.exec(
-                codeNode?.properties?.className || ""
+                codeNode?.properties?.className || "",
               );
               return match ? (
                 <SyntaxHighlighter
@@ -122,7 +121,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
             },
 
             // make the footnote link clickable and scroll to the footnote
-            a({ node, ...props }) {
+            a({ ...props }) {
               if (
                 props.href &&
                 (props.href.startsWith("#user-content-fn-") ||
@@ -150,11 +149,11 @@ const MarkdownRenderer = ({ markdownContent }) => {
             },
 
             // make the image path correct for relative import
-            img({ node, ...props }) {
+            img({ ...props }) {
               if (props.src && !props.src.startsWith("http")) {
                 const src = resolveRelativePath(
                   window.location.hash.replace("#/", ""),
-                  props.src
+                  props.src,
                 );
                 console.log(src);
                 return <img {...props} src={src} />;
@@ -163,7 +162,7 @@ const MarkdownRenderer = ({ markdownContent }) => {
             },
 
             // for latex block that is too wide, make it scrollable
-            span({ node, ...props }) {
+            span({ ...props }) {
               if (
                 props.className &&
                 props.className.includes("katex-display")

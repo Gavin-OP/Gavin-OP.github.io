@@ -33,11 +33,11 @@ jobs:
         # run: npm run build
       
       - name: Verify build directory
-        run: ls -la ./build
+        run: ls -la ./dist
   
       - name: Deploy to GitHub pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./dist
           publish_branch: gh-pages
