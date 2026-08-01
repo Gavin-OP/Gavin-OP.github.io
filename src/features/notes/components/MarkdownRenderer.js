@@ -39,7 +39,6 @@ import { xcode } from "react-syntax-highlighter/dist/esm/styles/hljs";
 // import remarkMermaid from 'remark-mermaid';
 
 import "katex/dist/katex.min.css";
-import "../styles/MarkdownRenderer.css";
 // import 'mermaid/dist/mermaid.esm.min.mjs';
 
 const MarkdownRenderer = ({ markdownContent }) => {
