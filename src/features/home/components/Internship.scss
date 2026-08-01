@@ -1,0 +1,185 @@
+.internship {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.internship__heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 1500px;
+}
+
+.internship__heading p {
+  text-align: start;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  color: #86868b;
+  padding-left: 5rem;
+}
+
+.internship__highlight {
+  text-align: end;
+  background: linear-gradient(to right, #be22ff, #7418d4, #d61635, #ff981f);
+  font-weight: 700;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  padding-right: 5rem;
+}
+
+.internship__cards-container {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin: 5rem 2rem 1rem;
+  max-width: 1500px;
+  overflow: hidden;
+}
+
+.internship__cards-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: calc((100% * 4 / 3) + 8rem);
+  margin-bottom: 2rem;
+}
+
+.internship__card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+  position: relative;
+  background-color: #000000;
+  color: #fff;
+  border-radius: 35px;
+  box-shadow: 0 4px 8px rgba(77, 77, 77, 0.1);
+  margin: 1rem;
+  padding: 2rem 4rem 0;
+  min-height: 100%;
+  min-width: calc((100% / 3) - 2rem);
+}
+
+.internship__card h1 {
+  font-size: 100px;
+  text-align: left;
+  font-weight: 300;
+  color: #4f4f51;
+  margin: 0;
+}
+
+.internship__card h2 {
+  font-size: 30px;
+  margin-bottom: 1rem;
+  text-align: left;
+  min-height: 110px;
+}
+
+.internship__position {
+  font-size: 25px;
+}
+
+.internship__details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1rem 0 3rem;
+  justify-content: flex-start;
+}
+
+.internship__details p {
+  font-size: 1rem;
+  color: #89898d;
+  text-align: left;
+  white-space: pre-line;
+  margin-top: auto;
+  min-height: 10rem;
+}
+
+.internship__company-name {
+  font-weight: 700;
+  background-image: var(--internship-company-gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.internship__company-name--1 {
+  --internship-company-gradient: linear-gradient(
+    to right,
+    #c21675,
+    #ff1100
+  );
+}
+
+.internship__company-name--2 {
+  --internship-company-gradient: linear-gradient(
+    to right,
+    #9d56df,
+    #524ef1
+  );
+}
+
+.internship__company-name--3 {
+  --internship-company-gradient: linear-gradient(
+    to right,
+    #01d8d5,
+    #0078ff
+  );
+}
+
+.internship__company-name--4 {
+  --internship-company-gradient: linear-gradient(
+    to right,
+    #db1626,
+    #de9059
+  );
+}
+
+.internship__button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-right: 3rem;
+  max-width: 1500px;
+  margin-bottom: 7rem;
+}
+
+.internship__switch-button {
+  background: #1b1b1c;
+  border: none;
+  border-radius: 40px;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.internship__switch-button:hover:not(:disabled) {
+  background: #262626;
+  box-shadow: 4px 4px 8px #0d0d0d;
+}
+
+.internship__switch-button:active:not(:disabled) {
+  box-shadow: inset 2px 2px 5px #0d0d0d62, inset -2px -2px 5px #26262646;
+}
+
+.internship__switch-button:disabled {
+  cursor: default;
+  background: #1b1b1c;
+  color: #595959;
+}
+
+.internship__divider {
+  height: 2px;
+  width: 80%;
+  background: linear-gradient(to right, #0b0d0f, #dbdbdb61, #0b0d0f);
+  margin-bottom: 10rem;
+  max-width: 1500px;
+}

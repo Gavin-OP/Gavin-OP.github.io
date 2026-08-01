@@ -1,69 +1,51 @@
-import React from "react";
 import { HiOutlineMail } from "react-icons/hi";
 import { AiOutlineGithub, AiFillLinkedin } from "react-icons/ai";
-import "../styles/Footer.css";
+import "./Footer.scss";
 
-// Footer.js
 function Footer() {
-  const handleIconHover = (e) => {
-    e.currentTarget.style.color = "#dbdbdb";
-    e.currentTarget.style.cursor = "pointer";
-  };
-
-  const handleIconLeave = (e) => {
-    e.currentTarget.style.color = "#86868b";
-    e.currentTarget.style.cursor = "default";
-  };
-
+  const contacts = [
+    {
+      id: "email",
+      icon: <HiOutlineMail size={25} />,
+      label: "HaoxiangZhang@link.cuhk.edu.hk",
+      href: "mailto:HaoxiangZhang@link.cuhk.edu.hk",
+    },
+    {
+      id: "github",
+      icon: <AiOutlineGithub size={25} />,
+      label: "https://github.com/Gavin-OP",
+      href: "https://github.com/Gavin-OP",
+    },
+    {
+      id: "linkedin",
+      icon: <AiFillLinkedin size={25} />,
+      label: "https://www.linkedin.com/in/gavin-zhang-op",
+      href: "https://www.linkedin.com/in/gavin-zhang-op",
+    },
+  ];
   return (
-    <footer id="contact" className="footer-section">
-      <div className="footer-content-container">
-        <div className="footer-contact">
-          {/* Contact information or any other relevant details */}
-          <ul>
-            <li>
-              <span
-                onClick={() =>
-                  (window.location.href =
-                    "mailto:HaoxiangZhang@link.cuhk.edu.hk")
-                }
-                onMouseEnter={handleIconHover}
-                onMouseLeave={handleIconLeave}
-              >
-                <HiOutlineMail size={25} />
-                <span>HaoxiangZhang@link.cuhk.edu.hk</span>
-              </span>
-            </li>
-            <li>
-              <span
-                onClick={() =>
-                  (window.location.href = "https://github.com/Gavin-OP")
-                }
-                onMouseEnter={handleIconHover}
-                onMouseLeave={handleIconLeave}
-              >
-                <AiOutlineGithub size={25} />
-                <span>https://github.com/Gavin-OP</span>
-              </span>
-            </li>
-            <li>
-              <span
-                onClick={() =>
-                  (window.location.href =
-                    "https://www.linkedin.com/in/gavin-zhang-op")
-                }
-                onMouseEnter={handleIconHover}
-                onMouseLeave={handleIconLeave}
-              >
-                <AiFillLinkedin size={25} />
-                <span>https://www.linkedin.com/in/gavin-zhang-op</span>
-              </span>
-            </li>
+    <footer id="contact" className="site-footer">
+      <div className="site-footer__content">
+        <div className="site-footer__contact">
+          <ul className="site-footer__list">
+            {contacts.map((contact) => (
+              <li key={contact.id} className="site-footer__item">
+                <a
+                  className="site-footer__link"
+                  href={contact.href}
+                  target={contact.id === "email" ? undefined : "_blank"}
+                  rel={contact.id === "email" ? undefined : "noreferrer"}
+                >
+                  {contact.icon}
+                  <span>{contact.label}</span>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
-      <div className="footer-bottom">
-        <p className="footer-copyright">
+      <div className="site-footer__bottom">
+        <p className="site-footer__copyright">
           &copy; 2022-2024 ZHANG Haoxiang. All rights reserved.
         </p>
       </div>

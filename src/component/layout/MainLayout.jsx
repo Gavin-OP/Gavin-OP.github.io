@@ -1,12 +1,12 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import "../styles/MainLayout.css";
+import "./MainLayout.scss";
 
 const MainLayout = ({ children, showNav = true }) => {
   return (
-    <div className="layout">
+    <div className="main-layout">
       {showNav && <Navbar />}
-      <main className="main-content">{children}</main>
+      <main className="main-layout__content">{children}</main>
       <Footer />
     </div>
   );

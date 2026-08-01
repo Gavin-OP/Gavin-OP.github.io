@@ -90,8 +90,6 @@
 }
 
 .project-showcase__content {
-  position: relative;
-  z-index: 1;
   display: flex;
   height: 98%;
   flex-direction: column;
@@ -191,15 +189,29 @@
   opacity: 1;
 }
 
+.project-showcase__image img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
 .project-showcase__image--wechat-analysis {
   height: 60%;
   margin-top: 2rem;
   max-width: 700px;
 }
 
+.project-showcase__item--active .project-showcase__image--wechat-analysis {
+  height: 60%;
+}
+
 .project-showcase__image--stock-prediction {
   height: 77%;
   max-width: 700px;
+}
+
+.project-showcase__item--active .project-showcase__image--stock-prediction {
+  height: 77%;
 }
 
 .project-showcase__icons {
