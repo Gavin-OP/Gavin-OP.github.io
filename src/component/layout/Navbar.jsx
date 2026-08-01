@@ -14,9 +14,11 @@ function Navigation() {
   const handleScroll = useCallback(() => {
     const currentScrollPos = window.scrollY;
 
-    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 15);
-    setPrevScrollPos(currentScrollPos);
-  }, [prevScrollPos]);
+    setPrevScrollPos((previousScrollPos) => {
+      setVisible(previousScrollPos > currentScrollPos || currentScrollPos < 15);
+      return currentScrollPos;
+    });
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
