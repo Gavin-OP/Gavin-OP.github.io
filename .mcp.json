@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "tools": ["*"],
+      "type": "local",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    }
+  }
+}
