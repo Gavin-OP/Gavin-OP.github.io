@@ -2,7 +2,7 @@
 
 Personal website built with **React 19 + Vite** and deployed to **GitHub Pages**.
 
-![Website Homepage](https://gavin-op.github.io/image/sample_homepage.png)
+![Website Homepage](./public/image/sample_homepage.png)
 
 ## Quick start
 
