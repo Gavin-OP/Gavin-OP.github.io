@@ -24,7 +24,7 @@ For focused linting on one folder:
 npx eslint src/features/home
 ```
 
-There is currently **no automated test runner configured in the root `package.json`** (`npm test` does not exist), so there is no full-suite or single-test command. Playwright is installed and `scripts/capture_playwright.js` is an ad hoc screenshot comparison script, not a test suite.
+There is currently **no automated test runner configured in the root `package.json`** (`npm test` does not exist), so there is no full-suite or single-test command. Playwright is installed but no test runner is configured.
 
 Treat the scripts in `package.json` as authoritative.
 
