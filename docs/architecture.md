@@ -16,8 +16,8 @@
 
 ## Route map
 
-- `/` -> `features/home/pages/HomePage.jsx`
-- `/20240109` -> `features/fun/pages/BirthdayPage.jsx`
+- `/` -> `src/features/home/pages/HomePage.jsx`
+- `/20240109` -> `src/features/fun/pages/BirthdayPage.jsx`
 - `*` -> redirect to `/`
 
 ## Content and assets
