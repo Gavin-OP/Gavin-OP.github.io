@@ -24,9 +24,9 @@ For focused linting on one folder:
 npx eslint src/features/home
 ```
 
-There is currently **no automated test runner configured in the root `package.json`** (`npm test` does not exist), so there is no full-suite or single-test command. Playwright is installed and `scripts/capture_playwright.js` is an ad hoc screenshot comparison script, not a test suite.
+There is currently **no automated test runner configured in the root `package.json`** (`npm test` does not exist), so there is no full-suite or single-test command. Playwright is installed but no test runner is configured.
 
-Treat the scripts in `package.json` as authoritative; the README's `npm start` command is stale.
+Treat the scripts in `package.json` as authoritative.
 
 ## High-level architecture
 
@@ -67,3 +67,9 @@ Treat the scripts in `package.json` as authoritative; the README's `npm start` c
 - Reference files in `public/` with root-relative URLs such as `/image/...` and `/file/...`; do not import them through the React source tree or edit generated copies under `dist/`.
 - Lint excludes historical and sandbox folders (`.history`, `test`, `design`) in eslint global ignores.
 - Deployment workflow lives in `.github/workflows/build-and-deploy.yaml` and triggers on `master` pushes; keep build output directory assumptions consistent with Vite output when touching deployment settings.
+
+## Commit message convention
+
+- For automated commits, use a **VS Code Git Commit Plugin-compatible format**.
+- Preferred format: `type(scope): summary`, e.g. `docs(readme): refresh quick start and scripts`.
+- Keep commit messages concise, imperative, and aligned with conventional commit style so plugin parsing and changelog grouping remain stable.
