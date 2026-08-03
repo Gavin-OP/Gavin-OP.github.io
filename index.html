@@ -1,59 +1,78 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/image/avatar.ico" />
-    <link rel="apple-touch-icon" href="/image/avatar.png" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0,user-scalable=yes,minimum-scale=1.0,maximum-scale=3.0"
-    />
-    <meta
-      name="description"
-      content="ZHANG Haoxiang Personal Website CUHK Quantitative Finance and Risk Management"
-    />
-    <meta
-      name="google-site-verification"
-      content="QLyvddfntrPrjtrDo5ooqSkrezcwTQXeOFKUCPT2Png"
-    />
-    <title>Haoxiang (Gavin) ZHANG</title>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      var pathSegmentsToKeep = 0;
+      // Keep this list in sync with `src/app/router/routesConfig.jsx`.
+      var spaSingleSegmentRoutes = ["20240109"];
+      // Explicit GitHub project pages repos that should not fall back to this SPA root.
+      var projectPagesRepos = ["alfred-api"];
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-23JZF546MQ"
-    ></script>
-    <script>
-      (function (l) {
-        if (l.search[1] === "/") {
-          var decoded = l.search
-            .slice(1)
-            .split("&")
-            .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            })
-            .join("?");
-          window.history.replaceState(
-            null,
-            null,
-            l.pathname.slice(0, -1) + decoded + l.hash,
-          );
-        }
-      })(window.location);
-    </script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+      var l = window.location;
+      var trimmedPath = l.pathname.replace(/^\/+|\/+$/g, "");
+      var isSingleSegment = trimmedPath && trimmedPath.indexOf("/") === -1;
+      var isKnownSpaRoute = spaSingleSegmentRoutes.indexOf(trimmedPath) !== -1;
+      var decodedTrimmedPath;
+      try {
+        decodedTrimmedPath = decodeURIComponent(trimmedPath);
+      } catch (e) {
+        decodedTrimmedPath = trimmedPath;
       }
-      gtag("js", new Date());
+      var normalizedSegment = decodedTrimmedPath
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/_/g, "-");
+      var isKnownProjectPagesRepo =
+        projectPagesRepos.indexOf(normalizedSegment) !== -1;
+      var hasTrailingSlash = l.pathname.charAt(l.pathname.length - 1) === "/";
 
-      gtag("config", "G-23JZF546MQ");
+      if (isKnownProjectPagesRepo && !hasTrailingSlash) {
+        l.replace(
+          l.protocol +
+            "//" +
+            l.hostname +
+            (l.port ? ":" + l.port : "") +
+            "/" +
+            trimmedPath +
+            "/" +
+            l.search +
+            l.hash,
+        );
+      }
+      // For unknown top-level paths like `/some-repo`, try GitHub Pages project URL first.
+      else if (isSingleSegment && !isKnownSpaRoute && !hasTrailingSlash) {
+        l.replace(
+          l.protocol +
+            "//" +
+            l.hostname +
+            (l.port ? ":" + l.port : "") +
+            "/" +
+            trimmedPath +
+            "/" +
+            l.search +
+            l.hash,
+        );
+      } else {
+        l.replace(
+          l.protocol +
+            "//" +
+            l.hostname +
+            (l.port ? ":" + l.port : "") +
+            l.pathname.split("/").slice(0, 1 + pathSegmentsToKeep).join("/") +
+            "/?/" +
+            l.pathname
+              .slice(1)
+              .split("/")
+              .slice(pathSegmentsToKeep)
+              .join("/")
+              .replace(/&/g, "~and~") +
+            (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+            l.hash,
+        );
+      }
     </script>
   </head>
-
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <body></body>
 </html>
