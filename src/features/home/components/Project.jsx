@@ -105,8 +105,12 @@ const Project = () => {
       ).matches;
 
       if (container && activeProject) {
+        const containerRect = container.getBoundingClientRect();
+        const projectRect = activeProject.getBoundingClientRect();
+        const left = projectRect.left - containerRect.left + container.scrollLeft;
+
         container.scrollTo({
-          left: activeProject.offsetLeft,
+          left,
           behavior: reduceMotion ? "auto" : "smooth",
         });
       }
