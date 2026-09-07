@@ -41,7 +41,8 @@
   height: 600px;
   max-width: 1500px;
   width: calc(100% - 4rem);
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
