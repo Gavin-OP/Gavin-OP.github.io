@@ -1,7 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faImages } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronLeft,
+  faChevronRight,
+  faImages,
+} from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveProjectId } from "../../../app/store/slices/homeSlice";
 import "./Project.scss";
@@ -66,6 +71,54 @@ const projects = [
 const Project = () => {
   const dispatch = useDispatch();
   const activeProjectId = useSelector((state) => state.home.activeProjectId);
+  const cardsContainerRef = useRef(null);
+  const projectRefs = useRef(new Map());
+  const activeProjectIndex = Math.max(
+    projects.findIndex((project) => project.id === activeProjectId),
+    0,
+  );
+  const showGalleryControls = projects.length > 2;
+
+  const selectProject = (projectId) => {
+    if (projectId !== activeProjectId) {
+      dispatch(setActiveProjectId(projectId));
+    }
+  };
+
+  const selectProjectAtIndex = (index) => {
+    const project = projects[index];
+    if (project) {
+      selectProject(project.id);
+    }
+  };
+
+  useEffect(() => {
+    if (!showGalleryControls) {
+      return;
+    }
+
+    const animationFrame = window.requestAnimationFrame(() => {
+      const container = cardsContainerRef.current;
+      const activeProject = projectRefs.current.get(activeProjectId);
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (container && activeProject) {
+        const containerRect = container.getBoundingClientRect();
+        const projectRect = activeProject.getBoundingClientRect();
+        const left = projectRect.left - containerRect.left + container.scrollLeft;
+
+        container.scrollTo({
+          left,
+          behavior: reduceMotion ? "auto" : "smooth",
+        });
+      }
+    });
+
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [activeProjectId, showGalleryControls]);
+
   return (
     <section id="project" className="project-showcase">
       <div className="project-showcase__heading">
@@ -73,15 +126,37 @@ const Project = () => {
         <div className="project-showcase__highlight">best projects</div>
       </div>
 
-      <div className="project-showcase__cards-container">
+      <div
+        ref={cardsContainerRef}
+        className="project-showcase__cards-container"
+      >
         <div className="project-showcase__cards-wrapper">
           {projects.map((project) => {
             const isActive = activeProjectId === project.id;
             return (
               <article
                 key={project.id}
+                ref={(element) => {
+                  if (element) {
+                    projectRefs.current.set(project.id, element);
+                  } else {
+                    projectRefs.current.delete(project.id);
+                  }
+                }}
                 className={`project-showcase__item project-showcase__item--${project.id} ${isActive ? "project-showcase__item--active" : ""}`}
-                onClick={() => dispatch(setActiveProjectId(project.id))}
+                onClick={() => selectProject(project.id)}
+                onKeyDown={(event) => {
+                  if (
+                    !isActive &&
+                    (event.key === "Enter" || event.key === " ")
+                  ) {
+                    event.preventDefault();
+                    selectProject(project.id);
+                  }
+                }}
+                role={isActive ? undefined : "button"}
+                tabIndex={isActive ? undefined : 0}
+                aria-label={isActive ? undefined : `Open ${project.title.replaceAll("\n", " ")}`}
                 style={
                   project.backgroundImage
                     ? { backgroundImage: `url(${project.backgroundImage})` }
@@ -117,7 +192,10 @@ const Project = () => {
                   </div>
                 </div>
 
-                <div className="project-showcase__icons">
+                <div
+                  className="project-showcase__icons"
+                  aria-hidden={!isActive}
+                >
                   {project.actions.map((action) => (
                     <a
                       key={action.href}
@@ -126,6 +204,7 @@ const Project = () => {
                       aria-label={action.ariaLabel}
                       target={action.external ? "_blank" : undefined}
                       rel={action.external ? "noreferrer" : undefined}
+                      tabIndex={isActive ? 0 : -1}
                       onClick={(event) => event.stopPropagation()}
                     >
                       <FontAwesomeIcon icon={action.icon} />
@@ -137,6 +216,32 @@ const Project = () => {
           })}
         </div>
       </div>
+
+      {showGalleryControls ? (
+        <div
+          className="project-showcase__controls"
+          aria-label="Project gallery controls"
+        >
+          <button
+            type="button"
+            className="project-showcase__control"
+            aria-label="Previous project"
+            disabled={activeProjectIndex === 0}
+            onClick={() => selectProjectAtIndex(activeProjectIndex - 1)}
+          >
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          <button
+            type="button"
+            className="project-showcase__control"
+            aria-label="Next project"
+            disabled={activeProjectIndex === projects.length - 1}
+            onClick={() => selectProjectAtIndex(activeProjectIndex + 1)}
+          >
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </div>
+      ) : null}
     </section>
   );
 };

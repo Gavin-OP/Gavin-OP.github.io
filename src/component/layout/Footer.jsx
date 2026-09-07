@@ -3,6 +3,7 @@ import { AiOutlineGithub, AiFillLinkedin } from "react-icons/ai";
 import "./Footer.scss";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   const contacts = [
     {
       id: "email",
@@ -46,7 +47,7 @@ function Footer() {
       </div>
       <div className="site-footer__bottom">
         <p className="site-footer__copyright">
-          &copy; 2022-2024 ZHANG Haoxiang. All rights reserved.
+          &copy; 2022&ndash;{currentYear} ZHANG Haoxiang. All rights reserved.
         </p>
       </div>
     </footer>

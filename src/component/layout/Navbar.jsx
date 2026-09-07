@@ -1,5 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Navbar.scss";
+
+const SCROLL_THRESHOLD = 14;
+const TOP_THRESHOLD = 8;
 
 function Navigation() {
   const navItems = [
@@ -8,25 +11,67 @@ function Navigation() {
     { label: "Project", target: "project" },
     { label: "Contact", target: "contact" },
   ];
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-
-  const handleScroll = useCallback(() => {
-    const currentScrollPos = window.scrollY;
-
-    setPrevScrollPos((previousScrollPos) => {
-      setVisible(previousScrollPos > currentScrollPos || currentScrollPos < 15);
-      return currentScrollPos;
-    });
-  }, []);
+  const [isAtTop, setIsAtTop] = useState(true);
+  const scrollState = useRef({
+    lastPosition: 0,
+    accumulatedDistance: 0,
+    direction: null,
+    animationFrame: null,
+  });
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    const state = scrollState.current;
+    state.lastPosition = window.scrollY;
+
+    const updateNavigation = () => {
+      const currentPosition = Math.max(window.scrollY, 0);
+      const atTop = currentPosition <= TOP_THRESHOLD;
+      const delta = currentPosition - state.lastPosition;
+
+      setIsAtTop(atTop);
+
+      if (atTop) {
+        state.accumulatedDistance = 0;
+        state.direction = null;
+        setVisible(true);
+      } else if (delta !== 0) {
+        const direction = delta > 0 ? "down" : "up";
+
+        if (direction !== state.direction) {
+          state.direction = direction;
+          state.accumulatedDistance = 0;
+        }
+
+        state.accumulatedDistance += Math.abs(delta);
+
+        if (state.accumulatedDistance >= SCROLL_THRESHOLD) {
+          setVisible(direction === "up");
+          state.accumulatedDistance = 0;
+        }
+      }
+
+      state.lastPosition = currentPosition;
+      state.animationFrame = null;
+    };
+
+    const handleScroll = () => {
+      if (state.animationFrame !== null) {
+        return;
+      }
+
+      state.animationFrame = window.requestAnimationFrame(updateNavigation);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (state.animationFrame !== null) {
+        window.cancelAnimationFrame(state.animationFrame);
+      }
     };
-  }, [handleScroll]);
+  }, []);
 
   useEffect(() => {
     if (!window.location.hash) {
@@ -64,7 +109,11 @@ function Navigation() {
 
   return (
     <nav
-      className={`site-nav ${visible ? "site-nav--visible" : "site-nav--hidden"}`}
+      className={[
+        "site-nav",
+        visible ? "site-nav--visible" : "site-nav--hidden",
+        isAtTop ? "site-nav--at-top" : "site-nav--scrolled",
+      ].join(" ")}
       aria-label="Primary"
     >
       <ul className="site-nav__list">
