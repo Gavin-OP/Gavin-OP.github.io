@@ -72,6 +72,7 @@ const Project = () => {
   const dispatch = useDispatch();
   const activeProjectId = useSelector((state) => state.home.activeProjectId);
   const [isPhone, setIsPhone] = useState(() => window.innerWidth <= 767);
+  const [phoneProjectIndex, setPhoneProjectIndex] = useState(0);
   const cardsContainerRef = useRef(null);
   const projectRefs = useRef(new Map());
   const activeProjectIndex = Math.max(
@@ -100,6 +101,40 @@ const Project = () => {
     if (project) {
       selectProject(project.id);
     }
+  };
+
+  const handleProjectScroll = () => {
+    if (!isPhone) {
+      return;
+    }
+
+    const container = cardsContainerRef.current;
+    if (!container) {
+      return;
+    }
+
+    const nearestProjectIndex = projects.reduce(
+      (nearestIndex, project, index) => {
+        const projectElement = projectRefs.current.get(project.id);
+        const nearestProjectElement = projectRefs.current.get(
+          projects[nearestIndex].id,
+        );
+
+        if (!projectElement || !nearestProjectElement) {
+          return nearestIndex;
+        }
+
+        return Math.abs(projectElement.offsetLeft - container.scrollLeft) <
+          Math.abs(nearestProjectElement.offsetLeft - container.scrollLeft)
+          ? index
+          : nearestIndex;
+      },
+      0,
+    );
+
+    setPhoneProjectIndex((currentIndex) =>
+      currentIndex === nearestProjectIndex ? currentIndex : nearestProjectIndex,
+    );
   };
 
   useEffect(() => {
@@ -139,6 +174,7 @@ const Project = () => {
       <div
         ref={cardsContainerRef}
         className="project-showcase__cards-container"
+        onScroll={handleProjectScroll}
       >
         <div className="project-showcase__cards-wrapper">
           {projects.map((project) => {
@@ -234,7 +270,23 @@ const Project = () => {
         </div>
       </div>
 
-      {showGalleryControls ? (
+      {isPhone ? (
+        <div
+          className="project-showcase__position"
+          aria-label={`Project ${phoneProjectIndex + 1} of ${projects.length}`}
+        >
+          <span>{String(phoneProjectIndex + 1).padStart(2, "0")}</span>
+          <span className="project-showcase__position-track" aria-hidden="true">
+            <span
+              className="project-showcase__position-progress"
+              style={{
+                width: `${((phoneProjectIndex + 1) / projects.length) * 100}%`,
+              }}
+            />
+          </span>
+          <span>{String(projects.length).padStart(2, "0")}</span>
+        </div>
+      ) : showGalleryControls ? (
         <div
           className="project-showcase__controls"
           aria-label="Project gallery controls"

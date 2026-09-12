@@ -76,7 +76,7 @@
   min-height: 110px;
 }
 
-.internship__position {
+.internship__carousel-position {
   font-size: 25px;
 }
 
@@ -306,17 +306,8 @@
 
   .internship__tools {
     display: block;
-    padding-top: 0.875rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.065);
-  }
-
-  .internship__tools-label {
-    margin: 0 0 0.5rem;
-    color: #696b73;
-    font-size: 0.5625rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    padding-top: 0;
+    border-top: 0;
   }
 
   .internship__tools-list {
@@ -345,22 +336,37 @@
   }
 
   .internship__button-container {
-    position: relative;
-    width: 2.75rem;
+    display: flex;
+    justify-content: center;
+    margin: 0.875rem auto 2.75rem;
+  }
+
+  .internship__position {
+    display: grid;
+    grid-template-columns: auto 2.75rem auto;
+    gap: 0.5rem;
+    align-items: center;
+    color: #777982;
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: 0.5625rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+  }
+
+  .internship__carousel-position-track {
+    display: block;
     height: 0.125rem;
-    margin: 0.75rem auto 2.75rem;
     overflow: hidden;
-    border-radius: 999px;
+    border-radius: inherit;
     background: rgba(255, 255, 255, 0.08);
   }
 
-  .internship__button-container::before {
+  .internship__carousel-position-progress {
     display: block;
-    width: 25%;
     height: 100%;
     border-radius: inherit;
     background: rgba(245, 245, 247, 0.82);
-    content: "";
+    transition: width 180ms ease;
   }
 
   .internship__switch-button {

@@ -334,20 +334,29 @@
     scroll-behavior: auto;
   }
 
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .project-showcase__heading p,
-    .project-showcase__highlight {
-      padding-right: 3rem;
-      padding-left: 3rem;
-    }
+  .project-showcase__item,
+  .project-showcase__small-detail,
+  .project-showcase__detail,
+  .project-showcase__image,
+  .project-showcase__icons {
+    transition: none;
+  }
+}
 
-    .project-showcase__item {
-      padding-right: 2rem;
-      padding-left: 2rem;
-    }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .project-showcase__heading p,
+  .project-showcase__highlight {
+    padding-right: 3rem;
+    padding-left: 3rem;
   }
 
-  @media (max-width: 767px) {
+  .project-showcase__item {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
     .project-showcase {
       margin: 0;
       padding: 2.75rem 0 3.125rem;
@@ -531,34 +540,31 @@
       touch-action: manipulation;
     }
 
-    .project-showcase__controls {
-      width: 2.75rem;
-      height: 0.125rem;
-      margin: 0.75rem auto 0;
-      overflow: hidden;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .project-showcase__controls::before {
-      display: block;
-      width: 50%;
-      height: 100%;
-      border-radius: inherit;
-      background: rgba(245, 245, 247, 0.82);
-      content: "";
-    }
-
-    .project-showcase__control {
-      display: none;
-    }
+  .project-showcase__position {
+    display: grid;
+    grid-template-columns: auto 2.75rem auto;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 0.875rem auto 0;
+    color: #777982;
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: 0.5625rem;
+    letter-spacing: 0.08em;
   }
 
-  .project-showcase__item,
-  .project-showcase__small-detail,
-  .project-showcase__detail,
-  .project-showcase__image,
-  .project-showcase__icons {
-    transition: none;
+  .project-showcase__position-track {
+    display: block;
+    height: 0.125rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .project-showcase__position-progress {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: rgba(245, 245, 247, 0.82);
+    transition: width 180ms ease;
   }
 }

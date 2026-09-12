@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useRef, useState } from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { useDispatch, useSelector } from "react-redux";
 import { setInternshipIndex } from "../../../app/store/slices/homeSlice";
@@ -46,6 +46,8 @@ const VISIBLE_CARDS = 3;
 const Internship = () => {
   const dispatch = useDispatch();
   const currentIndex = useSelector((state) => state.home.internshipIndex);
+  const [phoneCardIndex, setPhoneCardIndex] = useState(0);
+  const cardsContainerRef = useRef(null);
 
   const maxIndex = useMemo(
     () => Math.max(cardsData.length - VISIBLE_CARDS, 0),
@@ -65,6 +67,27 @@ const Internship = () => {
     updateIndex(currentIndex + 1);
   };
 
+  const handleCardsScroll = () => {
+    const container = cardsContainerRef.current;
+    if (!container || !window.matchMedia("(max-width: 767px)").matches) {
+      return;
+    }
+
+    const cards = [...container.querySelectorAll(".internship__card")];
+    const nearestCardIndex = cards.reduce(
+      (nearestIndex, card, index) =>
+        Math.abs(card.offsetLeft - container.scrollLeft) <
+        Math.abs(cards[nearestIndex].offsetLeft - container.scrollLeft)
+          ? index
+          : nearestIndex,
+      0,
+    );
+
+    setPhoneCardIndex((currentIndex) =>
+      currentIndex === nearestCardIndex ? currentIndex : nearestCardIndex,
+    );
+  };
+
   return (
     <section id="internship" className="internship">
       <div className="internship__heading">
@@ -72,7 +95,11 @@ const Internship = () => {
         <div className="internship__highlight">internship experiences</div>
       </div>
 
-      <div className="internship__cards-container">
+      <div
+        ref={cardsContainerRef}
+        className="internship__cards-container"
+        onScroll={handleCardsScroll}
+      >
         <div
           className="internship__cards-wrapper"
           style={{
@@ -94,7 +121,6 @@ const Internship = () => {
 
               <div className="internship__details">
                 <div className="internship__tools">
-                  <p className="internship__tools-label">Tools I survived</p>
                   <div className="internship__tools-list">
                     {card.tools.map((tool) => (
                       <span key={tool} className="internship__tool">
@@ -111,6 +137,21 @@ const Internship = () => {
       </div>
 
       <div className="internship__button-container">
+        <div
+          className="internship__carousel-position"
+          aria-label={`Internship ${phoneCardIndex + 1} of ${cardsData.length}`}
+        >
+          <span>{String(phoneCardIndex + 1).padStart(2, "0")}</span>
+          <span className="internship__carousel-position-track" aria-hidden="true">
+            <span
+              className="internship__carousel-position-progress"
+              style={{
+                width: `${((phoneCardIndex + 1) / cardsData.length) * 100}%`,
+              }}
+            />
+          </span>
+          <span>{String(cardsData.length).padStart(2, "0")}</span>
+        </div>
         <button
           onClick={handlePrev}
           className="internship__switch-button"

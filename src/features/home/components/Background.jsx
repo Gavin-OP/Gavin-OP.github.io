@@ -11,7 +11,7 @@ const Background = () => {
             This is <span>OP.</span>
           </p>
         </div>
-        <p className="profile-hero__mobile-real-name">Gavin Zhang Haoxiang</p>
+        <p className="profile-hero__mobile-real-name">ZHANG Haoxiang · Gavin</p>
         <div className="profile-hero__mobile-intro">
           <p>
             I am a <span>Quantitative Finance and Risk Management</span>{" "}
