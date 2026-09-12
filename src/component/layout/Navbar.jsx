@@ -3,16 +3,17 @@ import "./Navbar.scss";
 
 const SCROLL_THRESHOLD = 14;
 const TOP_THRESHOLD = 8;
+const navItems = [
+  { label: "Profile", target: "profile" },
+  { label: "Internship", mobileLabel: "Intern", target: "internship" },
+  { label: "Project", target: "project" },
+  { label: "Contact", target: "contact" },
+];
 
 function Navigation() {
-  const navItems = [
-    { label: "Profile", target: "profile" },
-    { label: "Internship", target: "internship" },
-    { label: "Project", target: "project" },
-    { label: "Contact", target: "contact" },
-  ];
   const [visible, setVisible] = useState(true);
   const [isAtTop, setIsAtTop] = useState(true);
+  const [activeTarget, setActiveTarget] = useState("profile");
   const scrollState = useRef({
     lastPosition: 0,
     accumulatedDistance: 0,
@@ -74,6 +75,28 @@ function Navigation() {
   }, []);
 
   useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.target))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleSection) {
+          setActiveTarget(visibleSection.target.id);
+        }
+      },
+      { rootMargin: "-20% 0px -55%", threshold: [0.1, 0.4] },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     if (!window.location.hash) {
       return;
     }
@@ -120,10 +143,13 @@ function Navigation() {
         {navItems.map((item) => (
           <li key={item.target} className="site-nav__item">
             <button
-              className="site-nav__link"
+              className={`site-nav__link ${activeTarget === item.target ? "site-nav__link--active" : ""}`}
               onClick={() => scrollToAnchor(item.target)}
             >
-              {item.label}
+              <span className="site-nav__desktop-label">{item.label}</span>
+              <span className="site-nav__mobile-label">
+                {item.mobileLabel || item.label}
+              </span>
             </button>
           </li>
         ))}

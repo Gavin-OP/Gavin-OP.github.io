@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveProjectId } from "../../../app/store/slices/homeSlice";
 import "./Project.scss";
@@ -71,6 +71,7 @@ const projects = [
 const Project = () => {
   const dispatch = useDispatch();
   const activeProjectId = useSelector((state) => state.home.activeProjectId);
+  const [isPhone, setIsPhone] = useState(() => window.innerWidth <= 767);
   const cardsContainerRef = useRef(null);
   const projectRefs = useRef(new Map());
   const activeProjectIndex = Math.max(
@@ -78,6 +79,15 @@ const Project = () => {
     0,
   );
   const showGalleryControls = projects.length > 2;
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateIsPhone = () => setIsPhone(mediaQuery.matches);
+
+    updateIsPhone();
+    mediaQuery.addEventListener("change", updateIsPhone);
+    return () => mediaQuery.removeEventListener("change", updateIsPhone);
+  }, []);
 
   const selectProject = (projectId) => {
     if (projectId !== activeProjectId) {
@@ -154,9 +164,13 @@ const Project = () => {
                     selectProject(project.id);
                   }
                 }}
-                role={isActive ? undefined : "button"}
-                tabIndex={isActive ? undefined : 0}
-                aria-label={isActive ? undefined : `Open ${project.title.replaceAll("\n", " ")}`}
+                role={!isPhone && !isActive ? "button" : undefined}
+                tabIndex={!isPhone && !isActive ? 0 : undefined}
+                aria-label={
+                  !isPhone && !isActive
+                    ? `Open ${project.title.replaceAll("\n", " ")}`
+                    : undefined
+                }
                 style={
                   project.backgroundImage
                     ? { backgroundImage: `url(${project.backgroundImage})` }
@@ -178,7 +192,10 @@ const Project = () => {
                   </p>
 
                   <div className="project-showcase__detail">
-                    <p className="project-showcase__active-detail">
+                    <p
+                      className="project-showcase__active-detail"
+                      data-title={project.title.replaceAll("\n", " ")}
+                    >
                       {project.description}
                     </p>
 
@@ -204,7 +221,7 @@ const Project = () => {
                       aria-label={action.ariaLabel}
                       target={action.external ? "_blank" : undefined}
                       rel={action.external ? "noreferrer" : undefined}
-                      tabIndex={isActive ? 0 : -1}
+                      tabIndex={isPhone || isActive ? 0 : -1}
                       onClick={(event) => event.stopPropagation()}
                     >
                       <FontAwesomeIcon icon={action.icon} />

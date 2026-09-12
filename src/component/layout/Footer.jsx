@@ -9,23 +9,34 @@ function Footer() {
       id: "email",
       icon: <HiOutlineMail size={25} />,
       label: "HaoxiangZhang@link.cuhk.edu.hk",
+      mobileLabel: "HaoxiangZhang@link.cuhk.edu.hk",
       href: "mailto:HaoxiangZhang@link.cuhk.edu.hk",
     },
     {
       id: "github",
       icon: <AiOutlineGithub size={25} />,
       label: "https://github.com/Gavin-OP",
+      mobileLabel: "@Gavin-OP",
       href: "https://github.com/Gavin-OP",
     },
     {
       id: "linkedin",
       icon: <AiFillLinkedin size={25} />,
       label: "https://www.linkedin.com/in/gavin-zhang-op",
+      mobileLabel: "/gavin-zhang-op",
       href: "https://www.linkedin.com/in/gavin-zhang-op",
     },
   ];
   return (
     <footer id="contact" className="site-footer">
+      <div className="site-footer__mobile-signoff">
+        <p>
+          Perfectly
+          <br />
+          <span>balanced.</span>
+        </p>
+        <p>Hi, this is OP.</p>
+      </div>
       <div className="site-footer__content">
         <div className="site-footer__contact">
           <ul className="site-footer__list">
@@ -37,8 +48,15 @@ function Footer() {
                   target={contact.id === "email" ? undefined : "_blank"}
                   rel={contact.id === "email" ? undefined : "noreferrer"}
                 >
-                  {contact.icon}
-                  <span>{contact.label}</span>
+                  <span className="site-footer__desktop-contact">
+                    {contact.icon}
+                    <span>{contact.label}</span>
+                  </span>
+                  <span className="site-footer__mobile-contact">
+                    <strong>{contact.id}</strong>
+                    <span>{contact.mobileLabel}</span>
+                    <span aria-hidden="true">↗</span>
+                  </span>
                 </a>
               </li>
             ))}

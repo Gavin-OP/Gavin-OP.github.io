@@ -10,32 +10,34 @@ const cardsData = [
     title: "01",
     company: "Polymer Capital",
     position: "Alpha Capture System Intern",
-    details:
-      "Python: .groupby(), .merge(), .assign()\nGit: git pull, git branch, git rebase\nDocker: docker image, docker run\n\nDatabase. Data preprocessing. Summary statistics. Alpha generation. Backtesting.",
+    tools: ["Python: .groupby()", ".merge()", ".assign()", "git rebase", "docker run"],
+    summary:
+      "Database. Data preprocessing. Summary statistics. Alpha generation. Backtesting.",
   },
   {
     id: 2,
     title: "02",
     company: "FutureX Capital",
     position: "Investment Research Intern",
-    details:
-      "Markdown: ##, -, **\nPowerPoint: ctrl+E, islide\nWord: ctrl+C, ctrl+V\n\nPitch desk, due diligence, and investment research.",
+    tools: ["Markdown: ##", "-", "**", "ctrl+E", "ctrl+C / ctrl+V"],
+    summary: "Pitch desk, due diligence, and investment research.",
   },
   {
     id: 3,
     title: "03",
     company: "Zhihu",
     position: "Business Development Intern",
-    details:
-      "SQL: SELECT *;\nR: read.csv()\nExcel: ctrl+C ctrl+V\n\nMonitored and analyzed operational data and generated weekly reports.",
+    tools: ["SQL: SELECT *", "R: read.csv()", "ctrl+C / ctrl+V"],
+    summary: "Monitored and analyzed operational data and generated weekly reports.",
   },
   {
     id: 4,
     title: "04",
     company: "PwC",
     position: "Summer Intern",
-    details:
-      "Bloomberg: F1 F1\nWord: ctrl+F\nExcel: ctrl+shift+L, ctrl+shift+> \n\nRetrieved financial data, validated the accuracy, and audited the risk.",
+    tools: ["Bloomberg: F1 F1", "ctrl+F", "ctrl+shift+L", "ctrl+shift+>"],
+    summary:
+      "Retrieved financial data, validated the accuracy, and audited the risk.",
   },
 ];
 
@@ -91,7 +93,17 @@ const Internship = () => {
               </h2>
 
               <div className="internship__details">
-                <p>{card.details}</p>
+                <div className="internship__tools">
+                  <p className="internship__tools-label">Tools I survived</p>
+                  <div className="internship__tools-list">
+                    {card.tools.map((tool) => (
+                      <span key={tool} className="internship__tool">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <p className="internship__summary">{card.summary}</p>
               </div>
             </article>
           ))}
