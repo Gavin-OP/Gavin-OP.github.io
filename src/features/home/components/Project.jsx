@@ -272,10 +272,14 @@ const Project = () => {
       </div>
 
       {isPhone ? (
-        <div
-          className="project-showcase__position"
-          aria-label={`Project ${phoneProjectIndex + 1} of ${projects.length}`}
-        >
+          <div
+            className="project-showcase__position"
+            role="progressbar"
+            aria-label="Project carousel position"
+            aria-valuemin={1}
+            aria-valuemax={projects.length}
+            aria-valuenow={phoneProjectIndex + 1}
+          >
           <div className="project-showcase__position-track" aria-hidden="true">
             <div
               className="project-showcase__position-thumb"
