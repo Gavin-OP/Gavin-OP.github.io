@@ -190,9 +190,10 @@ const Project = () => {
                   }
                 }}
                 className={`project-showcase__item project-showcase__item--${project.id} ${isActive ? "project-showcase__item--active" : ""}`}
-                onClick={() => selectProject(project.id)}
+                onClick={() => !isPhone && selectProject(project.id)}
                 onKeyDown={(event) => {
                   if (
+                    !isPhone &&
                     !isActive &&
                     (event.key === "Enter" || event.key === " ")
                   ) {
@@ -208,7 +209,7 @@ const Project = () => {
                     : undefined
                 }
                 style={
-                  project.backgroundImage
+                  !isPhone && project.backgroundImage
                     ? { backgroundImage: `url(${project.backgroundImage})` }
                     : undefined
                 }

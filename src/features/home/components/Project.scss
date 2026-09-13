@@ -413,14 +413,16 @@
       width: 100%;
       height: auto;
       min-height: 22rem;
-      padding: 1.375rem;
+      padding: 1.5rem 1.35rem;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 1.75rem;
       background-color: #08090d;
-      background-position: center;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
       cursor: grab;
       scroll-snap-align: start;
       scroll-snap-stop: always;
+      position: relative;
+      overflow: hidden;
       transition: none;
     }
 
@@ -430,17 +432,47 @@
 
     .project-showcase__item--active {
       flex-basis: 100%;
+      justify-content: flex-start;
+    }
+
+    .project-showcase__item--wechat-analysis {
+      position: relative;
+    }
+
+    .project-showcase__item--wechat-analysis::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("/image/wechat_analysis_backgroud.png");
+      background-size: cover;
+      background-position: right center;
+      opacity: 0.18;
+      mix-blend-mode: luminosity;
+      pointer-events: none;
+      z-index: 1;
     }
 
     .project-showcase__overlay {
-      background-color: rgba(0, 0, 0, 0.55);
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(8, 9, 13, 0.98) 35%, rgba(8, 9, 13, 0.75) 100%);
+      z-index: 1;
+      pointer-events: none;
     }
 
     .project-showcase__content {
-      display: block;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
       height: auto;
       margin: 0;
       text-align: left;
+    }
+
+    .project-showcase__item--active .project-showcase__content {
+      bottom: auto;
+      margin-top: 0;
     }
 
     .project-showcase__small-detail {
@@ -460,19 +492,25 @@
 
     .project-showcase__active-detail {
       margin: 0;
-      color: #92939a;
+      color: #d1d1d6;
       font-size: 0.8125rem;
-      line-height: 1.5;
+      line-height: 1.55;
+      min-height: 3.8rem;
+    }
+
+    .project-showcase__active-detail span {
+      color: #ffffff;
+      font-weight: 600;
     }
 
     .project-showcase__active-detail::before {
       display: block;
-      margin-bottom: 0.75rem;
-      color: #f4f4f6;
+      margin-bottom: 0.625rem;
+      color: #ffffff;
       font-size: 1.45rem;
-      font-weight: 760;
-      letter-spacing: -0.06em;
-      line-height: 1.05;
+      font-weight: 750;
+      letter-spacing: -0.04em;
+      line-height: 1.15;
       content: attr(data-title);
     }
 
@@ -481,12 +519,13 @@
       display: flex;
       width: 100%;
       height: 9.5rem;
-      margin-top: 0.875rem;
+      margin-top: 0;
+      margin-bottom: 1.125rem;
       padding: 0.625rem;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 1.25rem;
-      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 1.125rem;
+      background: rgba(255, 255, 255, 0.03);
       opacity: 1;
       pointer-events: auto;
     }
@@ -510,6 +549,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
     }
 
     .project-showcase__icons,
@@ -517,12 +557,14 @@
       position: relative;
       right: auto;
       bottom: auto;
-      margin-top: 0.875rem;
+      margin-top: auto;
       display: flex;
       justify-content: flex-end;
+      gap: 0.75rem;
       opacity: 1;
       transform: none;
       transition: none;
+      z-index: 2;
     }
 
     .project-showcase__item:not(.project-showcase__item--active)
@@ -535,15 +577,25 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 2.75rem;
-      height: 2.75rem;
-      margin: 0 0 0 0.5rem;
+      width: 2.375rem;
+      height: 2.375rem;
+      margin: 0;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.055);
-      color: #d9d9df;
-      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: #e5e5ea;
+      font-size: 0.875rem;
       touch-action: manipulation;
+      transition: all 0.2s ease;
+    }
+
+    .project-showcase__action-button:hover,
+    .project-showcase__action-button:active,
+    .project-showcase__item--active .project-showcase__action-button:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      transform: translateY(-1px);
     }
 
   .project-showcase__position {

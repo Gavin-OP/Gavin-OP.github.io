@@ -25,14 +25,18 @@
 ### 3. Project 项目区
 
 - 移除固定 `30rem`（480px）大高度，采用紧凑自然的自适应布局（`min-height: 22rem; height: auto`），解决宽扁配图导致的卡片空旷不协调问题。
-- 与 Intern 进度条风格统一，移除 `01 / 02` 数字，采用同款 48px 胶囊轨道 + 50% 滑块。
+- 与 Intern 进度条风格统一，移除 `01 / 02` 数字，采用同款 56px 胶囊轨道 + 50% 滑块。
+- **WeChat 背景图融合**：使用 `::before` 伪元素将 `/image/wechat_analysis_backgroud.png` 作为暗调纹理层（Luminosity 模式），叠加 135° 深色防眩渐变（`linear-gradient(135deg, rgba(8, 9, 13, 0.98) 35%, rgba(8, 9, 13, 0.75) 100%)`），让背景图氛围自然融入卡片，正文字体保持纯白高对比度。
+- **图文视窗精准对齐**：标题、正文描述、9.5rem 暗色图表槽及底部按钮在两张卡片间严格对齐。
+- **轻量微圆图标按钮**：纯图标呈现，采用 2.375rem 轻量微磨砂圆环（`rgba(255, 255, 255, 0.05)`），优雅融入卡片右下角。
+- **手机端无无效交互**：在手机模式下禁用卡片容器的 click 响应与 active 样式微动。
 - 真实图表继续以 contain 方式完整展示，避免裁切。
 
 ### 4. Contact 联系区
 
-- 修复 `.site-footer__list` 和 `.site-footer__item` 的全宽纵向排列（`width: 100%`），使每一项 Email、GitHub、LinkedIn 自然贴合手机宽度（两侧保留 1.25rem 屏幕安全边距），彻底消除中间挤压和左右大留白。
+- 采用方案 C（留白内嵌下划线）：外层保留 1.25rem 黄金呼吸留白，`.site-footer__list` 每一项 Email、GitHub、LinkedIn 底边带有 1px 极细半透明分割线与小 `↗`，消除中间挤压和左右大留白。
 - 保留 `Perfectly balanced.` 与 `Hi, this is OP.` 的首尾呼应。
-- Email、GitHub、LinkedIn 继续是同级 metadata links。
+- Email、GitHub、LinkedIn 作为同级 metadata links。
 
 ## 实现边界
 
