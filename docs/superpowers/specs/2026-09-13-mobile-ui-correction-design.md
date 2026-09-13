@@ -13,7 +13,7 @@
 
 ### 2. Intern 经历区
 
-- 移除 `01 / 04` 数字文本，采用 48px（3.5rem）精细胶囊轨道 + 25% 平滑滑动块指示当前滚动进度。
+- 移除 `01 / 04` 数字文本，采用 56px（3.5rem）精细胶囊轨道 + 25% 平滑滑动块指示当前滚动进度。
 - 完整恢复 4 家实习的所有原始工具、快捷键及软件名：
   - Polymer: `[Python]` `.groupby(), .merge(), .assign()`, `[Git]` `git pull, git branch, git rebase`, `[Docker]` `docker image, docker run`
   - FutureX: `[Markdown]` `##, -, **`, `[PowerPoint]` `ctrl+E, islide`, `[Word]` `ctrl+C, ctrl+V`
