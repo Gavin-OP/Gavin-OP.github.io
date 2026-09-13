@@ -248,7 +248,7 @@ const Project = () => {
 
                 <div
                   className="project-showcase__icons"
-                  aria-hidden={!isActive}
+                  aria-hidden={isPhone ? undefined : !isActive}
                 >
                   {project.actions.map((action) => (
                     <a
