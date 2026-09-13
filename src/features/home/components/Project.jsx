@@ -275,16 +275,15 @@ const Project = () => {
           className="project-showcase__position"
           aria-label={`Project ${phoneProjectIndex + 1} of ${projects.length}`}
         >
-          <span>{String(phoneProjectIndex + 1).padStart(2, "0")}</span>
-          <span className="project-showcase__position-track" aria-hidden="true">
-            <span
-              className="project-showcase__position-progress"
+          <div className="project-showcase__position-track" aria-hidden="true">
+            <div
+              className="project-showcase__position-thumb"
               style={{
-                width: `${((phoneProjectIndex + 1) / projects.length) * 100}%`,
+                width: `${100 / projects.length}%`,
+                transform: `translateX(${phoneProjectIndex * 100}%)`,
               }}
             />
-          </span>
-          <span>{String(projects.length).padStart(2, "0")}</span>
+          </div>
         </div>
       ) : showGalleryControls ? (
         <div

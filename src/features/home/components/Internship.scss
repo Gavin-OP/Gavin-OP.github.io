@@ -88,16 +88,26 @@
   justify-content: flex-start;
 }
 
+.internship__desktop-details {
+  font-size: 1rem;
+  color: #89898d;
+  text-align: left;
+  margin-top: auto;
+  min-height: 10rem;
+  white-space: pre-line;
+  display: block;
+}
+
+.internship__mobile-details {
+  display: none;
+}
+
 .internship__summary {
   font-size: 1rem;
   color: #89898d;
   text-align: left;
   margin-top: auto;
   min-height: 10rem;
-}
-
-.internship__tools {
-  display: none;
 }
 
 .internship__company-name {
@@ -304,6 +314,14 @@
     margin: 1rem 0 0;
   }
 
+  .internship__desktop-details {
+    display: none;
+  }
+
+  .internship__mobile-details {
+    display: block;
+  }
+
   .internship__tools {
     display: block;
     padding-top: 0;
@@ -312,19 +330,39 @@
 
   .internship__tools-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.375rem;
+    flex-direction: column;
+    gap: 0.45rem;
   }
 
-  .internship__tool {
-    padding: 0.375rem 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.075);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.052);
+  .internship__tool-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.5rem;
+    padding: 0.375rem 0.625rem;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.035);
+  }
+
+  .internship__tool-badge {
+    display: inline-block;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.375rem;
+    background: rgba(255, 255, 255, 0.08);
+    color: #f4f4f6;
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: 0.625rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .internship__tool-items {
     color: #babcc4;
     font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
-    font-size: 0.5625rem;
-    line-height: 1;
+    font-size: 0.6875rem;
+    line-height: 1.35;
   }
 
   .internship__summary {
@@ -341,32 +379,28 @@
     margin: 0.875rem auto 2.75rem;
   }
 
-  .internship__position {
-    display: grid;
-    grid-template-columns: auto 2.75rem auto;
-    gap: 0.5rem;
+  .internship__carousel-position {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    color: #777982;
-    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
-    font-size: 0.5625rem;
-    font-weight: 400;
-    letter-spacing: 0.08em;
   }
 
   .internship__carousel-position-track {
     display: block;
-    height: 0.125rem;
+    width: 3.5rem;
+    height: 2px;
     overflow: hidden;
-    border-radius: inherit;
-    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
   }
 
-  .internship__carousel-position-progress {
+  .internship__carousel-position-thumb {
     display: block;
     height: 100%;
     border-radius: inherit;
-    background: rgba(245, 245, 247, 0.82);
-    transition: width 180ms ease;
+    background: rgba(245, 245, 247, 0.88);
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
   }
 
   .internship__switch-button {

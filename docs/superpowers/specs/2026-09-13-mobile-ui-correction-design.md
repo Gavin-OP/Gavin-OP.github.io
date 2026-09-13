@@ -1,4 +1,4 @@
-# Mobile UI 第二轮精细校正规格
+# Mobile UI 精细校正设计规格
 
 ## 目标
 
@@ -6,32 +6,33 @@
 
 ## 已确认的调整
 
-### Project
+### 1. Profile 与 Intern 渐变分隔线
 
-- 修复 `Project.scss` 中 phone/tablet 媒体查询错误嵌套在 `prefers-reduced-motion` 内的问题，使普通 phone 设备也启用 mobile feature cards。
-- Phone 下每次展示一张完整 project card，使用原生横向滚动和 scroll snap。
-- 每张卡默认完整显示项目标题、说明、图片和操作入口；不要求先点击卡片展开。
-- 用真实的滚动位置驱动简洁的 `01 / 02` 位置指示，取代静态或不准确的显示。
+- 保持 Profile 与 Intern 之间的总垂直距离为约 5.5rem（88px）。
+- 将 gradient line 放置在 Profile 正文与 Intern 标题的正中心，上下边距各为 2.75rem。
+
+### 2. Intern 经历区
+
+- 移除 `01 / 04` 数字文本，采用 48px（3.5rem）精细胶囊轨道 + 25% 平滑滑动块指示当前滚动进度。
+- 完整恢复 4 家实习的所有原始工具、快捷键及软件名：
+  - Polymer: `[Python]` `.groupby(), .merge(), .assign()`, `[Git]` `git pull, git branch, git rebase`, `[Docker]` `docker image, docker run`
+  - FutureX: `[Markdown]` `##, -, **`, `[PowerPoint]` `ctrl+E, islide`, `[Word]` `ctrl+C, ctrl+V`
+  - Zhihu: `[SQL]` `SELECT *;`, `[R]` `read.csv()`, `[Excel]` `ctrl+C ctrl+V`
+  - PwC: `[Bloomberg]` `F1 F1`, `[Word]` `ctrl+F`, `[Excel]` `ctrl+shift+L, ctrl+shift+>`
+- 应用已确认的前缀高亮样式，使软件类别名称作为高亮徽章，命令保持 monospace。
+- Desktop 端完整保留原始 details 多行文本展示，不丢失任何信息。
+
+### 3. Project 项目区
+
+- 移除固定 `30rem`（480px）大高度，采用紧凑自然的自适应布局（`min-height: 22rem; height: auto`），解决宽扁配图导致的卡片空旷不协调问题。
+- 与 Intern 进度条风格统一，移除 `01 / 02` 数字，采用同款 48px 胶囊轨道 + 50% 滑块。
 - 真实图表继续以 contain 方式完整展示，避免裁切。
 
-### Internship
+### 4. Contact 联系区
 
-- 保留一屏一张的原生横滑和 scroll snap。
-- 移除 `Tools I survived` 标题，仅保留工具/命令 chips 与经历说明。
-- 用真实滚动位置驱动细进度条和当前项目编号，替换固定 25% 的伪进度条。
-- 不改变 desktop 的 Redux index、三卡显示和左右切换按钮。
-
-### Profile
-
-- Phone secondary identity 改为 `ZHANG Haoxiang · Gavin`，使张浩翔位于 Gavin 前。
-- 保留当前 hero lockup、打字动效和 reduced-motion fallback。
-
-### Contact
-
+- 修复 `.site-footer__list` 和 `.site-footer__item` 的全宽纵向排列（`width: 100%`），使每一项 Email、GitHub、LinkedIn 自然贴合手机宽度（两侧保留 1.25rem 屏幕安全边距），彻底消除中间挤压和左右大留白。
 - 保留 `Perfectly balanced.` 与 `Hi, this is OP.` 的首尾呼应。
 - Email、GitHub、LinkedIn 继续是同级 metadata links。
-- 缩小 links 区域的左右留白，提升横向利用率，同时保留不小于 44px 的触控行高度。
-- 将 footer 顶部到 sign-off 的间距收紧至与页面其他 section divider 一致的节奏，目标为约 2.75rem。
 
 ## 实现边界
 

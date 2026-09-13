@@ -79,7 +79,7 @@
 
 @media (max-width: 767px) {
   .profile-hero {
-    padding: 0 1.25rem 2.75rem;
+    padding: 0 1.25rem 0;
   }
 
   .profile-hero__spacer,
@@ -171,6 +171,7 @@
 
   .profile-hero__divider {
     width: 100%;
+    margin-top: 2.75rem;
   }
 }
 

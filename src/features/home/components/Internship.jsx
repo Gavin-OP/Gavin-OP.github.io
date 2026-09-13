@@ -10,7 +10,13 @@ const cardsData = [
     title: "01",
     company: "Polymer Capital",
     position: "Alpha Capture System Intern",
-    tools: ["Python: .groupby()", ".merge()", ".assign()", "git rebase", "docker run"],
+    details:
+      "Python: .groupby(), .merge(), .assign()\nGit: git pull, git branch, git rebase\nDocker: docker image, docker run\n\nDatabase. Data preprocessing. Summary statistics. Alpha generation. Backtesting.",
+    tools: [
+      { category: "Python", items: ".groupby(), .merge(), .assign()" },
+      { category: "Git", items: "git pull, git branch, git rebase" },
+      { category: "Docker", items: "docker image, docker run" },
+    ],
     summary:
       "Database. Data preprocessing. Summary statistics. Alpha generation. Backtesting.",
   },
@@ -19,7 +25,13 @@ const cardsData = [
     title: "02",
     company: "FutureX Capital",
     position: "Investment Research Intern",
-    tools: ["Markdown: ##", "-", "**", "ctrl+E", "ctrl+C / ctrl+V"],
+    details:
+      "Markdown: ##, -, **\nPowerPoint: ctrl+E, islide\nWord: ctrl+C, ctrl+V\n\nPitch desk, due diligence, and investment research.",
+    tools: [
+      { category: "Markdown", items: "##, -, **" },
+      { category: "PowerPoint", items: "ctrl+E, islide" },
+      { category: "Word", items: "ctrl+C, ctrl+V" },
+    ],
     summary: "Pitch desk, due diligence, and investment research.",
   },
   {
@@ -27,7 +39,13 @@ const cardsData = [
     title: "03",
     company: "Zhihu",
     position: "Business Development Intern",
-    tools: ["SQL: SELECT *", "R: read.csv()", "ctrl+C / ctrl+V"],
+    details:
+      "SQL: SELECT *;\nR: read.csv()\nExcel: ctrl+C ctrl+V\n\nMonitored and analyzed operational data and generated weekly reports.",
+    tools: [
+      { category: "SQL", items: "SELECT *;" },
+      { category: "R", items: "read.csv()" },
+      { category: "Excel", items: "ctrl+C ctrl+V" },
+    ],
     summary: "Monitored and analyzed operational data and generated weekly reports.",
   },
   {
@@ -35,7 +53,13 @@ const cardsData = [
     title: "04",
     company: "PwC",
     position: "Summer Intern",
-    tools: ["Bloomberg: F1 F1", "ctrl+F", "ctrl+shift+L", "ctrl+shift+>"],
+    details:
+      "Bloomberg: F1 F1\nWord: ctrl+F\nExcel: ctrl+shift+L, ctrl+shift+> \n\nRetrieved financial data, validated the accuracy, and audited the risk.",
+    tools: [
+      { category: "Bloomberg", items: "F1 F1" },
+      { category: "Word", items: "ctrl+F" },
+      { category: "Excel", items: "ctrl+shift+L, ctrl+shift+>" },
+    ],
     summary:
       "Retrieved financial data, validated the accuracy, and audited the risk.",
   },
@@ -120,16 +144,24 @@ const Internship = () => {
               </h2>
 
               <div className="internship__details">
-                <div className="internship__tools">
-                  <div className="internship__tools-list">
-                    {card.tools.map((tool) => (
-                      <span key={tool} className="internship__tool">
-                        {tool}
-                      </span>
-                    ))}
+                <p className="internship__desktop-details">{card.details}</p>
+                <div className="internship__mobile-details">
+                  <div className="internship__tools">
+                    <div className="internship__tools-list">
+                      {card.tools.map((tool) => (
+                        <div key={tool.category} className="internship__tool-row">
+                          <span className="internship__tool-badge">
+                            {tool.category}
+                          </span>
+                          <span className="internship__tool-items">
+                            {tool.items}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
+                  <p className="internship__summary">{card.summary}</p>
                 </div>
-                <p className="internship__summary">{card.summary}</p>
               </div>
             </article>
           ))}
@@ -141,16 +173,18 @@ const Internship = () => {
           className="internship__carousel-position"
           aria-label={`Internship ${phoneCardIndex + 1} of ${cardsData.length}`}
         >
-          <span>{String(phoneCardIndex + 1).padStart(2, "0")}</span>
-          <span className="internship__carousel-position-track" aria-hidden="true">
-            <span
-              className="internship__carousel-position-progress"
+          <div
+            className="internship__carousel-position-track"
+            aria-hidden="true"
+          >
+            <div
+              className="internship__carousel-position-thumb"
               style={{
-                width: `${((phoneCardIndex + 1) / cardsData.length) * 100}%`,
+                width: `${100 / cardsData.length}%`,
+                transform: `translateX(${phoneCardIndex * 100}%)`,
               }}
             />
-          </span>
-          <span>{String(cardsData.length).padStart(2, "0")}</span>
+          </div>
         </div>
         <button
           onClick={handlePrev}
