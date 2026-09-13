@@ -577,14 +577,14 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 2.375rem;
-      height: 2.375rem;
+      width: 2.25rem;
+      height: 2.25rem;
       margin: 0;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: none;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
-      color: #e5e5ea;
-      font-size: 0.875rem;
+      background: transparent;
+      color: rgba(245, 245, 247, 0.72);
+      font-size: 1.125rem;
       touch-action: manipulation;
       transition: all 0.2s ease;
     }
@@ -592,10 +592,9 @@
     .project-showcase__action-button:hover,
     .project-showcase__action-button:active,
     .project-showcase__item--active .project-showcase__action-button:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
       color: #ffffff;
-      transform: translateY(-1px);
+      transform: scale(1.08);
     }
 
   .project-showcase__position {

@@ -121,8 +121,8 @@
   .site-footer__list {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin: 0;
+    width: auto;
+    margin: 0 1.25rem;
     padding: 0;
     list-style: none;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -139,8 +139,8 @@
     display: block;
     width: 100%;
     box-sizing: border-box;
-    min-height: 3.875rem;
-    padding: 0.75rem 1.25rem;
+    min-height: 3.5rem;
+    padding: 0.875rem 0.25rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     color: #f5f5f7;
     touch-action: manipulation;

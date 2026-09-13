@@ -9,7 +9,7 @@ function Footer() {
       id: "email",
       icon: <HiOutlineMail size={25} />,
       label: "HaoxiangZhang@link.cuhk.edu.hk",
-      mobileLabel: "HaoxiangZhang@link.cuhk.edu.hk",
+      mobileLabel: "HaoxiangZhang@link...",
       href: "mailto:HaoxiangZhang@link.cuhk.edu.hk",
     },
     {
