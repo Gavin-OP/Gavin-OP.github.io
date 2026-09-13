@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveProjectId } from "../../../app/store/slices/homeSlice";
 import "./Project.scss";
@@ -71,6 +71,8 @@ const projects = [
 const Project = () => {
   const dispatch = useDispatch();
   const activeProjectId = useSelector((state) => state.home.activeProjectId);
+  const [isPhone, setIsPhone] = useState(() => window.innerWidth <= 767);
+  const [phoneProjectIndex, setPhoneProjectIndex] = useState(0);
   const cardsContainerRef = useRef(null);
   const projectRefs = useRef(new Map());
   const activeProjectIndex = Math.max(
@@ -78,6 +80,15 @@ const Project = () => {
     0,
   );
   const showGalleryControls = projects.length > 2;
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateIsPhone = () => setIsPhone(mediaQuery.matches);
+
+    updateIsPhone();
+    mediaQuery.addEventListener("change", updateIsPhone);
+    return () => mediaQuery.removeEventListener("change", updateIsPhone);
+  }, []);
 
   const selectProject = (projectId) => {
     if (projectId !== activeProjectId) {
@@ -90,6 +101,40 @@ const Project = () => {
     if (project) {
       selectProject(project.id);
     }
+  };
+
+  const handleProjectScroll = () => {
+    if (!isPhone) {
+      return;
+    }
+
+    const container = cardsContainerRef.current;
+    if (!container) {
+      return;
+    }
+
+    const nearestProjectIndex = projects.reduce(
+      (nearestIndex, project, index) => {
+        const projectElement = projectRefs.current.get(project.id);
+        const nearestProjectElement = projectRefs.current.get(
+          projects[nearestIndex].id,
+        );
+
+        if (!projectElement || !nearestProjectElement) {
+          return nearestIndex;
+        }
+
+        return Math.abs(projectElement.offsetLeft - container.scrollLeft) <
+          Math.abs(nearestProjectElement.offsetLeft - container.scrollLeft)
+          ? index
+          : nearestIndex;
+      },
+      0,
+    );
+
+    setPhoneProjectIndex((currentIndex) =>
+      currentIndex === nearestProjectIndex ? currentIndex : nearestProjectIndex,
+    );
   };
 
   useEffect(() => {
@@ -129,6 +174,7 @@ const Project = () => {
       <div
         ref={cardsContainerRef}
         className="project-showcase__cards-container"
+        onScroll={handleProjectScroll}
       >
         <div className="project-showcase__cards-wrapper">
           {projects.map((project) => {
@@ -144,9 +190,10 @@ const Project = () => {
                   }
                 }}
                 className={`project-showcase__item project-showcase__item--${project.id} ${isActive ? "project-showcase__item--active" : ""}`}
-                onClick={() => selectProject(project.id)}
+                onClick={() => !isPhone && selectProject(project.id)}
                 onKeyDown={(event) => {
                   if (
+                    !isPhone &&
                     !isActive &&
                     (event.key === "Enter" || event.key === " ")
                   ) {
@@ -154,11 +201,15 @@ const Project = () => {
                     selectProject(project.id);
                   }
                 }}
-                role={isActive ? undefined : "button"}
-                tabIndex={isActive ? undefined : 0}
-                aria-label={isActive ? undefined : `Open ${project.title.replaceAll("\n", " ")}`}
+                role={!isPhone && !isActive ? "button" : undefined}
+                tabIndex={!isPhone && !isActive ? 0 : undefined}
+                aria-label={
+                  !isPhone && !isActive
+                    ? `Open ${project.title.replaceAll("\n", " ")}`
+                    : undefined
+                }
                 style={
-                  project.backgroundImage
+                  !isPhone && project.backgroundImage
                     ? { backgroundImage: `url(${project.backgroundImage})` }
                     : undefined
                 }
@@ -178,7 +229,10 @@ const Project = () => {
                   </p>
 
                   <div className="project-showcase__detail">
-                    <p className="project-showcase__active-detail">
+                    <p
+                      className="project-showcase__active-detail"
+                      data-title={project.title.replaceAll("\n", " ")}
+                    >
                       {project.description}
                     </p>
 
@@ -194,7 +248,7 @@ const Project = () => {
 
                 <div
                   className="project-showcase__icons"
-                  aria-hidden={!isActive}
+                  aria-hidden={isPhone ? undefined : !isActive}
                 >
                   {project.actions.map((action) => (
                     <a
@@ -204,7 +258,7 @@ const Project = () => {
                       aria-label={action.ariaLabel}
                       target={action.external ? "_blank" : undefined}
                       rel={action.external ? "noreferrer" : undefined}
-                      tabIndex={isActive ? 0 : -1}
+                      tabIndex={isPhone || isActive ? 0 : -1}
                       onClick={(event) => event.stopPropagation()}
                     >
                       <FontAwesomeIcon icon={action.icon} />
@@ -217,7 +271,26 @@ const Project = () => {
         </div>
       </div>
 
-      {showGalleryControls ? (
+      {isPhone ? (
+          <div
+            className="project-showcase__position"
+            role="progressbar"
+            aria-label="Project carousel position"
+            aria-valuemin={1}
+            aria-valuemax={projects.length}
+            aria-valuenow={phoneProjectIndex + 1}
+          >
+          <div className="project-showcase__position-track" aria-hidden="true">
+            <div
+              className="project-showcase__position-thumb"
+              style={{
+                width: `${100 / projects.length}%`,
+                transform: `translateX(${phoneProjectIndex * 100}%)`,
+              }}
+            />
+          </div>
+        </div>
+      ) : showGalleryControls ? (
         <div
           className="project-showcase__controls"
           aria-label="Project gallery controls"
