@@ -169,10 +169,14 @@ const Internship = () => {
       </div>
 
       <div className="internship__button-container">
-        <div
-          className="internship__carousel-position"
-          aria-label={`Internship ${phoneCardIndex + 1} of ${cardsData.length}`}
-        >
+          <div
+            className="internship__carousel-position"
+            role="progressbar"
+            aria-label="Internship carousel position"
+            aria-valuemin={1}
+            aria-valuemax={cardsData.length}
+            aria-valuenow={phoneCardIndex + 1}
+          >
           <div
             className="internship__carousel-position-track"
             aria-hidden="true"
